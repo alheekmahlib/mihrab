@@ -1,0 +1,80 @@
+name: mihrab_tv
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.6+7
+
+environment:
+  sdk: ^3.11.3
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  mihrab_shared:
+    path: ../mihrab_shared
+  supabase_flutter: ^2.9.0
+  uuid: ^4.5.1
+  qr_flutter: ^4.1.0
+  get: ^4.7.3
+  get_storage: ^2.1.1
+  gap: ^3.0.1
+  adhan: ^2.0.0+1
+  intl: any
+  flutter_svg: ^2.0.17
+  hijri_date: ^1.1.0
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "../app_icon.png"
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "../app_icon.png"
+    background_color: "#F2EBE0"
+    theme_color: "#F2EBE0"
+  adaptive_icon_background: "#F2EBE0"
+  adaptive_icon_foreground: "../app_icon.png"
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/json/
+    - assets/json/books_data/bukhari_books/
+    - assets/json/books_data/muslim_books/
+    - assets/json/books_data/nasai_books/
+    - assets/json/books_data/abudawud_books/
+    - assets/json/books_data/tirmidhi_books/
+    - assets/json/books_data/ibnmajah_books/
+    - assets/images/

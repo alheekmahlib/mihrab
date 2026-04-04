@@ -1,0 +1,157 @@
+const Map<String, String> ar = {
+  // App
+  'appName': 'محراب',
+  'appDescription': 'شاشة مسجدية لعرض أوقات الصلاة والأحاديث',
+
+  // Prayer names
+  'fajr': 'الفجر',
+  'sunrise': 'الشروق',
+  'dhuhr': 'الظهر',
+  'asr': 'العصر',
+  'maghrib': 'المغرب',
+  'isha': 'العشاء',
+  'midnight': 'منتصف الليل',
+  'lastThird': 'الثلث الأخير',
+
+  // Display modes
+  'prayerTimes': 'أوقات الصلاة',
+  'hadith': 'حديث',
+  'combined': 'أوقات الصلاة + حديث',
+  'prayerQibla': 'أوقات الصلاة + القبلة',
+  'autoRotate': 'تدوير تلقائي',
+
+  // Onboarding
+  'welcome': 'مرحباً بكم في محراب',
+  'pairWithPhone': 'ربط بهاتف',
+  'manualSetup': 'إعداد يدوي',
+  'scanQrCode': 'امسح رمز QR للربط',
+  'waitingForPairing': 'في انتظار الربط...',
+  'selectCountry': 'اختر الدولة',
+  'back': 'رجوع',
+  'save': 'حفظ',
+  'close': 'إغلاق',
+
+  // Prayer times screen
+  'nextPrayer': 'الصلاة القادمة',
+  'prayerTimeArrived': 'حان وقت صلاة',
+  'remainingTime': 'الوقت المتبقي',
+
+  // Hadith screen
+  'hadithOfTheDay': 'حديث اليوم',
+  'hadithNumber': 'حديث رقم',
+  'dailyHadith': 'الحديث اليومي',
+
+  // Qibla
+  'qiblaDirection': 'اتجاه القبلة',
+
+  // Settings
+  'settings': 'الإعدادات',
+  'displayMode': 'وضع العرض',
+  'location': 'الموقع',
+  'calculationMethod': 'طريقة الحساب',
+  'madhab': 'المذهب',
+  'shafi': 'الشافعي',
+  'hanafi': 'الحنفي',
+  'useEnglishNumbers': 'استخدام الأرقام الإنجليزية',
+  'darkMode': 'الوضع الداكن',
+  'rePair': 'إعادة الربط',
+  'deleteDevice': 'حذف الجهاز',
+  'deleteDeviceConfirm': 'هل أنت متأكد من حذف هذا الجهاز؟',
+  'delete': 'حذف',
+  'cancel': 'إلغاء',
+  'resetPairingConfirm': 'سيتم إلغاء الربط الحالي. هل تريد المتابعة؟',
+  'autoRotateInterval': 'مدة التدوير التلقائي',
+  'selectMadhab': 'اختر المذهب',
+  'showQrCode': 'عرض رمز QR',
+  'minutes': 'دقيقة',
+
+  // Cardinal directions
+  'north': 'شمال',
+  'south': 'جنوب',
+  'east': 'شرق',
+  'west': 'غرب',
+  'northEast': 'شمال شرق',
+  'northWest': 'شمال غرب',
+  'southEast': 'جنوب شرق',
+  'southWest': 'جنوب غرب',
+
+  // Calculation methods
+  'method_umm_al_qura': 'أم القرى',
+  'method_mwl': 'رابطة العالم الإسلامي',
+  'method_egyptian': 'الهيئة المصرية العامة للمساحة',
+  'method_karachi': 'جامعة العلوم الإسلامية - كراتشي',
+  'method_dubai': 'دبي',
+  'method_kuwait': 'الكويت',
+  'method_qatar': 'قطر',
+  'method_singapore': 'سنغافورة',
+  'method_turkey': 'تركيا',
+  'method_tehran': 'طهران',
+  'method_north_america': 'أمريكا الشمالية',
+  'method_other': 'أخرى',
+
+  // Hadith collections
+  'collection_bukhari': 'صحيح البخاري',
+  'collection_muslim': 'صحيح مسلم',
+  'collection_nasai': 'سنن النسائي',
+  'collection_abudawud': 'سنن أبي داود',
+  'collection_tirmidhi': 'جامع الترمذي',
+  'collection_ibnmajah': 'سنن ابن ماجة',
+
+  // Additional UI strings (previously hardcoded)
+  'language': 'اللغة',
+  'selectLanguage': 'اختر اللغة',
+  'retry': 'إعادة المحاولة',
+  'adjustPrayerTimes': 'تعديل الأوقات',
+  'adjustPrayerTimesDesc': 'تعديل أوقات الصلاة بالدقائق (+ أو -)',
+  'savedSuccessfully': 'تم الحفظ بنجاح',
+  'deviceNotFound': 'لم يتم العثور على الجهاز',
+  'error': 'خطأ',
+  'noDeviceSelected': 'لا يوجد جهاز محدد',
+  'city': 'المدينة',
+  'country': 'الدولة',
+  'coordinates': 'الإحداثيات',
+  'detectLocation': 'تحديد الموقع',
+  'detectingLocation': 'جاري التحديد...',
+  'locationNotSet':
+      'لم يتم تحديد الموقع بعد. اضغط الزر أدناه لتحديده تلقائياً.',
+  'locationPermissionRequired': 'يرجى السماح بالوصول للموقع من الإعدادات',
+  'locationError': 'خطأ في تحديد الموقع',
+  'noPairedDevices': 'لا توجد أجهزة مرتبطة',
+  'scanQrToPair': 'امسح رمز QR من شاشة التلفاز للربط',
+  'scannerInstructions': 'وجّه الكاميرا نحو رمز QR على شاشة التلفاز',
+  'screenLabel': 'شاشة',
+  'notSet': 'غير محدد',
+  'deviceNameTv': 'محراب TV',
+  'registrationFailed': 'فشل تسجيل الجهاز',
+  'renameDevice': 'تغيير اسم الجهاز',
+  'deviceName': 'اسم الجهاز',
+
+  // Web landing page
+  'appDescriptionLong':
+      'محراب هو نظام شاشة مسجدية متكامل لعرض أوقات الصلاة والأحاديث النبوية واتجاه القبلة. يمكنك التحكم بالشاشات عن بُعد من أي مكان.',
+  'goToDashboard': 'لوحة التحكم',
+  'features': 'المميزات',
+  'featurePrayerTimes': 'أوقات الصلاة',
+  'featurePrayerTimesDesc':
+      'عرض دقيق لأوقات الصلاة مع عد تنازلي للصلاة القادمة',
+  'featureHadith': 'الأحاديث النبوية',
+  'featureHadithDesc': 'عرض أحاديث من الكتب الستة بتدوير تلقائي',
+  'featureQibla': 'اتجاه القبلة',
+  'featureQiblaDesc': 'عرض اتجاه القبلة بالدرجات والاتجاه الأساسي',
+  'featureMultiScreen': 'تعدد الشاشات',
+  'featureMultiScreenDesc': 'تحكم بعدة شاشات من لوحة تحكم واحدة',
+  'featureMultiLanguage': 'متعدد اللغات',
+  'featureMultiLanguageDesc': 'دعم 9 لغات مختلفة',
+  'featureFullscreen': 'عرض ملء الشاشة',
+  'featureFullscreenDesc': 'افتح شاشة العرض بوضع ملء الشاشة من المتصفح',
+  'downloadApps': 'تحميل التطبيقات',
+  'downloadTvApp': 'تطبيق التلفاز',
+  'downloadDashboard': 'تطبيق التحكم',
+  'scanWithCamera': 'مسح بالكاميرا',
+  'enterTokenManually': 'إدخال الرمز يدوياً',
+  'pasteToken': 'الصق الرمز هنا',
+  'tokenHint': 'أدخل رمز الربط الموجود على شاشة التلفاز',
+  'openDisplay': 'فتح الشاشة',
+  'enterFullscreen': 'ملء الشاشة',
+  'exitFullscreen': 'الخروج من ملء الشاشة',
+};

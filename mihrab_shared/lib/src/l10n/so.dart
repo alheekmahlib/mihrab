@@ -1,0 +1,158 @@
+const Map<String, String> so = {
+  // App
+  'appName': 'Mihraab',
+  'appDescription': 'Shaashada masjidka ee wakhtiyada salaadda iyo xadiiska',
+
+  // Prayer names
+  'fajr': 'Fajr',
+  'sunrise': 'Qorrax-soo-bax',
+  'dhuhr': 'Duhur',
+  'asr': 'Casr',
+  'maghrib': 'Maqrib',
+  'isha': 'Cishaa',
+  'midnight': 'Badh-habeenka',
+  'lastThird': 'Saddexdii u dambaysay',
+
+  // Display modes
+  'prayerTimes': 'Wakhtiyada Salaadda',
+  'hadith': 'Xadiis',
+  'combined': 'Wakhtiyada + Xadiis',
+  'prayerQibla': 'Wakhtiyada + Qiblada',
+  'autoRotate': 'Is-wareejin toos ah',
+
+  // Onboarding
+  'welcome': 'Ku soo dhawoow Mihraab',
+  'pairWithPhone': 'Ku xidh telefoonka',
+  'manualSetup': 'Dejin gacmeed',
+  'scanQrCode': 'Sawir QR-ka si aad u xidho',
+  'waitingForPairing': 'Waa la sugayaa xidhiidhka...',
+  'selectCountry': 'Dooro dalka',
+  'back': 'Dib u noqo',
+  'save': 'Kaydi',
+  'close': 'Xidh',
+
+  // Prayer times screen
+  'nextPrayer': 'Salaadda xigta',
+  'prayerTimeArrived': 'Waa waqtiga salaadda',
+  'remainingTime': 'Waqtiga haray',
+
+  // Hadith screen
+  'hadithOfTheDay': 'Xadiiska maanta',
+  'hadithNumber': 'Xadiis Lr.',
+  'dailyHadith': 'Xadiiska maalintii',
+
+  // Qibla
+  'qiblaDirection': 'Jihada Qiblada',
+
+  // Settings
+  'settings': 'Dejinta',
+  'displayMode': 'Qaabka muuqaalka',
+  'location': 'Goobta',
+  'calculationMethod': 'Habka xisaabinta',
+  'madhab': 'Madhhab',
+  'shafi': 'Shaafici',
+  'hanafi': 'Xanafi',
+  'useEnglishNumbers': 'Isticmaal nambarada Ingiriisiga',
+  'darkMode': 'Qaabka mugdiga',
+  'rePair': 'Dib u xidh',
+  'deleteDevice': 'Tir qaadka',
+  'deleteDeviceConfirm': 'Ma hubtaa inaad rabto inaad tirtirto qaadkan?',
+  'delete': 'Tirtir',
+  'cancel': 'Jooji',
+  'resetPairingConfirm': 'Xidhiidhka hadda waa la tirtirayaa. Ma sii wadaa?',
+  'autoRotateInterval': 'Waqtiga is-wareejinta',
+  'selectMadhab': 'Dooro madhhabka',
+  'showQrCode': 'Muuji QR code-ka',
+  'minutes': 'daqiiqo',
+
+  // Cardinal directions
+  'north': 'Waqooyi',
+  'south': 'Koonfur',
+  'east': 'Bari',
+  'west': 'Galbeed',
+  'northEast': 'Waqooyi-bari',
+  'northWest': 'Waqooyi-galbeed',
+  'southEast': 'Koonfur-bari',
+  'southWest': 'Koonfur-galbeed',
+
+  // Calculation methods
+  'method_umm_al_qura': 'Umm Al-Quraa',
+  'method_mwl': 'Ururka Muslimiinta Adduunka',
+  'method_egyptian': 'Hay\'adda Guud ee Masaarida',
+  'method_karachi': 'Jaamacadda Cilmiga Islaamka, Karachi',
+  'method_dubai': 'Dubai',
+  'method_kuwait': 'Kuwait',
+  'method_qatar': 'Qatar',
+  'method_singapore': 'Singapore',
+  'method_turkey': 'Turkiga',
+  'method_tehran': 'Tehran',
+  'method_north_america': 'Waqooyiga Ameerika (ISNA)',
+  'method_other': 'Kale',
+
+  // Hadith collections
+  'collection_bukhari': 'Saxiix Al-Bukhaari',
+  'collection_muslim': 'Saxiix Muslim',
+  'collection_nasai': 'Sunan An-Nasaa\'i',
+  'collection_abudawud': 'Sunan Abu Dawud',
+  'collection_tirmidhi': 'Jaamic At-Tirmidhi',
+  'collection_ibnmajah': 'Sunan Ibn Maajah',
+
+  // Additional UI strings
+  'language': 'Luuqadda',
+  'selectLanguage': 'Dooro luuqadda',
+  'retry': 'Isku day mar kale',
+  'adjustPrayerTimes': 'Hagaaji wakhtiyada',
+  'adjustPrayerTimesDesc': 'Hagaaji wakhtiyada salaadda daqiiqadaha (+ ama -)',
+  'savedSuccessfully': 'Si guul leh ayaa loo kaydiyay',
+  'deviceNotFound': 'Qaadka lama helin',
+  'error': 'Khalad',
+  'noDeviceSelected': 'Qaad lama dooran',
+  'city': 'Magaalada',
+  'country': 'Dalka',
+  'coordinates': 'Isku-xirnaanta',
+  'detectLocation': 'Ogaanshaha goobta',
+  'detectingLocation': 'Waa la ogaanayaa...',
+  'locationNotSet': 'Goobta wali lama dejin. Taabo hoos si toos ah loo ogaado.',
+  'locationPermissionRequired': 'Fasax helitaanka goobta dejinta',
+  'locationError': 'Khalad ogaanshaha goobta',
+  'noPairedDevices': 'Ma jiraan qaado la xidhiidhay',
+  'scanQrToPair': 'Sawir QR-ka shaashadda TV-ga si aad u xidho',
+  'scannerInstructions': 'U jeedi kamaradda QR-ka ku yaal shaashadda TV-ga',
+  'screenLabel': 'Shaashad',
+  'notSet': 'Lama dejin',
+  'deviceNameTv': 'Mihraab TV',
+  'registrationFailed': 'Diiwaan gelinta qaadku way fashilantay',
+  'renameDevice': 'Magaca qaadka bedel',
+  'deviceName': 'Magaca qaadka',
+
+  // Web landing page
+  'appDescriptionLong':
+      'Mihraab waa nidaam shaashadda masjidka oo dhamaystiran oo muujinaya waqtiyada salaadda, xadiisyada Nabiga iyo jihada Qiblada. Ka xakamee shaashadahaaga meel kasta.',
+  'goToDashboard': 'Guddiga xakamaynta',
+  'features': 'Astaamaha',
+  'featurePrayerTimes': 'Waqtiyada salaadda',
+  'featurePrayerTimesDesc':
+      'Waqtiyada salaadda oo sax ah oo leh tirinta salaadda xigta',
+  'featureHadith': 'Xadiisyada Nabiga',
+  'featureHadithDesc':
+      'Muuji xadiisyada lixda buug ee waaweyn oo isbedel toos ah',
+  'featureQibla': 'Jihada Qiblada',
+  'featureQiblaDesc': 'Muuji jihada Qiblada darajooyin iyo jiho asaasi ah',
+  'featureMultiScreen': 'Shaashado badan',
+  'featureMultiScreenDesc': 'Xakamee shaashado badan hal guddiga xakamaynta',
+  'featureMultiLanguage': 'Luqado badan',
+  'featureMultiLanguageDesc': 'Taageero 9 luqadood oo kala duwan',
+  'featureFullscreen': 'Shaashad buuxda',
+  'featureFullscreenDesc':
+      'Fur shaashada wax-muujinta qaabka shaashada buuxda browserka',
+  'downloadApps': 'Soo degso Apps-ka',
+  'downloadTvApp': 'App-ka TV',
+  'downloadDashboard': 'App-ka Xakamaynta',
+  'scanWithCamera': 'Ku scan kaamirada',
+  'enterTokenManually': 'Geli lambarka gacanta',
+  'pasteToken': 'Halkan ku dhaji lambarka',
+  'tokenHint': 'Geli lambarka isku-xirka ee shaashada TV-ga',
+  'openDisplay': 'Fur Shaashada',
+  'enterFullscreen': 'Shaashad buuxda',
+  'exitFullscreen': 'Ka bax shaashada buuxda',
+};
