@@ -4,11 +4,8 @@ on:
   push:
     paths:
       - 'mihrab_dashboard/**'
+      - 'mihrab_shared/**'
     branches: [main, master]
-
-defaults:
-  run:
-    working-directory: mihrab_dashboard
 
 jobs:
   build:
@@ -29,16 +26,18 @@ jobs:
         with:
           channel: stable
 
-      - name: Get dependencies
-        run: flutter pub get
+      - name: Get dependencies (shared + dashboard)
+        run: |
+          cd mihrab_shared && flutter pub get && cd ..
+          cd mihrab_dashboard && flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release
+        run: cd mihrab_dashboard && flutter build apk --release
 
       - name: Get version
         id: version
         run: |
-          VERSION=$(grep 'version:' pubspec.yaml | head -1 | sed 's/.*version: //' | sed 's/[[:space:]]//g')
+          VERSION=$(grep 'version:' mihrab_dashboard/pubspec.yaml | head -1 | sed 's/.*version: //' | sed 's/[[:space:]]//g')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Delete latest release (if exists)
@@ -55,4 +54,4 @@ jobs:
             --title "Dashboard v${{ steps.version.outputs.version }} (Build #${{ github.run_number }})" \
             --notes "Automated build from [commit ${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})" \
             --prerelease \
-            build/app/outputs/flutter-apk/app-release.apk
+            mihrab_dashboard/build/app/outputs/flutter-apk/app-release.apk

@@ -4,11 +4,8 @@ on:
   push:
     paths:
       - 'mihrab_tv/**'
+      - 'mihrab_shared/**'
     branches: [main, master]
-
-defaults:
-  run:
-    working-directory: mihrab_tv
 
 jobs:
   build:
@@ -38,25 +35,26 @@ jobs:
             -dname "CN=Android Debug,O=Android,C=US" 2>/dev/null || true
 
       - name: Create key.properties (fallback to debug)
-        working-directory: mihrab_tv/android
         run: |
-          if [ ! -f key.properties ]; then
-            echo "storeFile=$HOME/.android/debug.keystore" > key.properties
-            echo "storePassword=android" >> key.properties
-            echo "keyAlias=androiddebugkey" >> key.properties
-            echo "keyPassword=android" >> key.properties
+          if [ ! -f mihrab_tv/android/key.properties ]; then
+            echo "storeFile=$HOME/.android/debug.keystore" > mihrab_tv/android/key.properties
+            echo "storePassword=android" >> mihrab_tv/android/key.properties
+            echo "keyAlias=androiddebugkey" >> mihrab_tv/android/key.properties
+            echo "keyPassword=android" >> mihrab_tv/android/key.properties
           fi
 
-      - name: Get dependencies
-        run: flutter pub get
+      - name: Get dependencies (shared + tv)
+        run: |
+          cd mihrab_shared && flutter pub get && cd ..
+          cd mihrab_tv && flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release
+        run: cd mihrab_tv && flutter build apk --release
 
       - name: Get version
         id: version
         run: |
-          VERSION=$(grep 'version:' pubspec.yaml | head -1 | sed 's/.*version: //' | sed 's/[[:space:]]//g')
+          VERSION=$(grep 'version:' mihrab_tv/pubspec.yaml | head -1 | sed 's/.*version: //' | sed 's/[[:space:]]//g')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Delete latest release (if exists)
@@ -73,4 +71,4 @@ jobs:
             --title "TV v${{ steps.version.outputs.version }} (Build #${{ github.run_number }})" \
             --notes "Automated build from [commit ${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})" \
             --prerelease \
-            build/app/outputs/flutter-apk/app-release.apk
+            mihrab_tv/build/app/outputs/flutter-apk/app-release.apk
