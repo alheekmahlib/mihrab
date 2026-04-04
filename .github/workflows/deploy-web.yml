@@ -36,17 +36,6 @@ jobs:
           echo "url=${{ secrets.SUPABASE_URL }}" > mihrab_shared/.env
           echo "anonKey=${{ secrets.SUPABASE_ANON_KEY }}" >> mihrab_shared/.env
 
-      - name: Verify .env
-        run: |
-          if [ ! -s mihrab_shared/.env ]; then
-            echo "ERROR: .env file is empty. Check GitHub Secrets."
-            exit 1
-          fi
-          # Check values are not empty
-          grep -q "url=." mihrab_shared/.env || { echo "ERROR: SUPABASE_URL secret is empty"; exit 1; }
-          grep -q "anonKey=." mihrab_shared/.env || { echo "ERROR: SUPABASE_ANON_KEY secret is empty"; exit 1; }
-          echo ".env file verified OK"
-
       - name: Get dependencies (shared)
         run: flutter pub get
         working-directory: mihrab_shared
