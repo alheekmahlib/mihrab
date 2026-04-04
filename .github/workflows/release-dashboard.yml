@@ -10,8 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on:
-  workflow_dispatch: ubuntu-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -20,10 +19,8 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution:
-  workflow_dispatch: 'zulu'
-          java-version:
-  workflow_dispatch: '17'
+          distribution: 'zulu'
+          java-version: '17'
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -41,8 +38,7 @@ jobs:
       - name: Get version
         id: version
         run: |
-          VERSION=$(grep 'version:
-  workflow_dispatch:' mihrab_dashboard/pubspec.yaml | head -1 | sed 's/.*version: //' | sed 's/[[:space:]]//g')
+          VERSION=$(grep 'version:' mihrab_dashboard/pubspec.yaml | head -1 | sed 's/.*version: //' | sed 's/[[:space:]]//g')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Delete latest release (if exists)
