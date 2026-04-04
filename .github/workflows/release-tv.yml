@@ -44,6 +44,9 @@ jobs:
             echo "keyPassword=android" >> mihrab_tv/android/key.properties
           fi
 
+      - name: Create .env for mihrab_shared
+        run: touch mihrab_shared/.env
+
       - name: Get dependencies (shared + tv)
         run: |
           cd mihrab_shared && flutter pub get && cd ..
