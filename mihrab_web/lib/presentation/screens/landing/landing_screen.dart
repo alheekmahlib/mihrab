@@ -79,7 +79,10 @@ class _HeroSection extends StatelessWidget {
             alignment: WrapAlignment.center,
             children: [
               ElevatedButton.icon(
-                onPressed: () => web.window.open('/tv/', '_blank'),
+                onPressed: () {
+                  final base = Uri.base.resolve('tv/').toString();
+                  web.window.open(base, '_blank');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.goldAmber,
                   foregroundColor: AppColors.whiteCream,

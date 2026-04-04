@@ -49,7 +49,7 @@ jobs:
         working-directory: mihrab_web
 
       - name: Build mihrab_tv for web
-        run: flutter build web --release --base-href "/tv/"
+        run: flutter build web --release --base-href "/mihrab/tv/"
         working-directory: mihrab_tv
 
       - name: Copy TV build to mihrab_web
@@ -74,7 +74,7 @@ jobs:
           "
 
       - name: Build mihrab_web
-        run: flutter build web --release
+        run: flutter build web --release --base-href "/mihrab/"
         working-directory: mihrab_web
 
       - name: Setup Pages
