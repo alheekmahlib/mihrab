@@ -1,0 +1,2948 @@
+[
+  {
+    "name": "bukhari",
+    "bookName": "صحيح البخاري",
+    "arAndEnName": "صحيح البخاري - Sahih al-Bukhari",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en","ur","bn"],
+    "books_count": 384,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": "كتاب بدء الوحى "
+      },
+      {
+        "book_number": "2",
+        "book_name": "كتاب الإيمان "
+      },
+      {
+        "book_number": "3",
+        "book_name": "كتاب العلم "
+      },
+      {
+        "book_number": "4",
+        "book_name": "كتاب الوضوء"
+      },
+      {
+        "book_number": "5",
+        "book_name": "كتاب الغسل "
+      },
+      {
+        "book_number": "6",
+        "book_name": "كتاب الحيض "
+      },
+      {
+        "book_number": "7",
+        "book_name": "كتاب التيمم "
+      },
+      {
+        "book_number": "8",
+        "book_name": "كتاب الصلاة "
+      },
+      {
+        "book_number": "9",
+        "book_name": "كتاب مواقيت الصلاة "
+      },
+      {
+        "book_number": "10",
+        "book_name": "كتاب الأذان "
+      },
+      {
+        "book_number": "11",
+        "book_name": "كتاب الجمعة "
+      },
+      {
+        "book_number": "12",
+        "book_name": "كتاب صلاة الخوف "
+      },
+      {
+        "book_number": "13",
+        "book_name": "كتاب العيدين "
+      },
+      {
+        "book_number": "14",
+        "book_name": "كتاب الوتر "
+      },
+      {
+        "book_number": "15",
+        "book_name": "كتاب الاستسقاء "
+      },
+      {
+        "book_number": "16",
+        "book_name": "كتاب الكسوف "
+      },
+      {
+        "book_number": "17",
+        "book_name": "كتاب سجود القرآن "
+      },
+      {
+        "book_number": "18",
+        "book_name": "كتاب التقصير "
+      },
+      {
+        "book_number": "19",
+        "book_name": "كتاب التهجد "
+      },
+      {
+        "book_number": "20",
+        "book_name": "كتاب فضل الصلاة فى مسجد مكة والمدينة "
+      },
+      {
+        "book_number": "21",
+        "book_name": "كتاب العمل فى الصلاة "
+      },
+      {
+        "book_number": "22",
+        "book_name": "كتاب السهو "
+      },
+      {
+        "book_number": "23",
+        "book_name": "كتاب الجنائز"
+      },
+      {
+        "book_number": "24",
+        "book_name": "كتاب الزكاة "
+      },
+      {
+        "book_number": "25",
+        "book_name": "كتاب الحج "
+      },
+      {
+        "book_number": "26",
+        "book_name": "كتاب العمرة "
+      },
+      {
+        "book_number": "27",
+        "book_name": "كتاب المحصر "
+      },
+      {
+        "book_number": "28",
+        "book_name": "كتاب جزاء الصيد "
+      },
+      {
+        "book_number": "29",
+        "book_name": "كتاب فضائل المدينة "
+      },
+      {
+        "book_number": "30",
+        "book_name": "كتاب الصوم "
+      },
+      {
+        "book_number": "31",
+        "book_name": "كتاب صلاة التراويح "
+      },
+      {
+        "book_number": "32",
+        "book_name": "كتاب فضل ليلة القدر "
+      },
+      {
+        "book_number": "33",
+        "book_name": "كتاب الاعتكاف "
+      },
+      {
+        "book_number": "34",
+        "book_name": "كتاب البيوع"
+      },
+      {
+        "book_number": "35",
+        "book_name": "كتاب السلم "
+      },
+      {
+        "book_number": "36",
+        "book_name": "كتاب الشفعة "
+      },
+      {
+        "book_number": "37",
+        "book_name": "كتاب الإجارة "
+      },
+      {
+        "book_number": "38",
+        "book_name": "كتاب الحوالات "
+      },
+      {
+        "book_number": "39",
+        "book_name": "كتاب الكفالة "
+      },
+      {
+        "book_number": "40",
+        "book_name": "كتاب الوكالة "
+      },
+      {
+        "book_number": "41",
+        "book_name": "كتاب المزارعة "
+      },
+      {
+        "book_number": "42",
+        "book_name": "كتاب المساقاة "
+      },
+      {
+        "book_number": "43",
+        "book_name": "كتاب فى الاستقراض "
+      },
+      {
+        "book_number": "44",
+        "book_name": "كتاب الخصومات "
+      },
+      {
+        "book_number": "45",
+        "book_name": "كتاب فى اللقطة "
+      },
+      {
+        "book_number": "46",
+        "book_name": "كتاب المظالم فِي الْمَظَالِمِ وَالْغَصْبِ "
+      },
+      {
+        "book_number": "47",
+        "book_name": "كتاب الشركة "
+      },
+      {
+        "book_number": "48",
+        "book_name": "كتاب الرهن "
+      },
+      {
+        "book_number": "49",
+        "book_name": "كتاب العتق "
+      },
+      {
+        "book_number": "50",
+        "book_name": "كتاب المكاتب "
+      },
+      {
+        "book_number": "51",
+        "book_name": "كتاب الهبة وفضلها والتحريض عليها "
+      },
+      {
+        "book_number": "52",
+        "book_name": "كتاب الشهادات "
+      },
+      {
+        "book_number": "53",
+        "book_name": "كتاب الصلح"
+      },
+      {
+        "book_number": "54",
+        "book_name": "كتاب الشروط "
+      },
+      {
+        "book_number": "55",
+        "book_name": "كتاب الوصايا "
+      },
+      {
+        "book_number": "56",
+        "book_name": "كتاب الجهاد والسير "
+      },
+      {
+        "book_number": "57",
+        "book_name": "كتاب فرض الخمس "
+      },
+      {
+        "book_number": "58",
+        "book_name": "كتاب الجزية والموادعة "
+      },
+      {
+        "book_number": "59",
+        "book_name": "كتاب بدء الخلق "
+      },
+      {
+        "book_number": "60",
+        "book_name": "كتاب أحاديث الأنبياء "
+      },
+      {
+        "book_number": "61",
+        "book_name": "كتاب المناقب "
+      },
+      {
+        "book_number": "62",
+        "book_name": "كتاب فضائل أصحاب النبى صلى الله عليه وسلم "
+      },
+      {
+        "book_number": "63",
+        "book_name": "كتاب مناقب الأنصار "
+      },
+      {
+        "book_number": "64",
+        "book_name": "كتاب المغازى "
+      },
+      {
+        "book_number": "65",
+        "book_name": "كتاب التفسير "
+      },
+      {
+        "book_number": "66",
+        "book_name": "كتاب فضائل القرآن "
+      },
+      {
+        "book_number": "67",
+        "book_name": "كتاب النكاح "
+      },
+      {
+        "book_number": "68",
+        "book_name": "كتاب الطلاق "
+      },
+      {
+        "book_number": "69",
+        "book_name": "كتاب النفقات "
+      },
+      {
+        "book_number": "70",
+        "book_name": "كتاب الأطعمة "
+      },
+      {
+        "book_number": "71",
+        "book_name": "كتاب العقيقة "
+      },
+      {
+        "book_number": "72",
+        "book_name": "كتاب الذبائح والصيد "
+      },
+      {
+        "book_number": "73",
+        "book_name": "كتاب الأضاحي "
+      },
+      {
+        "book_number": "74",
+        "book_name": "كتاب الأشربة "
+      },
+      {
+        "book_number": "75",
+        "book_name": "كتاب المرضى "
+      },
+      {
+        "book_number": "76",
+        "book_name": "كتاب الطب "
+      },
+      {
+        "book_number": "77",
+        "book_name": "كتاب اللباس "
+      },
+      {
+        "book_number": "78",
+        "book_name": "كتاب الأدب "
+      },
+      {
+        "book_number": "79",
+        "book_name": "كتاب الاستئذان "
+      },
+      {
+        "book_number": "80",
+        "book_name": "كتاب الدعوات"
+      },
+      {
+        "book_number": "81",
+        "book_name": "كتاب الرقاق"
+      },
+      {
+        "book_number": "82",
+        "book_name": "كتاب القدر "
+      },
+      {
+        "book_number": "83",
+        "book_name": "كتاب الأيمان والنذور "
+      },
+      {
+        "book_number": "84",
+        "book_name": "كتاب كفارات الأيمان "
+      },
+      {
+        "book_number": "85",
+        "book_name": "كتاب الفرائض "
+      },
+      {
+        "book_number": "86",
+        "book_name": "كتاب الحدود "
+      },
+      {
+        "book_number": "87",
+        "book_name": "كتاب الديات "
+      },
+      {
+        "book_number": "88",
+        "book_name": "كتاب استتابة المرتدين والمعاندين وقتالهم "
+      },
+      {
+        "book_number": "89",
+        "book_name": "كتاب الإكراه"
+      },
+      {
+        "book_number": "90",
+        "book_name": "كتاب الحيل "
+      },
+      {
+        "book_number": "91",
+        "book_name": "كتاب التعبير "
+      },
+      {
+        "book_number": "92",
+        "book_name": "كتاب الفتن "
+      },
+      {
+        "book_number": "93",
+        "book_name": "كتاب الأحكام "
+      },
+      {
+        "book_number": "94",
+        "book_name": "كتاب التمنى "
+      },
+      {
+        "book_number": "95",
+        "book_name": "كتاب أخبار الآحاد "
+      },
+      {
+        "book_number": "96",
+        "book_name": "كتاب الاعتصام بالكتاب والسنة "
+      },
+      {
+        "book_number": "97",
+        "book_name": "كتاب التوحيد "
+      }
+    ],
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Sahih al-Bukhari",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Sahih al-Bukhari",
+        "shortIntro": "\"الجامع الصَّحيح المسنَد مِن حديث رسول الله صلى الله عليه وسلم وسننه وأيَّامه\"، ينظر: مقدِّمة ابن الصلاح في علوم الحديث (1/ 26)، وفتح الباري؛ لابن حجر (1/ 8).\n\n• وقد اعتنى الإمامُ البخاري رحمه الله في تأليفه للجامع الصَّحيح عنايةً بالغة، قال البخاري رحمه الله: \"صنَّفتُ الجامعَ من ستمائة ألف حديث في ست عشرة سنة، وجعلتُه حجَّةً فيما بيني وبين الله\"، ينظر: تاريخ الإسلام؛ للذَّهبي (6/ 147).\n\n• وعدد أحاديث صحيح البخاري (2500) حديث تقريبًا بدون تكرار، وعدد أحاديثه مع التكرار (7563).\n\n• وقد رتَّب البخاريُّ صحيحَه ترتيبًا عَجيبًا في كُتب متنوعة تندرج تحتها أبوابٌ كثيرة، وعدد الكتب التي عقدها البخاريُّ في صحيحه (97) كتابًا، بدأها بكتاب بَدْء الوحي، فكتاب الإيمان، فكتاب العلم، ثمَّ كتب العبادات من الوضوء والغُسل... إلخ، وتناوَل في تلك الكتب سائرَ أحكام الشرع العملية والاعتقادية، ومن الكتب التي عقدها: كتاب تفسير القرآن، وكتاب فضائل القرآن، وكتاب الأدب، وكتاب الدعوات، وكتاب الرِّقاق، وممَّا ذكره كتاب أحاديث الأنبياء، وكتاب المناقب، وكتاب أصحاب النبي صلى الله عليه وسلم، وضمنه: باب مناقب علي بن أبي طالب القرشي الهاشمي أبي الحسَن رضي الله عنه، وباب مناقب قرابة رسول الله صلى الله عليه وسلم، وباب مناقب الحَسَن والحسين رضي الله عنهما، وباب مناقب فاطمة عليها السلام، وعقَد كتاب المغازي لذِكر سيرة النبي صلى الله عليه وسلم وغزواته، ثمَّ ذكَر أخيرًا: كتاب الفِتَن، وكتاب الأحكام، وكتاب التَّمَنِّي، وكتاب أخبار الآحاد، وكتاب الاعتصام بالكتاب والسنَّة، وختم كتابَه بكتاب التوحيد.\n\n• وكل كتاب في صحيح البخاري يتضمَّن أبوابًا يَذكر فيها البخاري بعضَ الآيات المناسِبة للباب، ويروي في كلِّ باب عددًا من الأحاديث بإسناده، ويكرِّر غالبًا الحديثَ الواحد في أكثر من باب؛ ليستخرج منه بعضَ الأحكام الفقهية وبعضَ الفوائد المستنبَطة؛ ولذلك قال العلماء: فِقهُ البخاري في تَراجِمه؛ أي: في الأبواب التي عقَدها في صحيحه؛ فهي تدلُّ على فِقْهه وحُسْنِ استنباطه، وقد يَذكر البخاريُّ في بعض الأبواب أقوالًا لبعض الصحابة والتابعين.\n\n• روى الفِرَبْريُّ عن شيخه البخاري أنه قال: \"ما وَضعتُ في كتابي الصَّحيح حديثًا إلَّا اغتَسلتُ قبلَ ذلك وصلَّيتُ ركعتين\"؛ ينظر: تاريخ بغداد؛ للخطيب البغدادي (2/ 327).\n\n• ونقَل عمر بن محمد البحيري عنه أنَّه قال: \"ما أَدْخلتُ فيه - يعني: كتاب صحيح البخاري - حديثًا حتى استخَرتُ اللهَ تعالى وصلَّيتُ ركعتين وتيقَّنتُ صحَّتَه\"، ينظر: فتح الباري؛ لابن حجر (1/ 489).\n\n\n\n| منقول من موقع شيكة الألوكة |"
+      },
+      {
+        "lang": "bn",
+        "title": "সহিহ বুখারি",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "صحیح بخاری ۔",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 7291,
+    "totalAvailableHadith": 7277
+  },
+  {
+    "name": "muslim",
+    "bookName": "صحيح مسلم",
+    "arAndEnName": "صحيح مسلم - Sahih Muslim",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en"],
+    "books_count": 114,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Sahih Muslim",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Sahih Muslim",
+        "shortIntro": "صنَّف الإمام مسلم كتبـًا كثيرة ، وأشهرها صحيحه الذي صنفه في خمس عشرة سنة ، وقد تأسى في تدوينه بالبخاري رحمه الله فلم يضع فيه إلا ما صح عنده ، وقد جمع في صحيحه روايات الحديث الواحد في مكان واحد لإبراز الفوائد الإسنادية في كتابه ، ولذلك فإنه يروي الحديث في أنسب المواضع به ويجمع طرقه وأسانيده في ذلك الموضع، بخلاف البخاري فإنه فرق الروايات في مواضع مختلفة ، فصنيع مسلم يجعل كتابه أسهل تناولاً ، حيث تجد جميع طرق الحديث ومتونه في موضع واحد ، وصنيع البخاري أكثر فقهـًا ؛ لأنه عنيَ ببيان الأحكام ، واستنباط الفوائد والنكات ، مما جعله يذكر كل رواية في الباب الذي يناسبها ، ففرق روايات الحديث ، ويرويه في كل موطن بإسناد جديد أيضا.\\n\nوكتاب صحيح مسلم مقسم إلى كتب ، وكل كتاب يقسم إلى أبواب ، وعدد كتبه (54) كتابـًا ، أولها كتاب الإيمان وآخرها كتاب التفسير ، وعدد أحاديثه بدون المكرر نحو (4000) حديث ، وبالمكرر نحو (7275) حديثًا .\\n\n\\n\n| منثول من موقع إسلام ويب |"
+      },
+      {
+        "lang": "bn",
+        "title": "সহীহ মুসলিম",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "صحیح مسلم",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 7470,
+    "totalAvailableHadith": 7459,
+    "books_names": [
+      {
+        "book_number": "0",
+        "book_name": "كتاب المقدمة"
+      },
+      {
+        "book_number": "1",
+        "book_name": "كتاب الإيمان"
+      },
+      {
+        "book_number": "2",
+        "book_name": " كتاب الطهارة"
+      },
+      {
+        "book_number": "3",
+        "book_name": " كتاب الحيض"
+      },
+      {
+        "book_number": "4",
+        "book_name": " كتاب الصلاة"
+      },
+      {
+        "book_number": "5",
+        "book_name": " كتاب الْمَسَاجِدِ وَمَوَاضِعِ الصَّلاَةِ"
+      },
+      {
+        "book_number": "6",
+        "book_name": " كتاب صلاة المسافرين وقصرها"
+      },
+      {
+        "book_number": "7",
+        "book_name": " كتاب الجمعة"
+      },
+      {
+        "book_number": "8",
+        "book_name": " كتاب صلاة العيدين"
+      },
+      {
+        "book_number": "9",
+        "book_name": " كتاب صلاة الاستسقاء‏"
+      },
+      {
+        "book_number": "10",
+        "book_name": " كتاب الكسوف"
+      },
+      {
+        "book_number": "11",
+        "book_name": " كتاب الجنائز"
+      },
+      {
+        "book_number": "12",
+        "book_name": " كتاب الزكاة"
+      },
+      {
+        "book_number": "13",
+        "book_name": " كتاب الصيام"
+      },
+      {
+        "book_number": "14",
+        "book_name": " كتاب الاعتكاف"
+      },
+      {
+        "book_number": "15",
+        "book_name": " كتاب الحج"
+      },
+      {
+        "book_number": "16",
+        "book_name": "كتاب النكاح"
+      },
+      {
+        "book_number": "17",
+        "book_name": " كتاب الرضاع"
+      },
+      {
+        "book_number": "18",
+        "book_name": " كتاب الطلاق"
+      },
+      {
+        "book_number": "19",
+        "book_name": " كتاب اللعان"
+      },
+      {
+        "book_number": "20",
+        "book_name": " كتاب العتق"
+      },
+      {
+        "book_number": "21",
+        "book_name": " كتاب البيوع"
+      },
+      {
+        "book_number": "22",
+        "book_name": " كتاب المساقاة"
+      },
+      {
+        "book_number": "23",
+        "book_name": " كتاب الفرائض"
+      },
+      {
+        "book_number": "24",
+        "book_name": " كتاب الهبات"
+      },
+      {
+        "book_number": "25",
+        "book_name": " كتاب الوصية"
+      },
+      {
+        "book_number": "26",
+        "book_name": " كتاب النذر"
+      },
+      {
+        "book_number": "27",
+        "book_name": " كتاب الأيمان"
+      },
+      {
+        "book_number": "28",
+        "book_name": " كتاب القسامة والمحاربين والقصاص والديات"
+      },
+      {
+        "book_number": "29",
+        "book_name": " كتاب الحدود"
+      },
+      {
+        "book_number": "30",
+        "book_name": " كتاب الأقضية"
+      },
+      {
+        "book_number": "31",
+        "book_name": " كتاب اللقطة"
+      },
+      {
+        "book_number": "32",
+        "book_name": " كتاب الجهاد والسير"
+      },
+      {
+        "book_number": "33",
+        "book_name": " كتاب الإمارة"
+      },
+      {
+        "book_number": "34",
+        "book_name": " كتاب الصيد والذبائح وما يؤكل من الحيوان"
+      },
+      {
+        "book_number": "35",
+        "book_name": " كتاب الأضاحى"
+      },
+      {
+        "book_number": "36",
+        "book_name": " كتاب الأشربة"
+      },
+      {
+        "book_number": "37",
+        "book_name": " كتاب اللباس والزينة"
+      },
+      {
+        "book_number": "38",
+        "book_name": " كتاب الآداب"
+      },
+      {
+        "book_number": "39",
+        "book_name": " كتاب السلام"
+      },
+      {
+        "book_number": "40",
+        "book_name": " كتاب الألفاظ من الأدب وغيرها"
+      },
+      {
+        "book_number": "41",
+        "book_name": " كتاب الشعر"
+      },
+      {
+        "book_number": "42",
+        "book_name": " كتاب الرؤيا"
+      },
+      {
+        "book_number": "43",
+        "book_name": " كتاب الفضائل"
+      },
+      {
+        "book_number": "44",
+        "book_name": " كتاب فضائل الصحابة رضى الله تعالى عنهم"
+      },
+      {
+        "book_number": "45",
+        "book_name": " كتاب البر والصلة والآداب"
+      },
+      {
+        "book_number": "46",
+        "book_name": " كتاب القدر"
+      },
+      {
+        "book_number": "47",
+        "book_name": " كتاب العلم"
+      },
+      {
+        "book_number": "48",
+        "book_name": " كتاب الذكر والدعاء والتوبة والاستغفار"
+      },
+      {
+        "book_number": "49",
+        "book_name": " كتاب الرقاق"
+      },
+      {
+        "book_number": "50",
+        "book_name": " كتاب التوبة"
+      },
+      {
+        "book_number": "51",
+        "book_name": " كتاب صفات المنافقين وأحكامهم"
+      },
+      {
+        "book_number": "52",
+        "book_name": " كتاب صفة القيامة والجنة والنار"
+      },
+      {
+        "book_number": "53",
+        "book_name": " كتاب الجنة وصفة نعيمها وأهلها"
+      },
+      {
+        "book_number": "54",
+        "book_name": " كتاب الفتن وأشراط الساعة"
+      },
+      {
+        "book_number": "55",
+        "book_name": " كتاب الزهد والرقائق"
+      },
+      {
+        "book_number": "56",
+        "book_name": " كتاب التفسير"
+      }
+    ]
+  },
+  {
+    "name": "nasai",
+    "bookName": "سنن النسائي",
+    "arAndEnName": "سنن النسائي - Sunan an-Nasai",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en"],
+    "books_count": 102,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Sunan an-Nasa'i",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Sunan an-Nasa'i",
+        "shortIntro": "Al-Nasa'i compiled a very extensive book known as Al-Sunan Al-Kubra, and this book (Al-Mujtaba), famous as Sunan Al-Nasa'i, is a selection from it. It has been said that its name is Al-Mujtanna with a noon.\n\n\n\nThe book Al-Mujtaba follows a precise methodology that combines jurisprudence and the art of chain of transmission. Al-Nasa'i arranged the hadiths into chapters, giving them titles that sometimes reach a high level of precision. He also collected the chains of transmission of each hadith in one place.\n\n\n\nIn his book, Al-Nasa'i gathered hadiths related to legal rulings and divided them into books, totaling 58 books. Each book is further divided into chapters. Unlike Abu Dawood and Al-Tirmidhi, he did not comment on some hadiths with criticism (tazkiyah), nor did he speak about the narrators of hadiths with criticism and commendation (jarh and ta'dil). He also did not transmit anything from the legal doctrines of the jurists of various regions.\n\n\n\nThe reason Abu Dawood, Al-Tirmidhi, and Al-Nasa'i included criticized hadiths in their books is the endorsement of some scholars and jurists who used these hadiths. They would present them, elucidate their weaknesses to dispel doubts, and Al-Nasa'i was particularly known for his meticulousness in hadith and narrators. His strict conditions for authentication are well-known.\n\n\n\n| Adapted from IslamWeb |"
+      },
+      {
+        "lang": "bn",
+        "title": "সুনান আল-নাসাঈ",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "سنن النسائی",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 5766,
+    "totalAvailableHadith": 5768,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": " كتاب الطهارة"
+      },
+      {
+        "book_number": "2",
+        "book_name": " كتاب المياه"
+      },
+      {
+        "book_number": "3",
+        "book_name": " كتاب الحيض والاستحاضة"
+      },
+      {
+        "book_number": "4",
+        "book_name": " كتاب الغسل والتيمم"
+      },
+      {
+        "book_number": "5",
+        "book_name": " كتاب الصلاة"
+      },
+      {
+        "book_number": "6",
+        "book_name": " كتاب المواقيت"
+      },
+      {
+        "book_number": "7",
+        "book_name": " كتاب الأذان"
+      },
+      {
+        "book_number": "8",
+        "book_name": " كتاب المساجد"
+      },
+      {
+        "book_number": "9",
+        "book_name": " كتاب القبلة"
+      },
+      {
+        "book_number": "10",
+        "book_name": " كتاب الإمامة"
+      },
+      {
+        "book_number": "11",
+        "book_name": " كتاب الافتتاح"
+      },
+      {
+        "book_number": "12",
+        "book_name": " كتاب التطبيق"
+      },
+      {
+        "book_number": "13",
+        "book_name": " كتاب السهو"
+      },
+      {
+        "book_number": "14",
+        "book_name": " كتاب الجمعة"
+      },
+      {
+        "book_number": "15",
+        "book_name": " كتاب تقصير الصلاة فى السفر"
+      },
+      {
+        "book_number": "16",
+        "book_name": " كتاب الكسوف "
+      },
+      {
+        "book_number": "17",
+        "book_name": " كتاب الاستسقاء"
+      },
+      {
+        "book_number": "18",
+        "book_name": " كتاب صلاة الخوف"
+      },
+      {
+        "book_number": "19",
+        "book_name": " كتاب صلاة العيدين"
+      },
+      {
+        "book_number": "20",
+        "book_name": " كتاب قيام الليل وتطوع النهار"
+      },
+      {
+        "book_number": "21",
+        "book_name": " كتاب الجنائز"
+      },
+      {
+        "book_number": "22",
+        "book_name": " كتاب الصيام"
+      },
+      {
+        "book_number": "23",
+        "book_name": " كتاب الزكاة"
+      },
+      {
+        "book_number": "24",
+        "book_name": " كتاب مناسك الحج"
+      },
+      {
+        "book_number": "25",
+        "book_name": " كتاب الجهاد"
+      },
+      {
+        "book_number": "26",
+        "book_name": " كتاب النكاح"
+      },
+      {
+        "book_number": "27",
+        "book_name": " كتاب الطلاق"
+      },
+      {
+        "book_number": "28",
+        "book_name": " كتاب الخيل"
+      },
+      {
+        "book_number": "29",
+        "book_name": " كتاب الإحباس"
+      },
+      {
+        "book_number": "30",
+        "book_name": " كتاب الوصايا"
+      },
+      {
+        "book_number": "31",
+        "book_name": " كتاب النحل"
+      },
+      {
+        "book_number": "32",
+        "book_name": " كتاب الهبة"
+      },
+      {
+        "book_number": "33",
+        "book_name": " كتاب الرقبى"
+      },
+      {
+        "book_number": "34",
+        "book_name": " كتاب العمرى"
+      },
+      {
+        "book_number": "35",
+        "book_name": " كتاب الأيمان والنذور"
+      },
+      {
+        "book_number": "36",
+        "book_name": " كتاب عشرة النساء"
+      },
+      {
+        "book_number": "37",
+        "book_name": " كتاب تحريم الدم"
+      },
+      {
+        "book_number": "38",
+        "book_name": " كتاب قسم الفىء"
+      },
+      {
+        "book_number": "39",
+        "book_name": " كتاب البيعة"
+      },
+      {
+        "book_number": "40",
+        "book_name": " كتاب العقيقة"
+      },
+      {
+        "book_number": "41",
+        "book_name": " كتاب الفرع والعتيرة"
+      },
+      {
+        "book_number": "42",
+        "book_name": " كتاب الصيد والذبائح"
+      },
+      {
+        "book_number": "43",
+        "book_name": " كتاب الضحايا"
+      },
+      {
+        "book_number": "44",
+        "book_name": " كتاب البيوع"
+      },
+      {
+        "book_number": "45",
+        "book_name": " كتاب القسامة"
+      },
+      {
+        "book_number": "46",
+        "book_name": " كتاب قطع السارق"
+      },
+      {
+        "book_number": "47",
+        "book_name": " كتاب الإيمان وشرائعه"
+      },
+      {
+        "book_number": "48",
+        "book_name": " كتاب الزينة من السنن"
+      },
+      {
+        "book_number": "49",
+        "book_name": " كتاب آداب القضاة"
+      },
+      {
+        "book_number": "50",
+        "book_name": " كتاب الاستعاذة"
+      },
+      {
+        "book_number": "51",
+        "book_name": " كتاب الأشربة "
+      }
+    ]
+  },
+  {
+    "name": "abudawud",
+    "bookName": "سنن أبي داود",
+    "arAndEnName": "سنن أبي داود - Sunan Abi Dawud",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en","ur"],
+    "books_count": 111,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Sunan Abi Dawud",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Sunan Abi Dawud",
+        "shortIntro": "جمع أبو داود في كتابه هذا جملة من أحاديث رسول الله صلى الله عليه وسلم ، وقد بلغت أحاديثه (5274) حديثـًا ، وكتابه السنن صنفه وانتقاه من خمسمائة ألف حديث .\\n\nوقد وجه أبو داود همه في هذا الكتاب إلى جمع الأحاديث التي استدل بها الفقهاء ، ودارت بينهم ، وبنى عليها الأحكام علماء الأمصار ، وتسمى هذه الأحاديث أحاديث الأحكام وقد قال المؤلف في رسالته لأهل مكة : فهذه الأحاديث أحاديث السنن كلها في الأحكام ، فأما أحاديث كثيرة في الزهد والفضائل ، وغيرها من غير هذا فلم أخرجها .\\n\nوقد رتب كتابه على الكتب ، وقسم كل كتاب إلى أبواب ، وترجم على كل حديث بما قد استنبط منه عالم وذهب إليه ذاهب ، وعدد كتبه خمسا وثلاثين كتابـًا ، ومجموع عدد أبوابه (1871) بابـًا .\\n\n\\n\n| منقول من موقع إسلام ويب |"
+      },
+      {
+        "lang": "bn",
+        "title": "সুনান আবী দাউদ",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "سنن ابی داؤد",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 5276,
+    "totalAvailableHadith": 5276,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": " كتاب الطهارة "
+      },
+      {
+        "book_number": "2",
+        "book_name": " كتاب الصلاة"
+      },
+      {
+        "book_number": "3",
+        "book_name": " كتاب الاستسقاء "
+      },
+      {
+        "book_number": "4",
+        "book_name": " كتاب صلاة السفر "
+      },
+      {
+        "book_number": "5",
+        "book_name": " كتاب التطوع "
+      },
+      {
+        "book_number": "6",
+        "book_name": " كتاب شهر رمضان "
+      },
+      {
+        "book_number": "7",
+        "book_name": " كتاب سجود القرآن "
+      },
+      {
+        "book_number": "8",
+        "book_name": " كتاب الوتر "
+      },
+      {
+        "book_number": "9",
+        "book_name": " كتاب الزكاة "
+      },
+      {
+        "book_number": "10",
+        "book_name": " كتاب اللقطة "
+      },
+      {
+        "book_number": "11",
+        "book_name": " كتاب المناسك "
+      },
+      {
+        "book_number": "12",
+        "book_name": " كتاب النكاح "
+      },
+      {
+        "book_number": "13",
+        "book_name": " كتاب الطلاق "
+      },
+      {
+        "book_number": "14",
+        "book_name": " كتاب الصوم "
+      },
+      {
+        "book_number": "15",
+        "book_name": " كتاب الجهاد "
+      },
+      {
+        "book_number": "16",
+        "book_name": " كتاب الضحايا "
+      },
+      {
+        "book_number": "17",
+        "book_name": " كتاب الصيد "
+      },
+      {
+        "book_number": "18",
+        "book_name": " كتاب الوصايا "
+      },
+      {
+        "book_number": "19",
+        "book_name": " كتاب الفرائض "
+      },
+      {
+        "book_number": "20",
+        "book_name": " كتاب الخراج والإمارة والفىء "
+      },
+      {
+        "book_number": "21",
+        "book_name": " كتاب الجنائز "
+      },
+      {
+        "book_number": "22",
+        "book_name": " كتاب الأيمان والنذور "
+      },
+      {
+        "book_number": "23",
+        "book_name": " كتاب البيوع "
+      },
+      {
+        "book_number": "24",
+        "book_name": " كتاب الإجارة "
+      },
+      {
+        "book_number": "25",
+        "book_name": " كتاب الأقضية "
+      },
+      {
+        "book_number": "26",
+        "book_name": " كتاب العلم "
+      },
+      {
+        "book_number": "27",
+        "book_name": " كتاب الأشربة "
+      },
+      {
+        "book_number": "28",
+        "book_name": " كتاب الأطعمة "
+      },
+      {
+        "book_number": "29",
+        "book_name": " كتاب الطب "
+      },
+      {
+        "book_number": "30",
+        "book_name": " كتاب الطب "
+      },
+      {
+        "book_number": "31",
+        "book_name": " كتاب العتق "
+      },
+      {
+        "book_number": "32",
+        "book_name": " كتاب الحروف والقراءات "
+      },
+      {
+        "book_number": "33",
+        "book_name": " كتاب الحمَّام"
+      },
+      {
+        "book_number": "34",
+        "book_name": " كتاب اللباس "
+      },
+      {
+        "book_number": "35",
+        "book_name": " كتاب الترجل "
+      },
+      {
+        "book_number": "36",
+        "book_name": " كتاب الخاتم "
+      },
+      {
+        "book_number": "37",
+        "book_name": " كتاب الفتن والملاحم "
+      },
+      {
+        "book_number": "38",
+        "book_name": " كتاب المهدى "
+      },
+      {
+        "book_number": "39",
+        "book_name": " كتاب الملاحم "
+      },
+      {
+        "book_number": "40",
+        "book_name": " كتاب الحدود "
+      },
+      {
+        "book_number": "41",
+        "book_name": " كتاب الديات "
+      },
+      {
+        "book_number": "42",
+        "book_name": " كتاب السنة "
+      },
+      {
+        "book_number": "43",
+        "book_name": " كتاب الأدب "
+      }
+    ]
+  },
+  {
+    "name": "tirmidhi",
+    "bookName": "جامع الترمذي",
+    "arAndEnName": "جامع الترمذي - Jami` at-Tirmidhi",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en"],
+    "books_count": 98,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Jami` at-Tirmidhi",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Jami` at-Tirmidhi",
+        "shortIntro": "وقد عني بجمع أحاديث الأحكام كما فعل أبو داود، ولكنه بين الحديث الصحيح من الضعيف ، وذكر مذاهب الصحابة والتابعين وفقهاء الأمصار .\\n\nوذكر الشيخ أحمد محمد شاكر ، في مقدمة تحقيقه لسنن الترمذي أن كتاب الترمذي هذا يمتاز بثلاثة أمور لا تجدها في شيء من كتب السنة ، الأصول الستة أو غيرها :\\n\nأولها : أنه يختصر طرق الحديث اختصارًا لطيفـًا ، فيذكر واحدًا ويومئ إلى ما عداه ، يقول  الشيخ أحمد شاكر : \" بعد أن يروي الترمذي حديث الباب يذكر أسماء الصحابة الذين رويت عنهم أحاديث في هذا الباب ، سواءً أكانت بمعنى الحديث الذي رواه ، أم بمعنى آخر ، أم بما يخالفه ، أم بإشارة إليه ولو من بعيد \" ، ولا شك أن هذا يدل على إطلاع واسع وحفظ عظيم.\\n\nثانيـها : أنه في أغلب أحيانه يذكر اختلاف الفقهاء وأقوالهم في المسائل الفقهية ، وكثيرًا ما يشير إلى دلائلهم ، ويذكر الأحاديث المتعارضة في المسألة ، وهذا المقصد من أعلى المقاصد وأهمها ، فإن الغاية من علوم الحديث ، تمييز الصحيح من الضعيف ، للاستدلال والاحتجاج ، ثمَّ الاتباع والعمل .\\n\nثالثـها : أنه يُعْنَي كل العناية في كتابه بتعليل الحديث ، فيذكر درجته من الصحة أو الضعف ، ويفصل القول في التعليل والرجال تفصيلاً جيدًا ، وبذلك صار كتابه هذا كأنه تطبيق عملي لقواعد علوم الحديث ، خصوصـًا علم العلل وصار أنفع كتاب للعالم والمتعلم ، وللمستفيد والباحث في علوم الحديث .\\n\nيقول الشوكاني مثنيـًا على سنن الترمذي : كتاب الترمذي أحسن الكتب وأكثرها فائدة ، وأحكمها ترتيبـًا ، وأقلها تكرارًا ، وفيه ما ليس في غيره من المذاهب ووجوه الاستدلال ، والإشارة إلى ما في الباب من الأحاديث ، وتبيين أنواع الحديث : من الصحة والحسن والغرابة والضعف ، وفيه جرح وتعديل .\\n\nومما امتاز به الكتاب كثرة فوائده العلمية وتنوعها ، وفي ذلك يقول ابن رُشَيد : \" إن كتاب الترمذي تضمن الحديث مصنفًا على الأبواب وهو علم برأسه ، والفقه وهو علم ثان ، وعلل الحديث ويشتمل على بيان الصحيح من السقيم وما بينهما من المراتب وهو علم ثالث ، والأسماء والكنى وهو علم رابع ، والتعديل والتجريح وهو علم خامس ، ومن أدرك النبي صلى الله عليه وسلم ومن لم يدركه ممن أسند عنه في كتابه وهو علم سادس ، وتعديد من روى ذلك وهو علم سابع ، هذه علومه المجملة ، وأما التفصيلية فمتعددة ، وبالجملة فمنفعته كثيرة ، وفوائده غزيرة \" .\\n\nوكتابه الجامع المشهور بـسنن الترمذي يعتبر من أهم مصادر الحديث الحسن ، قال ابن الصلاح : كتاب أبي عيسى الترمذي رحمه الله أصل في معرفة الحديث الحسن وهو الذي نوه باسمه وأكثر من ذكره في جامعه ، ويبلغ عدد أحاديث جامع الترمذي (3956) حديثاً .\\n\n\\n\n| منقول من موقع إسلام ويب |"
+      },
+      {
+        "lang": "bn",
+        "title": "জামি' আত-তিরমিয়ী",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "جامع الترمذی",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 3956,
+    "totalAvailableHadith": 4053,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": " كتاب الطهارة عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "2",
+        "book_name": " كتاب الصلاة"
+      },
+      {
+        "book_number": "3",
+        "book_name": " كتاب الصلاة"
+      },
+      {
+        "book_number": "4",
+        "book_name": " كتاب الصلاة"
+      },
+      {
+        "book_number": "5",
+        "book_name": " كتاب الصلاة"
+      },
+      {
+        "book_number": "6",
+        "book_name": " كتاب الصلاة"
+      },
+      {
+        "book_number": "7",
+        "book_name": " كتاب الزكاة عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "8",
+        "book_name": " كتاب الصوم عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "9",
+        "book_name": " كتاب الحج عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "10",
+        "book_name": " كتاب الجنائز عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "11",
+        "book_name": " كتاب النكاح عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "12",
+        "book_name": " كتاب الرضاع"
+      },
+      {
+        "book_number": "13",
+        "book_name": " كتاب الطلاق واللعان عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "14",
+        "book_name": " كتاب البيوع عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "15",
+        "book_name": " كتاب الأحكام عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "16",
+        "book_name": " كتاب الديات عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "17",
+        "book_name": " كتاب الحدود عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "18",
+        "book_name": "كتاب الصيد والذبائح عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "19",
+        "book_name": " كتاب الأضاحى عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "20",
+        "book_name": " كتاب النذور والأيمان عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "21",
+        "book_name": " كتاب السير عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "22",
+        "book_name": " كتاب فضائل الجهاد عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "23",
+        "book_name": " كتاب الجهاد عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "24",
+        "book_name": " كتاب اللباس"
+      },
+      {
+        "book_number": "25",
+        "book_name": " كتاب الأطعمة عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "26",
+        "book_name": " كتاب الأشربة عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "27",
+        "book_name": " كتاب البر والصلة عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "28",
+        "book_name": " كتاب الطب عن رسول اللَّهِ صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "29",
+        "book_name": " كتاب الفرائض عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "30",
+        "book_name": " كتاب الوصايا عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "31",
+        "book_name": " كتاب الولاء والهبة عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "32",
+        "book_name": " كتاب القدر عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "33",
+        "book_name": " كتاب الفتن عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "34",
+        "book_name": " كتاب الرؤيا عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "35",
+        "book_name": " كتاب الشهادات عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "36",
+        "book_name": " كتاب الزهد عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "37",
+        "book_name": " كتاب صفة القيامة والرقائق والورع عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "38",
+        "book_name": " كتاب صفة الجنة عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "39",
+        "book_name": " كتاب صفة جهنم عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "40",
+        "book_name": " كتاب الإيمان عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "41",
+        "book_name": " كتاب العلم عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "42",
+        "book_name": " كتاب الاستئذان والآداب عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "43",
+        "book_name": " كتاب الأدب عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "44",
+        "book_name": " كتاب الأمثال عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "45",
+        "book_name": " كتاب فضائل القرآن عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "46",
+        "book_name": " كتاب القراءات عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "47",
+        "book_name": " كتاب تفسير القرآن عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "48",
+        "book_name": " كتاب الدعوات عن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "49",
+        "book_name": " كتاب المناقب عن رسول الله صلى الله عليه وسلم"
+      }
+    ]
+  },
+  {
+    "name": "ibnmajah",
+    "bookName": "سنن ابن ماجه",
+    "arAndEnName": "سنن ابن ماجه - Sunan Ibn Majah",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en","ur"],
+    "books_count": 91,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Sunan Ibn Majah",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Sunan Ibn Majah",
+        "shortIntro": "قال الصنعاني عن ابن ماجه: وكان أحد الأعلام، وألف السنن، وليست لها رتبة ما أُلّف مِنْ قَبْلِه، لأن فيها أحاديث ضعيفة بل منكرة، ونقل عن الحافظ المزي أن غالب ما تفرد به الضعيف.\n\nوقد اعتُبِر هذا الكتاب رابع السنن، ومتمم الكتب الستة التي هي المراجع الأصول للسنة النبوية، وكان المتقدمون يعدونها خمسة، ليس فيها كتاب ابن ماجه، ثم جعل بعضهم الموطأ سادسها، ولما رأى بعض الحفاظ كتابه كتابًا مفيدًا قوي النفع في الفقه ورأى من كثرة زوائده أدرجه في الأصول وجعلوه آخرها منزلة؛ وذلك لأنه تفرد بأحاديث عن رجال متهمين بالكذب.\n\nومما تقدم نعلم أن إطلاق الصحيح على أحد كتب السنن الأربعة أو عليها مجتمعة مع الصحيحين فيه تساهل، لأن أحاديث الأربعة ليست كلها صحيحة، نعم أكثرها صحيح أو حسن، وربما كان ذلك سبب إطلاق الصحاح عليها من باب التغليب.\n\n\n\n| منقول من موقع إسلام ويب |"
+      },
+      {
+        "lang": "bn",
+        "title": "সুনান ইবন মাজাহ",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "سنن ابن ماجہ",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 4341,
+    "totalAvailableHadith": 4345,
+    "books_names": [
+      {
+        "book_number": "0",
+        "book_name": "  كتاب المقدمة "
+      },
+      {
+        "book_number": "1",
+        "book_name": "كتاب الطهارة وسننها "
+      },
+      {
+        "book_number": "2",
+        "book_name": " كتاب الصلاة "
+      },
+      {
+        "book_number": "3",
+        "book_name": " كتاب الأذان والسنة فيها "
+      },
+      {
+        "book_number": "4",
+        "book_name": " كتاب المساجد والجماعات "
+      },
+      {
+        "book_number": "5",
+        "book_name": " كتاب إقامة الصلاة والسنة فيها "
+      },
+      {
+        "book_number": "6",
+        "book_name": " كتاب الجنائز "
+      },
+      {
+        "book_number": "7",
+        "book_name": " كتاب الصيام "
+      },
+      {
+        "book_number": "8",
+        "book_name": " كتاب الزكاة "
+      },
+      {
+        "book_number": "9",
+        "book_name": " كتاب النكاح "
+      },
+      {
+        "book_number": "10",
+        "book_name": " كتاب الطلاق "
+      },
+      {
+        "book_number": "11",
+        "book_name": " كتاب الكفارات "
+      },
+      {
+        "book_number": "12",
+        "book_name": " كتاب التجارات "
+      },
+      {
+        "book_number": "13",
+        "book_name": " كتاب الأحكام "
+      },
+      {
+        "book_number": "14",
+        "book_name": " كتاب الهبات "
+      },
+      {
+        "book_number": "15",
+        "book_name": " كتاب الصدقات "
+      },
+      {
+        "book_number": "16",
+        "book_name": " كتاب الرهون "
+      },
+      {
+        "book_number": "17",
+        "book_name": " كتاب الشفعة "
+      },
+      {
+        "book_number": "18",
+        "book_name": " كتاب اللقطة "
+      },
+      {
+        "book_number": "19",
+        "book_name": " كتاب العتق "
+      },
+      {
+        "book_number": "20",
+        "book_name": " كتاب الحدود "
+      },
+      {
+        "book_number": "21",
+        "book_name": " كتاب الديات "
+      },
+      {
+        "book_number": "22",
+        "book_name": " كتاب الوصايا "
+      },
+      {
+        "book_number": "23",
+        "book_name": " كتاب الفرائض "
+      },
+      {
+        "book_number": "24",
+        "book_name": " كتاب الجهاد "
+      },
+      {
+        "book_number": "25",
+        "book_name": " كتاب المناسك "
+      },
+      {
+        "book_number": "26",
+        "book_name": " كتاب الأضاحي "
+      },
+      {
+        "book_number": "27",
+        "book_name": " كتاب الذبائح "
+      },
+      {
+        "book_number": "28",
+        "book_name": " كتاب الصيد "
+      },
+      {
+        "book_number": "29",
+        "book_name": " كتاب الأطعمة "
+      },
+      {
+        "book_number": "30",
+        "book_name": " كتاب الأشربة "
+      },
+      {
+        "book_number": "31",
+        "book_name": " كتاب الطب "
+      },
+      {
+        "book_number": "32",
+        "book_name": " كتاب اللباس "
+      },
+      {
+        "book_number": "33",
+        "book_name": " كتاب الأدب "
+      },
+      {
+        "book_number": "34",
+        "book_name": " كتاب الدعاء "
+      },
+      {
+        "book_number": "35",
+        "book_name": " كتاب تعبير الرؤيا "
+      },
+      {
+        "book_number": "36",
+        "book_name": " كتاب الفتن "
+      },
+      {
+        "book_number": "37",
+        "book_name": " كتاب الزهد"
+      }
+    ]
+  },
+  {
+    "name": "malik",
+    "bookName": "موطأ مالك",
+    "arAndEnName": "موطأ مالك - Muwatta Malik",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en"],
+    "books_count": 122,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Muwatta Malik",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Muwatta Malik",
+        "shortIntro": "أول كتاب حديث وصل إلينا كاملاً ومرتبًا على أبواب العلم هو موطأ الإمام مالك رحمه الله ، وقد وضع الله له القبول في نفوس الناس ، والموطأ من أجل الكتب التي ألفت في عصر الإمام مالك وأعمها نفعًا ، وقد فضله الشافعي على كل ما صُنِّف في الحديث إلى وقته ، حيث قال : ما على أديم الأرض بعد كتاب الله أصح من موطأ مالك .\n\nولعل الإمام مالك هو أسبق علماء الحديث في وضع ما عرف بفن الحديث ، فإنه لا يكاد يعرف من سبقه في نقد الرواة والتشدد في الأخذ عن الرواة والعلماء ، وقد جمع الإمام مالك في موطئه ما صح عنده من حديث وتفسير وتاريخ ، وذكر أقوال الصحابة والتابعين والأئمة قبله.\n\nتأتي مرتبة الموطأ بعد الصحيحين - صحيح البخاري وصحيح مسلم - في الصحة في رأي جمهور المحدِّثين .\n\nعني الإمام مالك بالموطأ عناية فائقة حتى قالوا : إنه مكث فيه أربعين سنة ينقحه ويهذبه ، وقد أخذه عنه الأوزاعي في أربعين يومـًا ، فقال مالك : كتاب ألفته في أربعين سنة أخذتموه في أربعين يومـًا ، ما أقل ما تفقهون فيه .\n\nقال مالك : عرضت كتابي هذا على سبعين فقيهـًا من فقهاء المدينة ، فكلهم واطأني عليه فسميته الموطأ ، فقيل لهذا سمي الموطأ ، وقيل إنه سُمي الموطأ ، لأن المنصور قال له : وطئه للناس أي اجعله سهل التناول ، والموطأ أي الممهد المنقح .\n\nوقد روى الموطأ عن مالك بغير واسطة أكثر من ألف رجل ، وضرب الناس فيه أكباد الإبل من أقاصي البلاد ، منهم الأئمة المبرزون ، ومنهم الفقهاء المجتهدون ، ومنهم الملوك والأمراء كالرشيد وابنيه .\n\n\n\n| منقول من موقع إسلام ويب |"
+      },
+      {
+        "lang": "bn",
+        "title": "মুয়াত্তা মালিক",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "موطأ مالک",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 1973,
+    "totalAvailableHadith": 1973,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": " كتاب وقوت الصلاة "
+      },
+      {
+        "book_number": "2",
+        "book_name": " كتاب الطهارة "
+      },
+      {
+        "book_number": "3",
+        "book_name": " كتاب الصلاة "
+      },
+      {
+        "book_number": "4",
+        "book_name": " كتاب السهو "
+      },
+      {
+        "book_number": "5",
+        "book_name": " كتاب الجمعة "
+      },
+      {
+        "book_number": "6",
+        "book_name": " كتاب الصلاة فى رمضان "
+      },
+      {
+        "book_number": "7",
+        "book_name": " كتاب صلاة الليل "
+      },
+      {
+        "book_number": "8",
+        "book_name": " كتاب صلاة الجماعة "
+      },
+      {
+        "book_number": "9",
+        "book_name": " كتاب قصر الصلاة فى السفر "
+      },
+      {
+        "book_number": "10",
+        "book_name": " كتاب العيدين "
+      },
+      {
+        "book_number": "11",
+        "book_name": " كتاب صلاة الخوف "
+      },
+      {
+        "book_number": "12",
+        "book_name": " كتاب صلاة الكسوف "
+      },
+      {
+        "book_number": "13",
+        "book_name": " كتاب الاستسقاء "
+      },
+      {
+        "book_number": "14",
+        "book_name": " كتاب القبلة "
+      },
+      {
+        "book_number": "15",
+        "book_name": " كتاب القرآن "
+      },
+      {
+        "book_number": "16",
+        "book_name": " كتاب الجنائز "
+      },
+      {
+        "book_number": "17",
+        "book_name": " كتاب الزكاة "
+      },
+      {
+        "book_number": "18",
+        "book_name": " كتاب الصيام "
+      },
+      {
+        "book_number": "19",
+        "book_name": " كتاب الاعتكاف "
+      },
+      {
+        "book_number": "20",
+        "book_name": " كتاب الحج "
+      },
+      {
+        "book_number": "21",
+        "book_name": " كتاب الجهاد "
+      },
+      {
+        "book_number": "22",
+        "book_name": " كتاب النذور والأيمان "
+      },
+      {
+        "book_number": "23",
+        "book_name": " كتاب الضحايا "
+      },
+      {
+        "book_number": "24",
+        "book_name": " كتاب الذبائح "
+      },
+      {
+        "book_number": "25",
+        "book_name": " كتاب الصيد "
+      },
+      {
+        "book_number": "26",
+        "book_name": " كتاب العقيقة "
+      },
+      {
+        "book_number": "27",
+        "book_name": " كتاب الفرائض "
+      },
+      {
+        "book_number": "28",
+        "book_name": " كتاب النكاح "
+      },
+      {
+        "book_number": "29",
+        "book_name": " كتاب الطلاق "
+      },
+      {
+        "book_number": "30",
+        "book_name": " كتاب الرضاع "
+      },
+      {
+        "book_number": "31",
+        "book_name": " كتاب البيوع"
+      },
+      {
+        "book_number": "32",
+        "book_name": " كتاب القراض "
+      },
+      {
+        "book_number": "33",
+        "book_name": " كتاب المساقاة "
+      },
+      {
+        "book_number": "34",
+        "book_name": " كتاب كراء الأرض "
+      },
+      {
+        "book_number": "35",
+        "book_name": " كتاب الشفعة "
+      },
+      {
+        "book_number": "36",
+        "book_name": " كتاب الأقضية "
+      },
+      {
+        "book_number": "37",
+        "book_name": " كتاب الوصية "
+      },
+      {
+        "book_number": "38",
+        "book_name": " كتاب العتق والولاء "
+      },
+      {
+        "book_number": "39",
+        "book_name": " كتاب المكاتب "
+      },
+      {
+        "book_number": "40",
+        "book_name": " كتاب المدبر "
+      },
+      {
+        "book_number": "41",
+        "book_name": " كتاب الحدود "
+      },
+      {
+        "book_number": "42",
+        "book_name": " كتاب الأشربة"
+      },
+      {
+        "book_number": "43",
+        "book_name": " كتاب العقول "
+      },
+      {
+        "book_number": "44",
+        "book_name": " كتاب القسامة "
+      },
+      {
+        "book_number": "45",
+        "book_name": "كتاب الْمَدِينَةِ"
+      },
+      {
+        "book_number": "46",
+        "book_name": " كتاب القدر "
+      },
+      {
+        "book_number": "47",
+        "book_name": " كتاب حسن الخلق "
+      },
+      {
+        "book_number": "48",
+        "book_name": " كتاب اللباس "
+      },
+      {
+        "book_number": "49",
+        "book_name": " كتاب صفة النبى صلى الله عليه وسلم "
+      },
+      {
+        "book_number": "50",
+        "book_name": " كتاب العين "
+      },
+      {
+        "book_number": "51",
+        "book_name": " كتاب الشعر "
+      },
+      {
+        "book_number": "52",
+        "book_name": " كتاب الرؤيا "
+      },
+      {
+        "book_number": "53",
+        "book_name": " كتاب السلام "
+      },
+      {
+        "book_number": "54",
+        "book_name": " كتاب الاستئذان "
+      },
+      {
+        "book_number": "55",
+        "book_name": " كتاب البيعة "
+      },
+      {
+        "book_number": "56",
+        "book_name": " كتاب الكلام "
+      },
+      {
+        "book_number": "57",
+        "book_name": " كتاب جهنم"
+      },
+      {
+        "book_number": "58",
+        "book_name": " كتاب الصدقة "
+      },
+      {
+        "book_number": "59",
+        "book_name": " كتاب العلم"
+      },
+      {
+        "book_number": "60",
+        "book_name": " كتاب دعوة المظلوم"
+      },
+      {
+        "book_number": "61",
+        "book_name": " كتاب أسماء النبى صلى الله عليه وسلم "
+      }
+    ]
+  },
+  {
+    "name": "ahmad",
+    "bookName": "مسند أحمد",
+    "arAndEnName": "مسند أحمد - Musnad Ahmad",
+    "hasBooks": true,
+    "hasChapters": false,
+    "translations":["ar","en"],
+    "books_count": 15,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Musnad Ahmad",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Musnad Ahmad",
+        "shortIntro": "وضع الإمام أحمد هذا الكتاب ليكون مرجعًا للمسلمين وإمامًا وجعله مرتبًا على أسماء الصحابة الذين يروون الأحاديث كما هي طريقة المسانيد ، فجاء كتابًا حافلاً كبير الحجم ، يبلغ عدد أحاديثه أربعين ألفًا تقريبًا ، تكرر منها عشرة آلاف حديث ومن أحاديثه ثلاثمائة حديث ثلاثية الإسناد - أي بين راويها وبين النبي صلى الله عليه وسلم ثلاثة رواة -.\n\nوقد رتب كتابه على المسانيد فجعل مرويات كل صحابي في موضع واحد ، وعدد الصحابة الذين لهم مسانيد في مسند الإمام أحمد (904) صحابي .\n\nكان الإمام أحمد يحفظ ألف ألف حديث عن ظهر قلب ، وقد انتقى المسند من هذا العدد الهائل من محفوظه ، ولم يدخل فيه إلاَّ ما يحتج به ، وبالغ بعضهم ، فأطلق أن جميع ما فيه صحيح ، وقد زعم بعض العلماء أن بعض الأحاديث فيه موضوعة ، قال بعضهم هي تسعة أحاديث ، وقال آخرون هي خمسة عشر .\n\nقال شيخ الإسلام ابن تيمية في كتاب منهاج السنة : \" شرط أحمد في المسند أنه لا يروي عن المعروفين بالكذب عندهم ، وإن كان في ذلك ما هو ضعيف.. إلى أن قال : زاد ابن الإمام زيادات على المسند ضمت إليه ، وكذلك زاد القطيعي وفي تلك الزيادات كثير من الأحاديث الموضوعات ، فظن من لا علم عنده أن ذلك من رواية الإمام أحمد في مسنده \" .\n\nوقد ألف الحافظ ابن حجر كتابًا سماه \" القول المسدد في الذب عن المسند \" حقق فيه نفي الوضع عن أحاديث المسند وظهر من بحثه أن غالبها جياد وأنه لا يتأتى القطع بالوضع في شيء منها بل ولا الحكم بكون واحد منها موضوعًا إلا الفرد النادر مع الاحتمال القوي في دفع ذلك .\n\nوقال السيوطي في خطبة كتابه الجامع الكبير ما لفظه : \" وكل ما كان في مسند أحمد فهو مقبول ، فإن الضعيف فيه يقرب من الحسن \" .\n\n\n\n | منقول من موقع إسلام ويب |"
+      },
+      {
+        "lang": "bn",
+        "title": "মুসনাদ আহমদ",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "مسند أحمد",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 28199,
+    "totalAvailableHadith": 1359,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": "مُسْنَدُ أَبِي بَكْرٍ الصِّدِّيقِ رَضِيَ اللَّهُ عَنْهُ"
+      },
+      {
+        "book_number": "2",
+        "book_name": "أَوَّلُ مُسْنَدِ عُمَرَ بْنِ الْخَطَّابِ رَضِيَ اللَّهُ عَنْهُ"
+      },
+      {
+        "book_number": "3",
+        "book_name": "حَدِيثُ السَّقِيفَةِ"
+      },
+      {
+        "book_number": "4",
+        "book_name": "مُسْنَدُ عُثْمَانَ بْنِ عَفَّانَ رَضِيَ اللَّهُ عَنْهُ"
+      },
+      {
+        "book_number": "5",
+        "book_name": "وَمِنْ مُسْنَدِ عَلِيِّ بْنِ أَبِي طَالِبٍ رَضِيَ اللَّهُ عَنْهُ"
+      },
+      {
+        "book_number": "6",
+        "book_name": "مُسْنَدُ أَبِي مُحَمَّدٍ طَلْحَةَ بْنِ عُبَيْدِ اللَّهِ رَضِيَ اللَّهُ تَعَالَى عَنْهُ"
+      },
+      {
+        "book_number": "7",
+        "book_name": "مُسْنَدُ الزُّبَيْرِ بْنِ الْعَوَّامِ رَضِيَ اللَّهُ عَنْهُ"
+      },
+      {
+        "book_number": "31",
+        "book_name": "حَدِيثُ أَبِي رِمْثَةَ عَنْ النَّبِيَّ رَضِيَ اللَّهُ عَنْهُ"
+      }
+    ]
+  },
+  {
+    "name": "darimi",
+    "bookName": "سنن الدارمي",
+    "arAndEnName": "سنن الدارمي - Sunan ad-Darimi",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar"],
+    "books_count": 24,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Sunan ad-Darimi",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Sunan ad-Darimi",
+        "shortIntro": "Sunan ad-Darimi is a collection of hadith compiled by Imam Abdullah ibn Abd ar-Rahman ad-Darimi (d. 255 AH/869 CE - rahimahullah). It is considered to be one of the important collections of reports of the Sunnah of the Prophet Muhammad (ﷺ), typically included in the \"Nine Books\" of hadith collections. It contains approximately 3,400 hadith sectioned by topic (as in a <i>Sunan</i>). It has unfortunately not been translated into English yet."
+      },
+      {
+        "lang": "bn",
+        "title": "সুনান আদ-দারিমি",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "سنن الدارمی",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 3406,
+    "totalAvailableHadith": 0,
+    "books_names": [
+      {
+        "book_number": "0",
+        "book_name": "سنن الدارمي"
+      },
+      {
+        "book_number": "1",
+        "book_name": "كِتَاب الطَّهَارَةِ"
+      },
+      {
+        "book_number": "2",
+        "book_name": "كِتَاب الصَّلَاةِ"
+      },
+      {
+        "book_number": "3",
+        "book_name": "مِنْ كِتَابِ الزَّكَاةِ"
+      },
+      {
+        "book_number": "4",
+        "book_name": "وَمِنْ كِتَابِ الصَّوْمِ"
+      },
+      {
+        "book_number": "5",
+        "book_name": "مِنْ كِتَابِ الْمَنَاسِكِ"
+      },
+      {
+        "book_number": "6",
+        "book_name": "مِنْ كِتَابِ الْأَضَاحِيِّ"
+      },
+      {
+        "book_number": "7",
+        "book_name": "وَمِنْ كِتَابِ الصَّيْدِ"
+      },
+      {
+        "book_number": "8",
+        "book_name": "وَمِنْ كِتَابِ الْأَطْعِمَةِ"
+      },
+      {
+        "book_number": "9",
+        "book_name": "وَمِنْ كِتَابِ الْأَشْرِبَةِ"
+      },
+      {
+        "book_number": "10",
+        "book_name": "وَمِنْ كِتَابِ الرُّؤْيَا"
+      },
+      {
+        "book_number": "11",
+        "book_name": "وَمِنْ كِتَابِ النِّكَاحِ"
+      },
+      {
+        "book_number": "12",
+        "book_name": "وَمِنْ كِتَابِ الطَّلَاقِ"
+      },
+      {
+        "book_number": "13",
+        "book_name": "وَمِنْ كِتَابِ الْحُدُودِ"
+      },
+      {
+        "book_number": "14",
+        "book_name": "وَمِنْ كِتَابِ النُّذُورِ وَالْأَيْمَانِ"
+      },
+      {
+        "book_number": "15",
+        "book_name": "وَمِنْ كِتَابِ الدِّيَاتِ"
+      },
+      {
+        "book_number": "16",
+        "book_name": "كِتَاب الْجِهَادِ"
+      },
+      {
+        "book_number": "17",
+        "book_name": "وَمِنْ كِتَابِ السِّيَرِ"
+      },
+      {
+        "book_number": "18",
+        "book_name": "وَمِنْ كِتَابِ الْبُيُوعِ"
+      },
+      {
+        "book_number": "19",
+        "book_name": "وَمِنْ كِتَابِ الِاسْتِئْذَانِ"
+      },
+      {
+        "book_number": "20",
+        "book_name": "وَمِنْ كِتَابِ الرِّقَاقِ"
+      },
+      {
+        "book_number": "21",
+        "book_name": "مِنْ كِتَابِ الْفَرَائِضِ"
+      },
+      {
+        "book_number": "22",
+        "book_name": "مِنْ كِتَابِ الْوَصَايَا"
+      },
+      {
+        "book_number": "23",
+        "book_name": "وَمِنْ كِتَابِ فَضَائِلِ الْقُرْآنِ"
+      }
+    ]
+  },
+  {
+    "name": "forty",
+    "bookName": "الأربعينات",
+    "arAndEnName": "الأربعينات - Forty Hadith",
+    "hasBooks": true,
+    "hasChapters": false,
+    "translations":["ar","en"],
+    "books_count": 6,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Collections of Forty",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Collections of Forty",
+        "shortIntro": ""
+      },
+      {
+        "lang": "bn",
+        "title": "চালিশ গুলির সংগ্রহ",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "چالیس گولی کی مجموعہ",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 0,
+    "totalAvailableHadith": 122,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": "الأربعون النووية"
+      },
+      {
+        "book_number": "2",
+        "book_name": "الحديث القدسي"
+      },
+      {
+        "book_number": "3",
+        "book_name": "أربعون شاه ولي الله الدهلوي"
+      }
+    ]
+  },
+  {
+    "name": "riyadussalihin",
+    "bookName": "رياض الصالحين",
+    "arAndEnName": "رياض الصالحين - Riyad as-Salihin",
+    "bookNumber": "10",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en"],
+    "books_count": 40,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Riyad as-Salihin",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Riyad as-Salihin",
+        "shortIntro": "هذا الكتاب الذي يتضمَّن (نفحات تربويَّة عبقة الشَّذى فوَّاحة الأريج، تهذِّب الرُّوح، وتسمو بها، وتولد فيها حافزًا قويًّا على التحلِّي بما خُلقت له من العبادة، وتصل بها إلى ما فيه إسعادها وصلاح أمرها؛ وذلك لما اشتمل عليه من ترغيب وترهيب، وطهارات للقلوب وعلاجها، وصيانة الجوارح وتقويم اعوجاجها، وغير ذلك من المقاصد التي يحتاج إليها المكلَّف الفطِن الذي يهمُّه أمر دينه ودنياه وآخرته، فهو كتابٌ تربويٌّ فذٌّ، تناول مختلف جوانب الحياة الفرديَّة والاجتماعيَّة بأسلوبٍ واضحٍ، يُدرك مرماه الخاصُّ والعامُّ، والمثقَّف ومَن دونه، ذلك لأنَّه لغة أفصح الخلق الذي تنزَّل القرآن على قلبه ليكون للعالمين بشيرًا ونذيرًا)"
+      },
+      {
+        "lang": "bn",
+        "title": "রিয়াদুস সালেহীন",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "رياض الصالحين",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 1895,
+    "totalAvailableHadith": 1896,
+    "books_names": [
+      {
+        "book_number": "0",
+        "book_name": "كتاب المقدمات"
+      },
+      {
+        "book_number": "1",
+        "book_name": "‏(‏‏(‏كتاب الأدب‏)‏‏)‏"
+      },
+      {
+        "book_number": "2",
+        "book_name": "كتـــــاب أدب الطعام"
+      },
+      {
+        "book_number": "3",
+        "book_name": "كتــــاب اللباس"
+      },
+      {
+        "book_number": "4",
+        "book_name": "كتاب آداب النوم"
+      },
+      {
+        "book_number": "5",
+        "book_name": "كتاب السلام"
+      },
+      {
+        "book_number": "6",
+        "book_name": "كتاب عيادة المريض وتشييع الميت والصلاة عليه وحضور دفنه المكث عند قبره بعد دفنه"
+      },
+      {
+        "book_number": "7",
+        "book_name": "كتاب آداب السفر"
+      },
+      {
+        "book_number": "8",
+        "book_name": "كتاب الفضائل"
+      },
+      {
+        "book_number": "9",
+        "book_name": "كتاب الاعتكاف"
+      },
+      {
+        "book_number": "10",
+        "book_name": "كتاب الحج"
+      },
+      {
+        "book_number": "11",
+        "book_name": "كتاب الجهاد"
+      },
+      {
+        "book_number": "12",
+        "book_name": "كتاب العلم"
+      },
+      {
+        "book_number": "13",
+        "book_name": "كتاب حمد الله تعالى وشكره"
+      },
+      {
+        "book_number": "14",
+        "book_name": "كتاب الصلاة على رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "15",
+        "book_name": "كتاب الأذكار"
+      },
+      {
+        "book_number": "16",
+        "book_name": "كتاب الدعوات"
+      },
+      {
+        "book_number": "17",
+        "book_name": "كتاب الأمور المنهي عنها"
+      },
+      {
+        "book_number": "18",
+        "book_name": "كتاب المنثورات والملح"
+      },
+      {
+        "book_number": "19",
+        "book_name": "كتاب المنثورات والملح"
+      }
+    ]
+  },
+  {
+    "name": "mishkat",
+    "bookName": "مشكاة المصابيح",
+    "arAndEnName": "مشكاة المصابيح - Mishkat al-Masabih",
+    "bookNumber": "11",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en"],
+    "books_count": 50,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Mishkat al-Masabih",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Mishkat al-Masabih",
+        "shortIntro": "مشكاة المصابيح أصله كتاب مصابيح السنة للبغوي، وهو كتاب جمع فيه صاحبه متون الأحاديث، وقام بترتيبها على طريقة كتب الجوامع، مع الحكم عليها بالصحة أو الحسن أو غيرها، فجاء كتابه مشتملا على أحاديث العقائد والعلم والعبادات والمعاملات والآداب والرقائق والفتن والفضائل والمناقب، لكنه يختلف عن الجوامع في خلوه من كتابي التفسير والمغازي .\n\nوالخطيب التبريزي رحمه الله صاحب المشكاة كان معجبا بـ المصابيح حتى إنه قال عنه وكان كتاب المصابيح الذي صنفه الإمام محيي السنة وقامع البدعة أبو محمد الحسين بن مسعود الفراء البغوي رفع الله درجته أجمع كتاب صنف في بابه، وأضبط لشوارد الأحاديث وأوابدها .\n\nولكنه مع إعجابه بالمصابيح رأى أنها بحاجة لاستدراك، فألف مشكاة المصابيح، وقام بتخريج أحاديثه، وذكر اسم الصحابي الراوي للحديث ؛ لأن البغوي لم يكن يذكر ذلك غالبا، وزاد فصلا ثالثا في كل باب. وقد قسم رحمه الله كل باب إلى فصول ثلاثة :\n\nالأول : ما أخرجه الشيخان أو أحدهما .\n\nالثاني : ما أورده غيرهما من الأربعة وأصحاب المسانيد والسنن.\n\nالثالث : ما اشتمل على معنى الباب من أحاديث وإن كانت موقوفة.\n\n\n\n| منقول من موقع إسلام ويب |"
+      },
+      {
+        "lang": "bn",
+        "title": "মশকাতুল মুসাব্বিহ",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "مشكاة المصابيح",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 6285,
+    "totalAvailableHadith": 4433,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": "كتاب الإيمان"
+      },
+      {
+        "book_number": "2",
+        "book_name": "كتاب العلم"
+      },
+      {
+        "book_number": "3",
+        "book_name": "كتاب الطهارة"
+      },
+      {
+        "book_number": "4",
+        "book_name": "كتاب الصلاة"
+      },
+      {
+        "book_number": "5",
+        "book_name": "كتاب الجنائز"
+      },
+      {
+        "book_number": "6",
+        "book_name": "كتاب الزكاة"
+      },
+      {
+        "book_number": "7",
+        "book_name": "كتاب الصوم"
+      },
+      {
+        "book_number": "8",
+        "book_name": "كتاب فضائل القرآن"
+      },
+      {
+        "book_number": "9",
+        "book_name": "كتاب الدعوات"
+      },
+      {
+        "book_number": "10",
+        "book_name": "كتاب المناسك"
+      },
+      {
+        "book_number": "11",
+        "book_name": "كتاب البيوع"
+      },
+      {
+        "book_number": "12",
+        "book_name": "كتاب الفرائض والوصايا"
+      },
+      {
+        "book_number": "13",
+        "book_name": "كتاب النكاح"
+      },
+      {
+        "book_number": "14",
+        "book_name": "كتاب العتق"
+      },
+      {
+        "book_number": "15",
+        "book_name": "كتاب الإيمان والنذور"
+      },
+      {
+        "book_number": "16",
+        "book_name": "كتاب القصاص"
+      },
+      {
+        "book_number": "17",
+        "book_name": "كتاب الحدود"
+      },
+      {
+        "book_number": "18",
+        "book_name": "كتاب الإمارة والقضاء"
+      },
+      {
+        "book_number": "19",
+        "book_name": "كتاب الجهاد"
+      },
+      {
+        "book_number": "20",
+        "book_name": "كتاب الصيد والذبائح"
+      },
+      {
+        "book_number": "21",
+        "book_name": "كتاب الأطعمة"
+      },
+      {
+        "book_number": "22",
+        "book_name": "كتاب اللباس"
+      },
+      {
+        "book_number": "23",
+        "book_name": "كتاب الطب والرقى"
+      },
+      {
+        "book_number": "24",
+        "book_name": "كتاب الرؤيا"
+      }
+    ]
+  },
+  {
+    "name": "adab",
+    "bookName": "الأدب المفرد",
+    "arAndEnName": "الأدب المفرد - Al-Adab Al-Mufrad",
+    "bookNumber": "12",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en"],
+    "books_count": 114,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Al-Adab Al-Mufrad",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Al-Adab Al-Mufrad",
+        "shortIntro": "كتاب \"الأدب المفرد\" وضعه الإمام البخاري حيث يتناول الكتاب الآداب الإسلامية المفردة الواردة في السنة النبوية، وضمن الكتاب بعض أقوال الصحابة والتابعين. وقد ذكر ابن حجر أنه \"يشتمل على أحاديث زائدة على ما في الصحيح، وفيه قليل من الآثار الموقوفة، وهو كثير الفائدة\"، ويتضمن الكتاب 1322 حديثًا موزعة على 644 بابًا، وأحاديث الكتاب يغلب عليها الصحة، وسبب عدم كونها كلها صحيحة أن البخاري لا يلتزم في هذا الكتاب شروطه في كتاب الصحيح لأن الأحاديث أحاديث آداب وليست أحاديث أحكام.\n\nوكتاب \"الأدب المفرد\" فريد في نوعه، يجمع الآداب الإسلامية، وهو موسوعة إسلامية في الآداب، فيه الآداب الشرعية الواردة في السنة النبوية. وقد جمع فيه ما يحتاجه المسلم من العقائد وأصول الدين والعلم وحقوق الناس ودلائل النبوة والزهد والرقائق.\n\nونجد أن الإمام البخاري تمسك في تألفيه بأسلوب كتابه \"الجامع الصحيح\"، وبوب فيه الأحاديث حسب مواضيعها وآثار الصحابة، وأورد عند بعض الأحاديث آيات من القرآن الكريم.\n\n\n\n| منقول من موقع شبكة الألوكة |"
+      },
+      {
+        "lang": "bn",
+        "title": "আল-আদাবু আল-মুফরিদ",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "الأدب المفرد",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 1322,
+    "totalAvailableHadith": 1326,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": "كتاب الْوَالِدَيْنِ"
+      },
+      {
+        "book_number": "2",
+        "book_name": "كتاب صِلَةِ الرَّحِمِ"
+      },
+      {
+        "book_number": "3",
+        "book_name": "كتاب مَوَالِي"
+      },
+      {
+        "book_number": "4",
+        "book_name": "كتاب عول البنات"
+      },
+      {
+        "book_number": "5",
+        "book_name": "كتاب رعاية الأولاد"
+      },
+      {
+        "book_number": "6",
+        "book_name": "كتاب الْجَارِ"
+      },
+      {
+        "book_number": "7",
+        "book_name": "كتاب الْكَرَمِ وَ يَتِيمٌ"
+      },
+      {
+        "book_number": "8",
+        "book_name": "كتاب موت الأولاد"
+      },
+      {
+        "book_number": "9",
+        "book_name": "كتاب الملكة"
+      },
+      {
+        "book_number": "10",
+        "book_name": "كتاب الرعاية"
+      },
+      {
+        "book_number": "11",
+        "book_name": "كتاب الْمَعْرُوفِ"
+      },
+      {
+        "book_number": "12",
+        "book_name": "كتاب الِانْبِسَاطِ إِلَى النَّاسِ"
+      },
+      {
+        "book_number": "13",
+        "book_name": "كتاب الْمَشُورَةِ"
+      },
+      {
+        "book_number": "14",
+        "book_name": "كتاب حسن الخلق"
+      },
+      {
+        "book_number": "15",
+        "book_name": "كتاب اللعن"
+      },
+      {
+        "book_number": "16",
+        "book_name": "كتاب المدح"
+      },
+      {
+        "book_number": "17",
+        "book_name": "كتاب الزِّيَارَةِ"
+      },
+      {
+        "book_number": "18",
+        "book_name": "كتاب الأكَابِرِ"
+      },
+      {
+        "book_number": "19",
+        "book_name": "كتاب الصَّغِيرِ"
+      },
+      {
+        "book_number": "20",
+        "book_name": "كتاب رَحْمَةِ"
+      },
+      {
+        "book_number": "21",
+        "book_name": "كتاب ذات البين"
+      },
+      {
+        "book_number": "22",
+        "book_name": "كتاب الهجر"
+      },
+      {
+        "book_number": "23",
+        "book_name": "كتاب الإشارة"
+      },
+      {
+        "book_number": "24",
+        "book_name": "كتاب السِّبَابِ"
+      },
+      {
+        "book_number": "25",
+        "book_name": "كتاب السَّرَفِ فِي الْبِنَاءِ"
+      },
+      {
+        "book_number": "26",
+        "book_name": "كتاب الرِّفْقِ"
+      },
+      {
+        "book_number": "27",
+        "book_name": "كتاب الاعتناء بالدنيا"
+      },
+      {
+        "book_number": "28",
+        "book_name": "كتاب الظُّلْم"
+      },
+      {
+        "book_number": "29",
+        "book_name": "كتاب عيادة المرضى"
+      },
+      {
+        "book_number": "30",
+        "book_name": "كتاب التصرف العام"
+      },
+      {
+        "book_number": "31",
+        "book_name": "كتاب الدعاء"
+      },
+      {
+        "book_number": "32",
+        "book_name": "كتاب الضيف والنفقة"
+      },
+      {
+        "book_number": "33",
+        "book_name": "كتاب الأقوال"
+      },
+      {
+        "book_number": "34",
+        "book_name": "كتاب الأسْمَاءِ"
+      },
+      {
+        "book_number": "35",
+        "book_name": "كتاب الكُنْيَةِ"
+      },
+      {
+        "book_number": "36",
+        "book_name": "كتاب الشِّعْرِ"
+      },
+      {
+        "book_number": "37",
+        "book_name": "كتاب الْكَلامِ"
+      },
+      {
+        "book_number": "38",
+        "book_name": "كتاب عاقبة الأمور"
+      },
+      {
+        "book_number": "39",
+        "book_name": "كتاب الطيرة"
+      },
+      {
+        "book_number": "40",
+        "book_name": "كتاب الْعُطَاسَ والتثاؤب"
+      },
+      {
+        "book_number": "41",
+        "book_name": "كتاب الحركات"
+      },
+      {
+        "book_number": "42",
+        "book_name": "كتاب السَّلامِ"
+      },
+      {
+        "book_number": "43",
+        "book_name": "كتاب الاسْتِئْذَانُ"
+      },
+      {
+        "book_number": "44",
+        "book_name": "كتاب أَهْلِ الْكِتَابِ"
+      },
+      {
+        "book_number": "45",
+        "book_name": "كتاب الرَّسَائِلِ"
+      },
+      {
+        "book_number": "46",
+        "book_name": "كتاب الْمَجَالِسِ"
+      },
+      {
+        "book_number": "47",
+        "book_name": "كتاب تعامل الناس"
+      },
+      {
+        "book_number": "48",
+        "book_name": "باب الجلوس والاستلقاء"
+      },
+      {
+        "book_number": "49",
+        "book_name": "كتاب الصباح والمساء"
+      },
+      {
+        "book_number": "50",
+        "book_name": "كتاب النوم والمبيت"
+      },
+      {
+        "book_number": "51",
+        "book_name": "كتاب الْبَهَائِمِ"
+      },
+      {
+        "book_number": "52",
+        "book_name": "كتاب الْقَائِلَةِ"
+      },
+      {
+        "book_number": "53",
+        "book_name": "كتاب الْخِتَانِ"
+      },
+      {
+        "book_number": "54",
+        "book_name": "كتاب القمار ونحوه"
+      },
+      {
+        "book_number": "55",
+        "book_name": "كتاب المعرفة"
+      },
+      {
+        "book_number": "56",
+        "book_name": "كتاب الفضول والجفاء"
+      },
+      {
+        "book_number": "57",
+        "book_name": "كتاب الْغَضَبِ"
+      }
+    ]
+  },
+  {
+    "name": "shamail",
+    "bookName": "الشمائل المحمدية",
+    "arAndEnName": "الشمائل المحمدية - Ash-Shamail Al-Muhammadiyah",
+    "bookNumber": "13",
+    "hasBooks": true,
+    "hasChapters": false,
+    "translations":["ar","en"],
+    "books_count": 122,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Ash-Shama'il Al-Muhammadiyah",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Ash-Shama'il Al-Muhammadiyah",
+        "shortIntro": "كتاب (الشمائل المحمدية) للإمام الترمذيِّ المتوفى عام (279هـ) كتابٌ شهير عند العلماء، أراد مؤلفه تعريف المسلمين بالصفات الخَلقية والخُلقية لنبيهم محمد عليه الصلاة والسلام، ويعتبر من أوائل ما صُنِّف في شمائلِ الرسول صلى الله عليه وسلم، وتلقاه العلماء بالحفاوة والعناية، فتناولوه بالإقراء والمدارس والشرح والنظم والاختصار.\n\n\n\n| منقول من موقع شبكة الألوكة |"
+      },
+      {
+        "lang": "bn",
+        "title": "আশ-শমা'ইলুল মুহাম্মাদীয়া",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "الشمائل المحمدية",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 398,
+    "totalAvailableHadith": 402,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": "باب ما جاء في خلق رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "2",
+        "book_name": "باب ما جاء في خاتم النبوة"
+      },
+      {
+        "book_number": "3",
+        "book_name": "-باب ما جاء في شعر رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "4",
+        "book_name": "باب ما جاء في ترجل رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "5",
+        "book_name": "باب ما جاء في شيب رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "6",
+        "book_name": "باب ما جاء في خضاب رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "7",
+        "book_name": "باب ما جاء في كُحل رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "8",
+        "book_name": "باب ما جاء في لباس رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "9",
+        "book_name": "باب ما جاء في خف رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "10",
+        "book_name": "باب ماجاء في نعل رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "11",
+        "book_name": "باب ما جاء في ذكر خاتم رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "12",
+        "book_name": "باب ماجاء في تختم رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "13",
+        "book_name": "باب ماجاء في صفة سَيْفِ رَسُولِ اللهِ صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "14",
+        "book_name": "باب ماجاء في صفة درع رَسُولِ اللهِصلى الله عليه وسلم"
+      },
+      {
+        "book_number": "15",
+        "book_name": "باب ما جاء في صفة مغفر رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "16",
+        "book_name": "باب ما جاء في عمامة رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "17",
+        "book_name": "باب ما جاء في صفة إزار رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "18",
+        "book_name": "باب ما جاء في مشية رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "19",
+        "book_name": "باب ما جاء في تقنع رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "20",
+        "book_name": "باب ما جاء في جلسته صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "21",
+        "book_name": "باب ما جاء في تكأة رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "22",
+        "book_name": "باب ما جاء في اتكاء رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "23",
+        "book_name": "باب ما جاء في أكل رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "24",
+        "book_name": "باب ما جاء في صفة خبز رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "25",
+        "book_name": "ما جاء في إدام رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "26",
+        "book_name": "باب ما جاء في صفة وضوء رسول الله صلى الله عليه وسلم عند الطعام"
+      },
+      {
+        "book_number": "27",
+        "book_name": "باب ما جاء في قول رسول الله صلى الله عليه وسلم قبل الطعام وعند الفراغ منه"
+      },
+      {
+        "book_number": "28",
+        "book_name": "باب ما جاء في قدح رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "29",
+        "book_name": "باب ما جاء في صفة فاكهة رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "30",
+        "book_name": "باب ما جاء في صفة شراب رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "31",
+        "book_name": "باب ما جاء في شرب رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "32",
+        "book_name": "باب ما جاء في تعطررسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "33",
+        "book_name": "باب كيف كان كلام رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "34",
+        "book_name": "باب ما جاء في ضحك رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "35",
+        "book_name": "باب ما جاء في صفة مزاح رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "36",
+        "book_name": "باب ما جاء في صفة كلام رسول الله صلى الله عليه وسلم في الشعر"
+      },
+      {
+        "book_number": "37",
+        "book_name": "باب ما جاء في كلام رسول الله صلى الله عليه وسلم في السمر"
+      },
+      {
+        "book_number": "38",
+        "book_name": "باب ما جاء في كلام رسول الله صلى الله عليه وسلم في السمر"
+      },
+      {
+        "book_number": "39",
+        "book_name": "باب في صفة نوم رسول الله صلى الله عليه وسلم في السمر"
+      },
+      {
+        "book_number": "40",
+        "book_name": "باب ما جاء في عبادة النبي صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "41",
+        "book_name": "باب صلاة الضحى"
+      },
+      {
+        "book_number": "42",
+        "book_name": "باب صلاة التطوع في البيت"
+      },
+      {
+        "book_number": "43",
+        "book_name": "باب ماجاء في صوم رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "44",
+        "book_name": "باب ماجاء في قراءة رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "45",
+        "book_name": "باب ماجاء في بكاء رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "46",
+        "book_name": "باب ماجاء في فراش رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "47",
+        "book_name": "باب ماجاء في تواضع رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "48",
+        "book_name": "باب ماجاء في خلق رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "49",
+        "book_name": "باب ماجاء في حياء رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "50",
+        "book_name": "باب ماجاء في حجامة رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "51",
+        "book_name": "باب ماجاء في قراءة رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "52",
+        "book_name": "باب ماجاء في عيش رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "53",
+        "book_name": "باب ماجاء في سن رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "54",
+        "book_name": "باب ماجاء في وفاة رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "55",
+        "book_name": "باب ماجاء في ميراث رسول الله صلى الله عليه وسلم"
+      },
+      {
+        "book_number": "56",
+        "book_name": "باب ماجاء في رؤية رسول الله صلى الله عليه وسلم"
+      }
+    ]
+  },
+  {
+    "name": "bulugh",
+    "bookName": "بلوغ المرام",
+    "arAndEnName": "بلوغ المرام - Bulugh al-Maram",
+    "bookNumber": "14",
+    "hasBooks": true,
+    "hasChapters": true,
+    "translations":["ar","en"],
+    "books_count": 32,
+    "collection": [
+      {
+        "lang": "en",
+        "title": "Bulugh al-Maram",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ar",
+        "title": "Bulugh al-Maram",
+        "shortIntro": "لقد اشتَملَ كتابُ \"بلوغ المرام من أدلة الأحكام\"؛ للإمام الحافظ أبي الفضل أحمد بن عليِّ بن محمد الكناني الشافعي، المعروف بابن حجرٍ العسقلاني، المتوفَّى سنة (852 هـ) على أصولِ الأدلَّة الحديثيَّة للأحكام الشرعيَّة؛ فقد حرَّرَه ابنُ حجرٍ- رحمه الله- تحريرًا بالغًا؛ ليكون بدايةً للطريق للطالب المبتدئ، واستزادةً لِمَن وصَل في هذا العِلم إلى أعْلى الدرجات.\n\nويتَّضح ذلك ممَّا قاله ابنُ حجرٍ نفسُه في مقدمة كتابه، حيث قال: \"أمَّا بعدُ، فهذا مختصَرٌ يشتمِل على أصولِ الأدلَّة الحديثيَّة للأحكام، حرَّرتُه تحريرًا بالغًا؛ ليصيرَ مَن يحفَظُه مِن بيْن أقرانه نابِغًا، ويَستعين به الطالِبُ المبتدِي، ولا يَستغني عنه الراغبُ المنتهي\".\n\nومن هنا جاءتْ أهميَّة الكتاب، فهو يُعَدُّ مِن أهم كتب الأحكام، بل يصل إلى درجةِ النفائس.\n\nوقد اتَّبَع ابن حجرٍ- رحمه الله- في ترتيبه لكتابه طريقةَ الفُقَهاء في ترتيبهم لكُتُب الفِقه؛ حيث بدأ كتابَه كعادة المتقدِّمين بالطهارة، ثم الصلاة، ثم الجنائز، ثم الزكاة، ثم الصيام، ثم الحج، ثم البيوع، ثم النكاح، ثم الجنايات، ثم الحدود، ثم الجهاد، ثم الأطعمة، وجعَل آخِرَه بابًا جامعًا سمَّاه: الجامِع في الآداب، حيث ضمَّنه نُخبةً طيِّبة مِنَ الأحاديث في الأخلاق والسلوك، والذِّكر والدعاء.\n\nوقد اهتَمَّ ابنُ حجرٍ بتوضيح درجةِ الحديث من حيثُ الصحةُ والضعْف، وكثيرًا ما كان يُصدِّر الباب الذي يتناوَله بما في الصحيحين أو أحدهما، وإذا كان للحديثِ مُتابعاتٌ أو شواهِدُ أشارَ إليها.\n\nوقدِ اشتَملَ الكتاب على \"1596\" حديثًا، وهو عددٌ كبير أعْطَى الكتاب ثقلاً من حيثُ الأهميَّة، وربَّما كان السببُ في زيادة عددِ الأحاديث في هذا الكتاب هو أنَّ ابن حجرٍ كان يُورِد كلَّ ما في الباب الذي يَتناوَله من أحاديثَ، مع بيانِ الضعيف، وهذا على عكسِ كتاب \"الإلمام\"؛ لابن دقيق، حيث اشترَط مؤلِّفه ألاَّ يورد إلا ما صَحَّ.\n\n\n\n| منقول من شبكة الألوكة |"
+      },
+      {
+        "lang": "bn",
+        "title": "বলূঘুল মুরাম",
+        "shortIntro": ""
+      },
+      {
+        "lang": "ur",
+        "title": "بلوغ المرام",
+        "shortIntro": ""
+      }
+    ],
+    "totalHadith": 1582,
+    "totalAvailableHadith": 1767,
+    "books_names": [
+      {
+        "book_number": "1",
+        "book_name": "كتاب الطهارة"
+      },
+      {
+        "book_number": "2",
+        "book_name": "كتاب الصلاة"
+      },
+      {
+        "book_number": "3",
+        "book_name": "كتاب الجنائز"
+      },
+      {
+        "book_number": "4",
+        "book_name": "كتاب الزكاة"
+      },
+      {
+        "book_number": "5",
+        "book_name": "كتاب الصيام"
+      },
+      {
+        "book_number": "6",
+        "book_name": "كتاب الحج"
+      },
+      {
+        "book_number": "7",
+        "book_name": "كتاب البيوع"
+      },
+      {
+        "book_number": "8",
+        "book_name": "كتاب النكاح"
+      },
+      {
+        "book_number": "9",
+        "book_name": "كتاب الجنايات"
+      },
+      {
+        "book_number": "10",
+        "book_name": "كتاب الحدود"
+      },
+      {
+        "book_number": "11",
+        "book_name": "كتاب الجهاد"
+      },
+      {
+        "book_number": "12",
+        "book_name": "كتاب الأطعمة"
+      },
+      {
+        "book_number": "13",
+        "book_name": "كتاب الأطعمة"
+      },
+      {
+        "book_number": "14",
+        "book_name": "كتاب الأطعمة"
+      },
+      {
+        "book_number": "15",
+        "book_name": "كتاب الأطعمة"
+      },
+      {
+        "book_number": "16",
+        "book_name": "كتاب الجامع"
+      }
+    ]
+  }
+]
