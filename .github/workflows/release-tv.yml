@@ -1,0 +1,75 @@
+name: Build & Release APK (TV)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'mihrab_tv/**'
+      - 'mihrab_shared/**'
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Create debug keystore for CI
+        run: |
+          mkdir -p ~/.android
+          keytool -genkeypair -v -keystore ~/.android/debug.keystore \
+            -storepass android -alias androiddebugkey -keypass android \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US" 2>/dev/null || true
+
+      - name: Create key.properties (fallback to debug)
+        run: |
+          if [ ! -f mihrab_tv/android/key.properties ]; then
+            echo "storeFile=$HOME/.android/debug.keystore" > mihrab_tv/android/key.properties
+            echo "storePassword=android" >> mihrab_tv/android/key.properties
+            echo "keyAlias=androiddebugkey" >> mihrab_tv/android/key.properties
+            echo "keyPassword=android" >> mihrab_tv/android/key.properties
+          fi
+
+      - name: Get dependencies (shared + tv)
+        run: |
+          cd mihrab_shared && flutter pub get && cd ..
+          cd mihrab_tv && flutter pub get
+
+      - name: Build APK
+        run: cd mihrab_tv && flutter build apk --release
+
+      - name: Get version
+        id: version
+        run: |
+          VERSION=$(grep 'version:' mihrab_tv/pubspec.yaml | head -1 | sed 's/.*version: //' | sed 's/[[:space:]]//g')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Delete latest release (if exists)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete latest-tv --yes --cleanup-tag 2>/dev/null || true
+
+      - name: Create Release & Upload APK
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create latest-tv \
+            --title "TV v${{ steps.version.outputs.version }} (Build #${{ github.run_number }})" \
+            --notes "Automated build from [commit ${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})" \
+            --prerelease \
+            mihrab_tv/build/app/outputs/flutter-apk/app-release.apk
