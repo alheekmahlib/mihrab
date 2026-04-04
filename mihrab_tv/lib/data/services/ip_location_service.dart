@@ -17,13 +17,13 @@ class IpLocationResult {
 }
 
 class IpLocationService {
-  /// Detect location using IP-based geolocation (ip-api.com).
-  /// Free tier: HTTP only, 45 req/min.
+  /// Detect location using IP-based geolocation.
+  /// Uses ipapi.co (HTTPS, free 1k req/day).
   static Future<IpLocationResult> detect() async {
-    final uri = Uri.parse(
-      'http://ip-api.com/json/?fields=status,message,country,city,lat,lon',
-    );
-    final response = await http.get(uri).timeout(const Duration(seconds: 10));
+    final uri = Uri.parse('https://ipapi.co/json/');
+    final response = await http
+        .get(uri, headers: {'Accept': 'application/json'})
+        .timeout(const Duration(seconds: 10));
 
     if (response.statusCode != 200) {
       throw Exception('IP location request failed: ${response.statusCode}');
@@ -31,17 +31,17 @@ class IpLocationService {
 
     final data = jsonDecode(response.body) as Map<String, dynamic>;
 
-    if (data['status'] != 'success') {
+    if (data.containsKey('error') && data['error'] == true) {
       throw Exception(
-        'IP location failed: ${data['message'] ?? 'unknown error'}',
+        'IP location failed: ${data['reason'] ?? 'unknown error'}',
       );
     }
 
     return IpLocationResult(
-      latitude: (data['lat'] as num).toDouble(),
-      longitude: (data['lon'] as num).toDouble(),
+      latitude: (data['latitude'] as num).toDouble(),
+      longitude: (data['longitude'] as num).toDouble(),
       city: data['city'] as String? ?? '',
-      country: data['country'] as String? ?? '',
+      country: data['country_name'] as String? ?? '',
     );
   }
 }
