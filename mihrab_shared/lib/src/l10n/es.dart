@@ -159,4 +159,5 @@ const Map<String, String> es = {
   'openDisplay': 'Abrir pantalla',
   'enterFullscreen': 'Pantalla completa',
   'exitFullscreen': 'Salir de pantalla completa',
+  'or': 'O',
 };

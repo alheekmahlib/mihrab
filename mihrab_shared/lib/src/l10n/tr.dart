@@ -157,4 +157,5 @@ const Map<String, String> tr = {
   'openDisplay': 'Ekranı Aç',
   'enterFullscreen': 'Tam Ekran',
   'exitFullscreen': 'Tam Ekrandan Çık',
+  'or': 'Veya',
 };

@@ -156,4 +156,5 @@ const Map<String, String> id = {
   'openDisplay': 'Buka Tampilan',
   'enterFullscreen': 'Layar Penuh',
   'exitFullscreen': 'Keluar Layar Penuh',
+  'or': 'Atau',
 };

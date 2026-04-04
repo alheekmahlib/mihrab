@@ -153,4 +153,5 @@ const Map<String, String> ur = {
   'openDisplay': 'ڈسپلی کھولیں',
   'enterFullscreen': 'فل سکرین',
   'exitFullscreen': 'فل سکرین سے باہر',
+  'or': 'یا',
 };

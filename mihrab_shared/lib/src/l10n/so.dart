@@ -155,4 +155,5 @@ const Map<String, String> so = {
   'openDisplay': 'Fur Shaashada',
   'enterFullscreen': 'Shaashad buuxda',
   'exitFullscreen': 'Ka bax shaashada buuxda',
+  'or': 'Ama',
 };

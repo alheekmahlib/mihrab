@@ -31,6 +31,11 @@ jobs:
           channel: stable
           cache: true
 
+      - name: Create .env file
+        run: |
+          echo "url=${{ secrets.SUPABASE_URL }}" > mihrab_shared/.env
+          echo "anonKey=${{ secrets.SUPABASE_ANON_KEY }}" >> mihrab_shared/.env
+
       - name: Get dependencies (shared)
         run: flutter pub get
         working-directory: mihrab_shared

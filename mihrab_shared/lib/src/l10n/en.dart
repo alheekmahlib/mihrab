@@ -155,4 +155,5 @@ const Map<String, String> en = {
   'openDisplay': 'Open Display',
   'enterFullscreen': 'Fullscreen',
   'exitFullscreen': 'Exit Fullscreen',
+  'or': 'Or',
 };

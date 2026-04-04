@@ -153,4 +153,5 @@ const Map<String, String> bn = {
   'openDisplay': 'ডিসপ্লে খুলুন',
   'enterFullscreen': 'ফুলস্ক্রিন',
   'exitFullscreen': 'ফুলস্ক্রিন থেকে বের হন',
+  'or': 'অথবা',
 };

@@ -159,4 +159,5 @@ const Map<String, String> fil = {
   'openDisplay': 'Buksan ang Display',
   'enterFullscreen': 'Fullscreen',
   'exitFullscreen': 'Lumabas sa Fullscreen',
+  'or': 'O',
 };
