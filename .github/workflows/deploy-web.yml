@@ -31,11 +31,6 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Create .env file
-        run: |
-          echo "url=${{ secrets.SUPABASE_URL }}" > mihrab_shared/.env
-          echo "anonKey=${{ secrets.SUPABASE_ANON_KEY }}" >> mihrab_shared/.env
-
       - name: Get dependencies (shared)
         run: flutter pub get
         working-directory: mihrab_shared
@@ -49,7 +44,10 @@ jobs:
         working-directory: mihrab_web
 
       - name: Build mihrab_tv for web
-        run: flutter build web --release --base-href "/mihrab/tv/"
+        run: |
+          flutter build web --release --base-href "/mihrab/tv/" \
+            --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
+            --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
         working-directory: mihrab_tv
 
       - name: Copy TV build to mihrab_web
@@ -74,7 +72,10 @@ jobs:
           "
 
       - name: Build mihrab_web
-        run: flutter build web --release --base-href "/mihrab/"
+        run: |
+          flutter build web --release --base-href "/mihrab/" \
+            --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
+            --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
         working-directory: mihrab_web
 
       - name: Setup Pages
