@@ -43,6 +43,12 @@ jobs:
         run: flutter pub get
         working-directory: mihrab_web
 
+      - name: Create .env for mihrab_tv
+        run: |
+          echo "SUPABASE_URL=${{ secrets.SUPABASE_URL }}" > .env
+          echo "SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}" >> .env
+        working-directory: mihrab_tv
+
       - name: Build mihrab_tv for web
         run: |
           flutter build web --release --base-href "/mihrab/tv/" \
