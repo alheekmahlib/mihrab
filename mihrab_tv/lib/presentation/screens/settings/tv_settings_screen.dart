@@ -43,12 +43,27 @@ class TvSettingsScreen extends StatelessWidget {
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Left: Settings header
-                      Text(
-                        AppStrings.settings,
-                        style: AppTextStyles.tvHeading().copyWith(
-                          color: context.theme.colorScheme.inversePrimary,
-                        ),
+                      // Back button + Settings header
+                      Row(
+                        children: [
+                          TvFocusable(
+                            autofocus: true,
+                            borderRadius: BorderRadius.circular(24),
+                            padding: const EdgeInsets.all(8),
+                            onSelect: () => Get.back(),
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: context.theme.colorScheme.inversePrimary,
+                            ),
+                          ),
+                          const Gap(12),
+                          Text(
+                            AppStrings.settings,
+                            style: AppTextStyles.tvHeading().copyWith(
+                              color: context.theme.colorScheme.inversePrimary,
+                            ),
+                          ),
+                        ],
                       ),
                       const Gap(8),
                       Obx(
@@ -73,11 +88,32 @@ class TvSettingsScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              AppStrings.settings,
-                              style: AppTextStyles.tvHeading().copyWith(
-                                color: context.theme.colorScheme.inversePrimary,
-                              ),
+                            Row(
+                              children: [
+                                TvFocusable(
+                                  autofocus: true,
+                                  borderRadius: BorderRadius.circular(24),
+                                  padding: const EdgeInsets.all(8),
+                                  onSelect: () => Get.back(),
+                                  child: Icon(
+                                    Icons.arrow_back,
+                                    color: context
+                                        .theme
+                                        .colorScheme
+                                        .inversePrimary,
+                                  ),
+                                ),
+                                const Gap(12),
+                                Text(
+                                  AppStrings.settings,
+                                  style: AppTextStyles.tvHeading().copyWith(
+                                    color: context
+                                        .theme
+                                        .colorScheme
+                                        .inversePrimary,
+                                  ),
+                                ),
+                              ],
                             ),
                             const Gap(8),
                             Obx(

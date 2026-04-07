@@ -150,6 +150,20 @@ class _DisplayScreenState extends State<DisplayScreen> {
                     onDismiss: _hideControls,
                   );
                 }),
+                // هنا يكون زر التحكم في الإعدادات، دائماً ظاهر في في الوسط الأعلي
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: TvFocusable(
+                      autofocus: true,
+                      borderRadius: BorderRadius.circular(24),
+                      padding: const EdgeInsets.all(8),
+                      onSelect: () => Get.toNamed(AppRoutes.settings),
+                      child: const Icon(Icons.settings, size: 28),
+                    ),
+                  ),
+                ),
                 Align(
                   alignment: Alignment.bottomRight,
                   child: SvgPicture.asset(
