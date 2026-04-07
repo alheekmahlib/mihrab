@@ -21,7 +21,7 @@ class CombinedScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      padding: EdgeInsets.all(24 * scale),
+      padding: EdgeInsets.symmetric(horizontal: 56, vertical: 24 * scale),
       child: isPortrait
           ? Column(
               children: [
@@ -224,7 +224,19 @@ class _HadithPanel extends StatelessWidget {
 
       return AnimatedSwitcher(
         duration: const Duration(milliseconds: 800),
+        layoutBuilder: (currentChild, previousChildren) {
+          return SizedBox.expand(
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                ...previousChildren,
+                ?currentChild,
+              ],
+            ),
+          );
+        },
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           key: ValueKey(hadith.arabicURN),
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -254,44 +266,52 @@ class _HadithPanel extends StatelessWidget {
             Gap(12 * scale),
             Divider(color: AppColors.sand.withValues(alpha: .4)),
             Gap(12 * scale),
-            Center(
-              child: Text(
-                hadith.hadithText,
-                style:
-                    AppTextStyles.tvBody(
-                      fontSize: (22 * scale).clamp(16, 28),
-                    ).copyWith(
-                      color: context.theme.colorScheme.inversePrimary,
-                      height: 2.0,
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      hadith.hadithText,
+                      style:
+                          AppTextStyles.tvBody(
+                            fontSize: (22 * scale).clamp(16, 28),
+                          ).copyWith(
+                            color: context.theme.colorScheme.inversePrimary,
+                            height: 2.0,
+                          ),
+                      textAlign: TextAlign.justify,
+                      textDirection: TextDirection.rtl,
                     ),
-                maxLines: null,
-                // overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-                textDirection: TextDirection.rtl,
-              ),
-            ),
-            Spacer(),
-            if (hadith.grade != null && hadith.grade!.isNotEmpty)
-              Padding(
-                padding: EdgeInsets.only(top: 6 * scale),
-                child: Text(
-                  hadith.grade!,
-                  style: AppTextStyles.bodySmall(
-                    fontSize: (18 * scale).clamp(18, 24),
-                  ).copyWith(color: context.theme.colorScheme.secondary),
+                    if (hadith.grade != null && hadith.grade!.isNotEmpty)
+                      Padding(
+                        padding: EdgeInsets.only(top: 6 * scale),
+                        child: Text(
+                          hadith.grade!,
+                          style: AppTextStyles.bodySmall(
+                            fontSize: (18 * scale).clamp(18, 24),
+                          ).copyWith(
+                            color: context.theme.colorScheme.secondary,
+                          ),
+                        ),
+                      ),
+                    Gap(8 * scale),
+                    Text(
+                      '${AppStrings.hadithNumber} ${hadith.hadithNumber}',
+                      style:
+                          AppTextStyles.bodySmall(
+                            fontSize: (14 * scale).clamp(10, 18),
+                          ).copyWith(
+                            color: context
+                                .theme
+                                .colorScheme
+                                .inversePrimary
+                                .withValues(alpha: .5),
+                          ),
+                    ),
+                  ],
                 ),
               ),
-            Gap(8 * scale),
-            Text(
-              '${AppStrings.hadithNumber} ${hadith.hadithNumber}',
-              style:
-                  AppTextStyles.bodySmall(
-                    fontSize: (14 * scale).clamp(10, 18),
-                  ).copyWith(
-                    color: context.theme.colorScheme.inversePrimary.withValues(
-                      alpha: .5,
-                    ),
-                  ),
             ),
           ],
         ),

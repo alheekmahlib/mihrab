@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:mihrab_shared/mihrab_shared.dart';
 
 import '../../domain/repositories/hadith_repository.dart';
+import 'device_controller.dart';
 
 class HadithController extends GetxController {
   final HadithRepository _repository;
@@ -20,6 +21,12 @@ class HadithController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    // Read interval from device settings if available
+    if (Get.isRegistered<DeviceController>()) {
+      final deviceCtrl = Get.find<DeviceController>();
+      final interval = deviceCtrl.settings.value?.hadithInterval ?? 15;
+      rotationInterval.value = interval;
+    }
     loadNextHadith();
     _startRotation();
   }

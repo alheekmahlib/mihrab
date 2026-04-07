@@ -9,6 +9,7 @@ import 'package:mihrab_shared/mihrab_shared.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../../app/routes.dart';
+import '../../../data/services/geocoding_service.dart';
 import '../../../data/services/ip_location_service.dart';
 import '../../controllers/device_controller.dart';
 
@@ -27,28 +28,77 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: Obx(() {
-        switch (_pageIndex.value) {
-          case 1:
-            return _QrPairingView(
-              deviceCtrl: _deviceCtrl,
-              onBack: () => _pageIndex.value = 0,
-            );
-          case 2:
-            return _ManualSetupView(
-              deviceCtrl: _deviceCtrl,
-              onBack: () => _pageIndex.value = 0,
-            );
-          default:
-            return _MainChoiceView(
-              onPairPhone: () async {
-                await _deviceCtrl.generateAndRegisterDevice();
-                _pageIndex.value = 1;
-              },
-              onManualSetup: () => _pageIndex.value = 2,
-            );
-        }
-      }),
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          Align(
+            alignment: Alignment.bottomRight,
+            child: SvgPicture.asset(
+              'assets/images/decorations.svg',
+              width: 90,
+              height: 90,
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: RotatedBox(
+              quarterTurns: 1,
+              child: SvgPicture.asset(
+                'assets/images/decorations.svg',
+                width: 90,
+                height: 90,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: RotatedBox(
+              quarterTurns: 2,
+              child: SvgPicture.asset(
+                'assets/images/decorations.svg',
+                width: 90,
+                height: 90,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: RotatedBox(
+              quarterTurns: 3,
+              child: SvgPicture.asset(
+                'assets/images/decorations.svg',
+                width: 90,
+                height: 90,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Obx(() {
+              switch (_pageIndex.value) {
+                case 1:
+                  return _QrPairingView(
+                    deviceCtrl: _deviceCtrl,
+                    onBack: () => _pageIndex.value = 0,
+                  );
+                case 2:
+                  return _ManualSetupView(
+                    deviceCtrl: _deviceCtrl,
+                    onBack: () => _pageIndex.value = 0,
+                  );
+                default:
+                  return _MainChoiceView(
+                    onPairPhone: () async {
+                      await _deviceCtrl.generateAndRegisterDevice();
+                      _pageIndex.value = 1;
+                    },
+                    onManualSetup: () => _pageIndex.value = 2,
+                  );
+              }
+            }),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -78,10 +128,6 @@ class _MainChoiceView extends StatelessWidget {
               'assets/images/mihrab_logo.svg',
               width: logoSize,
               height: logoSize,
-              colorFilter: const ColorFilter.mode(
-                AppColors.tealGreen,
-                BlendMode.srcIn,
-              ),
             ),
             Gap(20 * scale),
             Text(
@@ -323,6 +369,16 @@ class _ManualSetupViewState extends State<_ManualSetupView> {
   final _selectedCountryIndex = (-1).obs;
   final _showCountryFallback = false.obs;
 
+  // City search
+  final _searchController = TextEditingController();
+  final _searchResults = <GeocodingResult>[].obs;
+  final _isSearching = false.obs;
+
+  // Manual coordinates
+  final _latController = TextEditingController();
+  final _lngController = TextEditingController();
+  final _showManualEntry = false.obs;
+
   // Settings
   final _selectedMethod = CalculationMethodType.ummAlQura.obs;
   final _selectedMadhab = 0.obs; // 0=Shafi, 1=Hanafi
@@ -410,6 +466,45 @@ class _ManualSetupViewState extends State<_ManualSetupView> {
     _locationDetected.value = true;
   }
 
+  Future<void> _searchCity() async {
+    final query = _searchController.text.trim();
+    if (query.isEmpty) return;
+    _isSearching.value = true;
+    _searchResults.clear();
+    try {
+      final results = await GeocodingService.search(query);
+      _searchResults.value = results;
+    } catch (_) {
+      _searchResults.clear();
+    }
+    _isSearching.value = false;
+  }
+
+  void _selectSearchResult(GeocodingResult result) {
+    _latitude.value = result.latitude;
+    _longitude.value = result.longitude;
+    // Extract city/country from display_name (last part is usually country)
+    final parts = result.displayName.split(', ');
+    _city.value = parts.isNotEmpty ? parts.first : '';
+    _country.value = parts.length > 1 ? parts.last : '';
+    _locationDetected.value = true;
+    _searchResults.clear();
+    _searchController.clear();
+  }
+
+  void _applyManualCoords() {
+    final lat = double.tryParse(_latController.text.trim());
+    final lng = double.tryParse(_lngController.text.trim());
+    if (lat == null || lng == null) return;
+    if (lat < -90 || lat > 90 || lng < -180 || lng > 180) return;
+    _latitude.value = lat;
+    _longitude.value = lng;
+    _city.value = '';
+    _country.value = '';
+    _locationDetected.value = true;
+    _showManualEntry.value = false;
+  }
+
   Future<void> _saveAndContinue() async {
     if (!_locationDetected.value) return;
 
@@ -430,6 +525,8 @@ class _ManualSetupViewState extends State<_ManualSetupView> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+    final isPortrait = size.height > size.width;
     return Focus(
       onKeyEvent: (node, event) {
         if (event is KeyDownEvent &&
@@ -475,7 +572,7 @@ class _ManualSetupViewState extends State<_ManualSetupView> {
                           // ── Location ──
                           _sectionTitle(AppStrings.location, scale),
                           Gap(8 * scale),
-                          _buildLocationSection(scale),
+                          _buildLocationSection(scale, isPortrait),
                           Gap(24 * scale),
 
                           // ── Calculation Method ──
@@ -552,11 +649,12 @@ class _ManualSetupViewState extends State<_ManualSetupView> {
     );
   }
 
-  Widget _buildLocationSection(double scale) {
+  Widget _buildLocationSection(double scale, bool isPortrait) {
     return Obx(() {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // IP detect button + detected location
           Row(
             children: [
               SizedBox(
@@ -580,11 +678,15 @@ class _ManualSetupViewState extends State<_ManualSetupView> {
               ),
               Gap(16 * scale),
               if (_locationDetected.value)
-                Text(
-                  '${_city.value}, ${_country.value}',
-                  style: AppTextStyles.tvBody(
-                    fontSize: (18 * scale).clamp(14, 24),
-                  ).copyWith(color: AppColors.tealGreen),
+                Flexible(
+                  child: Text(
+                    _city.value.isNotEmpty || _country.value.isNotEmpty
+                        ? '${_city.value}, ${_country.value}'
+                        : '${_latitude.value.toStringAsFixed(4)}, ${_longitude.value.toStringAsFixed(4)}',
+                    style: AppTextStyles.tvBody(
+                      fontSize: (18 * scale).clamp(14, 24),
+                    ).copyWith(color: AppColors.tealGreen),
+                  ),
                 ),
             ],
           ),
@@ -624,6 +726,256 @@ class _ManualSetupViewState extends State<_ManualSetupView> {
                   );
                 },
               ),
+            ),
+          ],
+
+          Gap(20 * scale),
+
+          // ── City search ──
+          Text(
+            AppStrings.searchByCity,
+            style: AppTextStyles.tvBody(fontSize: (18 * scale).clamp(14, 24))
+                .copyWith(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                  fontWeight: FontWeight.w600,
+                ),
+          ),
+          Gap(8 * scale),
+          isPortrait
+              ? Column(
+                  children: [
+                    SizedBox(
+                      height: 48 * scale,
+                      width: double.infinity,
+                      child: TextField(
+                        controller: _searchController,
+                        style: TextStyle(fontSize: (16 * scale).clamp(12, 20)),
+                        decoration: InputDecoration(
+                          hintText: AppStrings.searchByCity,
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 12 * scale,
+                            vertical: 8 * scale,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: const BorderSide(
+                              color: AppColors.tealGreen,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        onSubmitted: (_) => _searchCity(),
+                      ),
+                    ),
+                    Gap(8 * scale),
+                    SizedBox(
+                      width: 220 * scale,
+                      child: ContainerButton(
+                        title: _isSearching.value ? '...' : AppStrings.search,
+                        icon: _isSearching.value
+                            ? SizedBox(
+                                width: 18 * scale,
+                                height: 18 * scale,
+                                child: const CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
+                              )
+                            : Icon(Icons.search_rounded, size: 20 * scale),
+                        onPressed: _isSearching.value ? null : _searchCity,
+                      ),
+                    ),
+                  ],
+                )
+              : Row(
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        height: 48 * scale,
+                        child: TextField(
+                          controller: _searchController,
+                          style: TextStyle(
+                            fontSize: (16 * scale).clamp(12, 20),
+                          ),
+                          decoration: InputDecoration(
+                            hintText: AppStrings.searchByCity,
+                            contentPadding: EdgeInsets.symmetric(
+                              horizontal: 12 * scale,
+                              vertical: 8 * scale,
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: const BorderSide(
+                                color: AppColors.tealGreen,
+                                width: 2,
+                              ),
+                            ),
+                          ),
+                          onSubmitted: (_) => _searchCity(),
+                        ),
+                      ),
+                    ),
+                    Gap(8 * scale),
+                    SizedBox(
+                      width: 120 * scale,
+                      child: ContainerButton(
+                        title: _isSearching.value ? '...' : AppStrings.search,
+                        icon: _isSearching.value
+                            ? SizedBox(
+                                width: 18 * scale,
+                                height: 18 * scale,
+                                child: const CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                ),
+                              )
+                            : Icon(Icons.search_rounded, size: 20 * scale),
+                        onPressed: _isSearching.value ? null : _searchCity,
+                      ),
+                    ),
+                  ],
+                ),
+          // Search results
+          if (_searchResults.isNotEmpty) ...[
+            Gap(8 * scale),
+            Container(
+              constraints: BoxConstraints(maxHeight: 200 * scale),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: AppColors.tealGreen.withValues(alpha: .3),
+                ),
+              ),
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: _searchResults.length,
+                separatorBuilder: (_, _) => const Divider(height: 1),
+                itemBuilder: (context, index) {
+                  final result = _searchResults[index];
+                  return TvFocusable(
+                    onSelect: () => _selectSearchResult(result),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12 * scale,
+                        vertical: 10 * scale,
+                      ),
+                      child: Text(
+                        result.displayName,
+                        style: TextStyle(fontSize: (14 * scale).clamp(11, 18)),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+
+          Gap(16 * scale),
+
+          // ── Manual coordinates toggle ──
+          TvFocusable(
+            onSelect: () => _showManualEntry.value = !_showManualEntry.value,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  _showManualEntry.value
+                      ? Icons.keyboard_arrow_up
+                      : Icons.keyboard_arrow_down,
+                  color: AppColors.tealGreen,
+                  size: 22 * scale,
+                ),
+                Gap(4 * scale),
+                Text(
+                  AppStrings.enterCoordinates,
+                  style: AppTextStyles.tvBody(
+                    fontSize: (16 * scale).clamp(12, 20),
+                  ).copyWith(color: AppColors.tealGreen),
+                ),
+              ],
+            ),
+          ),
+          if (_showManualEntry.value) ...[
+            Gap(8 * scale),
+            Row(
+              children: [
+                Expanded(
+                  child: SizedBox(
+                    height: 48 * scale,
+                    child: TextField(
+                      controller: _latController,
+                      keyboardType: const TextInputType.numberWithOptions(
+                        decimal: true,
+                        signed: true,
+                      ),
+                      style: TextStyle(fontSize: (16 * scale).clamp(12, 20)),
+                      decoration: InputDecoration(
+                        labelText: AppStrings.latitude,
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 12 * scale,
+                          vertical: 8 * scale,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: const BorderSide(
+                            color: AppColors.tealGreen,
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Gap(12 * scale),
+                Expanded(
+                  child: SizedBox(
+                    height: 48 * scale,
+                    child: TextField(
+                      controller: _lngController,
+                      keyboardType: const TextInputType.numberWithOptions(
+                        decimal: true,
+                        signed: true,
+                      ),
+                      style: TextStyle(fontSize: (16 * scale).clamp(12, 20)),
+                      decoration: InputDecoration(
+                        labelText: AppStrings.longitude,
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 12 * scale,
+                          vertical: 8 * scale,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: const BorderSide(
+                            color: AppColors.tealGreen,
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Gap(12 * scale),
+                SizedBox(
+                  width: 100 * scale,
+                  child: ContainerButton(
+                    title: AppStrings.save,
+                    onPressed: _applyManualCoords,
+                  ),
+                ),
+              ],
             ),
           ],
         ],

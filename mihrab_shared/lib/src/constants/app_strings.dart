@@ -67,6 +67,12 @@ class AppStrings {
   static String get cancel => 'cancel'.tr;
   static String get resetPairingConfirm => 'resetPairingConfirm'.tr;
   static String get autoRotateInterval => 'autoRotateInterval'.tr;
+  static String get hadithDisplayDuration => 'hadithDisplayDuration'.tr;
+  static String get searchByCity => 'searchByCity'.tr;
+  static String get enterCoordinates => 'enterCoordinates'.tr;
+  static String get latitude => 'latitude'.tr;
+  static String get longitude => 'longitude'.tr;
+  static String get search => 'search'.tr;
   static String get selectMadhab => 'selectMadhab'.tr;
   static String get showQrCode => 'showQrCode'.tr;
   static String get minutes => 'minutes'.tr;

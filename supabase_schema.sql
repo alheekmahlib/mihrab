@@ -98,6 +98,13 @@ CREATE POLICY "Anyone can update device settings"
 -- ============================================
 -- Enable realtime on device_settings so TV receives live updates
 ALTER PUBLICATION supabase_realtime ADD TABLE device_settings;
+
+-- ============================================
+-- 5. Migrations
+-- ============================================
+
+-- Add hadith rotation interval (minutes) to device_settings
+ALTER TABLE device_settings ADD COLUMN IF NOT EXISTS hadith_interval INTEGER NOT NULL DEFAULT 15;
 ALTER PUBLICATION supabase_realtime ADD TABLE devices;
 
 -- ============================================

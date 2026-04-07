@@ -8,6 +8,7 @@ import 'package:uuid/uuid.dart';
 
 import '../../domain/repositories/device_repository.dart';
 import '../../domain/repositories/prayer_repository.dart';
+import 'hadith_controller.dart';
 import 'prayer_controller.dart';
 
 class DeviceController extends GetxController {
@@ -175,6 +176,15 @@ class DeviceController extends GetxController {
       GetStorage().write('IS_DARK_MODE', isDark);
     }
 
+    // Apply hadith interval change
+    if (Get.isRegistered<HadithController>()) {
+      final hadithCtrl = Get.find<HadithController>();
+      final newInterval = newSettings.hadithInterval ?? 15;
+      if (hadithCtrl.rotationInterval.value != newInterval) {
+        hadithCtrl.updateRotationInterval(newInterval);
+      }
+    }
+
     if (newSettings.latitude != null &&
         newSettings.longitude != null &&
         (newSettings.latitude != 0 || newSettings.longitude != 0)) {
@@ -311,6 +321,21 @@ class DeviceController extends GetxController {
     // Recalculate prayers
     if (Get.isRegistered<PrayerController>()) {
       Get.find<PrayerController>().onSettingsChanged(updated);
+    }
+  }
+
+  Future<void> updateHadithInterval(int minutes) async {
+    final current = settings.value;
+    if (current == null) return;
+    final updated = current.copyWith(hadithInterval: minutes);
+    settings.value = updated;
+    await _deviceRepo.saveLocalSettings(updated);
+
+    // Push to Supabase if online
+    if (device.value != null) {
+      try {
+        await _deviceRepo.updateSettings(device.value!.id, updated);
+      } catch (_) {}
     }
   }
 

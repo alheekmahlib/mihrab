@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mihrab_shared/mihrab_shared.dart';
 
@@ -114,30 +115,33 @@ class _DisplayScreenState extends State<DisplayScreen> {
             child: Stack(
               children: [
                 // Main content
-                Obx(() {
-                  // Check for prayer alert
-                  if (_prayerCtrl.showPrayerAlert.value) {
-                    return _PrayerAlertOverlay(
-                      prayerName: _prayerCtrl.alertPrayerName.value,
-                      onDismiss: _prayerCtrl.dismissAlert,
-                    );
-                  }
-
-                  final mode = _deviceCtrl.displayMode.value;
-
-                  // Handle auto-rotate mode
-                  if (mode == DisplayMode.autoRotate) {
-                    if (!Get.isRegistered<AutoRotateController>()) {
-                      Get.put(AutoRotateController());
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 24.0),
+                  child: Obx(() {
+                    // Check for prayer alert
+                    if (_prayerCtrl.showPrayerAlert.value) {
+                      return _PrayerAlertOverlay(
+                        prayerName: _prayerCtrl.alertPrayerName.value,
+                        onDismiss: _prayerCtrl.dismissAlert,
+                      );
                     }
-                    final autoCtrl = Get.find<AutoRotateController>();
-                    return Obx(
-                      () => _buildScreenForMode(autoCtrl.currentMode.value),
-                    );
-                  }
 
-                  return _buildScreenForMode(mode);
-                }),
+                    final mode = _deviceCtrl.displayMode.value;
+
+                    // Handle auto-rotate mode
+                    if (mode == DisplayMode.autoRotate) {
+                      if (!Get.isRegistered<AutoRotateController>()) {
+                        Get.put(AutoRotateController());
+                      }
+                      final autoCtrl = Get.find<AutoRotateController>();
+                      return Obx(
+                        () => _buildScreenForMode(autoCtrl.currentMode.value),
+                      );
+                    }
+
+                    return _buildScreenForMode(mode);
+                  }),
+                ),
                 // Settings overlay
                 Obx(() {
                   if (!_showOverlay.value) return const SizedBox.shrink();
@@ -146,6 +150,47 @@ class _DisplayScreenState extends State<DisplayScreen> {
                     onDismiss: _hideControls,
                   );
                 }),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: SvgPicture.asset(
+                    'assets/images/decorations.svg',
+                    width: 90,
+                    height: 90,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: RotatedBox(
+                    quarterTurns: 1,
+                    child: SvgPicture.asset(
+                      'assets/images/decorations.svg',
+                      width: 90,
+                      height: 90,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: RotatedBox(
+                    quarterTurns: 2,
+                    child: SvgPicture.asset(
+                      'assets/images/decorations.svg',
+                      width: 90,
+                      height: 90,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: RotatedBox(
+                    quarterTurns: 3,
+                    child: SvgPicture.asset(
+                      'assets/images/decorations.svg',
+                      width: 90,
+                      height: 90,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

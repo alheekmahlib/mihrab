@@ -68,11 +68,15 @@ class _ContainerButtonState extends State<ContainerButton> {
       onFocusChange: (focused) {
         setState(() => _isFocused = focused);
         if (focused) {
-          Scrollable.ensureVisible(
-            context,
-            alignment: 0.5,
-            duration: const Duration(milliseconds: 200),
-          );
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) {
+              Scrollable.ensureVisible(
+                context,
+                alignment: 0.5,
+                duration: const Duration(milliseconds: 200),
+              );
+            }
+          });
         }
       },
       onKeyEvent: (node, event) {

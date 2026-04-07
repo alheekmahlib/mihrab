@@ -156,4 +156,10 @@ const Map<String, String> en = {
   'enterFullscreen': 'Fullscreen',
   'exitFullscreen': 'Exit Fullscreen',
   'or': 'Or',
+  'hadithDisplayDuration': 'Hadith Display Duration',
+  'searchByCity': 'Search by city name',
+  'enterCoordinates': 'Enter coordinates manually',
+  'latitude': 'Latitude',
+  'longitude': 'Longitude',
+  'search': 'Search',
 };

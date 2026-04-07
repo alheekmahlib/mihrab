@@ -154,4 +154,10 @@ const Map<String, String> bn = {
   'enterFullscreen': 'ফুলস্ক্রিন',
   'exitFullscreen': 'ফুলস্ক্রিন থেকে বের হন',
   'or': 'অথবা',
+  'hadithDisplayDuration': 'হাদিস প্রদর্শনের সময়কাল',
+  'searchByCity': 'শহরের নামে অনুসন্ধান',
+  'enterCoordinates': 'স্থানাঙ্ক ম্যানুয়ালি লিখুন',
+  'latitude': 'অক্ষাংশ',
+  'longitude': 'দ্রাঘিমাংশ',
+  'search': 'অনুসন্ধান',
 };

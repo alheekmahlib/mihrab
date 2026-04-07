@@ -154,4 +154,10 @@ const Map<String, String> ur = {
   'enterFullscreen': 'فل سکرین',
   'exitFullscreen': 'فل سکرین سے باہر',
   'or': 'یا',
+  'hadithDisplayDuration': 'حدیث دکھانے کی مدت',
+  'searchByCity': 'شہر کے نام سے تلاش کریں',
+  'enterCoordinates': 'مانعتات دستی طور پر درج کریں',
+  'latitude': 'عرض البلد',
+  'longitude': 'طول البلد',
+  'search': 'تلاش',
 };

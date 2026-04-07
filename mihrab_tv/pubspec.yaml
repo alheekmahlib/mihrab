@@ -38,6 +38,7 @@ dependencies:
   get: ^4.7.3
   get_storage: ^2.1.1
   gap: ^3.0.1
+  flutter_dotenv: ^5.2.1
   adhan: ^2.0.0+1
   intl: any
   flutter_svg: ^2.0.17
@@ -70,6 +71,7 @@ flutter_launcher_icons:
 flutter:
   uses-material-design: true
   assets:
+    - .env
     - assets/json/
     - assets/json/books_data/bukhari_books/
     - assets/json/books_data/muslim_books/

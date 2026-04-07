@@ -158,4 +158,10 @@ const Map<String, String> tr = {
   'enterFullscreen': 'Tam Ekran',
   'exitFullscreen': 'Tam Ekrandan Çık',
   'or': 'Veya',
+  'hadithDisplayDuration': 'Hadis Gösterim Süresi',
+  'searchByCity': 'Şehir adına göre ara',
+  'enterCoordinates': 'Koordinatları manuel girin',
+  'latitude': 'Enlem',
+  'longitude': 'Boylam',
+  'search': 'Ara',
 };

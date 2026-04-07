@@ -156,4 +156,10 @@ const Map<String, String> so = {
   'enterFullscreen': 'Shaashad buuxda',
   'exitFullscreen': 'Ka bax shaashada buuxda',
   'or': 'Ama',
+  'hadithDisplayDuration': 'Muddada Muujinta Xadiiska',
+  'searchByCity': 'Ku raadi magaca magaalada',
+  'enterCoordinates': 'Geli isku-dubaridyada gacanta',
+  'latitude': 'Latitude',
+  'longitude': 'Longitude',
+  'search': 'Raadi',
 };

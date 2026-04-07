@@ -30,6 +30,7 @@ class _DeviceSettingsScreenState extends State<DeviceSettingsScreen> {
   late Map<String, int> _adjustments;
   late String _selectedLanguage;
   bool _isDarkMode = false;
+  int _hadithInterval = 15;
 
   static const _supportedLanguages = {
     'ar': 'العربية',
@@ -81,6 +82,7 @@ class _DeviceSettingsScreenState extends State<DeviceSettingsScreen> {
     _adjustments = Map<String, int>.from(device?.settings?.adjustments ?? {});
     _selectedLanguage = device?.settings?.language ?? 'ar';
     _isDarkMode = device?.settings?.isDarkMode ?? false;
+    _hadithInterval = device?.settings?.hadithInterval ?? 15;
   }
 
   void _markChanged() {
@@ -206,6 +208,7 @@ class _DeviceSettingsScreenState extends State<DeviceSettingsScreen> {
       adjustments: _adjustments,
       language: _selectedLanguage,
       isDarkMode: _isDarkMode,
+      hadithInterval: _hadithInterval,
     );
     await ctrl.updateDeviceSettings(updated);
 
@@ -377,6 +380,63 @@ class _DeviceSettingsScreenState extends State<DeviceSettingsScreen> {
               ],
             ),
             const Gap(16),
+
+            // Hadith interval (shown for hadith or combined mode)
+            if (_selectedDisplayMode == DisplayMode.hadith ||
+                _selectedDisplayMode == DisplayMode.combined)
+              _SectionCard(
+                title: AppStrings.hadithDisplayDuration,
+                children: [
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.remove_circle_outline),
+                        color: AppColors.tealGreen,
+                        iconSize: 28,
+                        onPressed: _hadithInterval > 1
+                            ? () {
+                                setState(() => _hadithInterval--);
+                                _markChanged();
+                              }
+                            : null,
+                      ),
+                      SizedBox(
+                        width: 60,
+                        child: Text(
+                          '$_hadithInterval',
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.bodyMedium().copyWith(
+                            color: AppColors.tealGreen,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.add_circle_outline),
+                        color: AppColors.tealGreen,
+                        iconSize: 28,
+                        onPressed: _hadithInterval < 60
+                            ? () {
+                                setState(() => _hadithInterval++);
+                                _markChanged();
+                              }
+                            : null,
+                      ),
+                      const Gap(8),
+                      Text(
+                        AppStrings.minutes,
+                        style: AppTextStyles.bodyMedium().copyWith(
+                          color: AppColors.darkText,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            if (_selectedDisplayMode == DisplayMode.hadith ||
+                _selectedDisplayMode == DisplayMode.combined)
+              const Gap(16),
 
             // Madhab
             _SectionCard(

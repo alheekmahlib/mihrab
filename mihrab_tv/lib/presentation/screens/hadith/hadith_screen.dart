@@ -17,10 +17,7 @@ class HadithScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      padding: EdgeInsets.symmetric(
-        horizontal: 60 * scale,
-        vertical: 36 * scale,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 56, vertical: 36 * scale),
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
       ),

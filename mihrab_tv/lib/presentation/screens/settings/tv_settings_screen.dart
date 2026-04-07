@@ -5,9 +5,11 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:mihrab_shared/mihrab_shared.dart';
 
+import '../../../data/services/geocoding_service.dart';
 import '../../../data/services/ip_location_service.dart';
 import '../../controllers/auto_rotate_controller.dart';
 import '../../controllers/device_controller.dart';
+import '../../controllers/hadith_controller.dart';
 
 class TvSettingsScreen extends StatelessWidget {
   const TvSettingsScreen({super.key});
@@ -160,6 +162,15 @@ class _SettingsContent extends StatelessWidget {
             return _AutoRotateSettings();
           }),
 
+          // Hadith interval (when hadith or combined mode)
+          Obx(() {
+            final mode = deviceCtrl.displayMode.value;
+            if (mode != DisplayMode.hadith && mode != DisplayMode.combined) {
+              return const SizedBox.shrink();
+            }
+            return _HadithIntervalSettings(deviceCtrl: deviceCtrl);
+          }),
+
           // Madhab
           Text(
             AppStrings.selectMadhab,
@@ -259,6 +270,16 @@ class _LocationSection extends StatefulWidget {
 class _LocationSectionState extends State<_LocationSection> {
   final _detecting = false.obs;
 
+  // City search
+  final _searchController = TextEditingController();
+  final _searchResults = <GeocodingResult>[].obs;
+  final _isSearching = false.obs;
+
+  // Manual coordinates
+  final _latController = TextEditingController();
+  final _lngController = TextEditingController();
+  final _showManualEntry = false.obs;
+
   Future<void> _redetect() async {
     _detecting.value = true;
     try {
@@ -288,6 +309,60 @@ class _LocationSectionState extends State<_LocationSection> {
     _detecting.value = false;
   }
 
+  Future<void> _searchCity() async {
+    final query = _searchController.text.trim();
+    if (query.isEmpty) return;
+    _isSearching.value = true;
+    _searchResults.clear();
+    try {
+      final results = await GeocodingService.search(query);
+      _searchResults.value = results;
+    } catch (_) {
+      _searchResults.clear();
+    }
+    _isSearching.value = false;
+  }
+
+  void _selectSearchResult(GeocodingResult result) {
+    final parts = result.displayName.split(', ');
+    final city = parts.isNotEmpty ? parts.first : '';
+    final country = parts.length > 1 ? parts.last : '';
+    final current = widget.deviceCtrl.settings.value;
+    if (current != null) {
+      widget.deviceCtrl.saveManualSettings(
+        latitude: result.latitude,
+        longitude: result.longitude,
+        city: city,
+        country: country,
+        calculationMethod:
+            current.calculationMethod ?? CalculationMethodType.ummAlQura.value,
+        madhab: current.madhab ?? 0,
+      );
+    }
+    _searchResults.clear();
+    _searchController.clear();
+  }
+
+  void _applyManualCoords() {
+    final lat = double.tryParse(_latController.text.trim());
+    final lng = double.tryParse(_lngController.text.trim());
+    if (lat == null || lng == null) return;
+    if (lat < -90 || lat > 90 || lng < -180 || lng > 180) return;
+    final current = widget.deviceCtrl.settings.value;
+    if (current != null) {
+      widget.deviceCtrl.saveManualSettings(
+        latitude: lat,
+        longitude: lng,
+        city: '',
+        country: '',
+        calculationMethod:
+            current.calculationMethod ?? CalculationMethodType.ummAlQura.value,
+        madhab: current.madhab ?? 0,
+      );
+    }
+    _showManualEntry.value = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -306,6 +381,12 @@ class _LocationSectionState extends State<_LocationSection> {
             if (s?.city != null && s!.city!.isNotEmpty) s.city!,
             if (s?.country != null && s!.country!.isNotEmpty) s.country!,
           ].join(', ');
+          final coordsText =
+              (s?.latitude != null &&
+                  s?.longitude != null &&
+                  (s!.latitude != 0 || s.longitude != 0))
+              ? '(${s.latitude!.toStringAsFixed(4)}, ${s.longitude!.toStringAsFixed(4)})'
+              : '';
 
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -323,7 +404,9 @@ class _LocationSectionState extends State<_LocationSection> {
                       fit: BoxFit.scaleDown,
                       child: Text(
                         cityCountry.isNotEmpty
-                            ? cityCountry
+                            ? '$cityCountry $coordsText'
+                            : coordsText.isNotEmpty
+                            ? coordsText
                             : AppStrings.locationNotSet,
                         style: AppTextStyles.tvBody().copyWith(
                           color: context.theme.colorScheme.inversePrimary,
@@ -334,6 +417,8 @@ class _LocationSectionState extends State<_LocationSection> {
                 ],
               ),
               const Gap(16),
+
+              // IP detect button
               SizedBox(
                 width: 200,
                 child: ContainerButton(
@@ -351,6 +436,198 @@ class _LocationSectionState extends State<_LocationSection> {
                   onPressed: _detecting.value ? null : _redetect,
                 ),
               ),
+              const Gap(20),
+
+              // ── City search ──
+              Text(
+                AppStrings.searchByCity,
+                style: AppTextStyles.tvBody().copyWith(
+                  color: context.theme.colorScheme.inversePrimary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const Gap(8),
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 48,
+                      child: TextField(
+                        controller: _searchController,
+                        decoration: InputDecoration(
+                          hintText: AppStrings.searchByCity,
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 8,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: const BorderSide(
+                              color: AppColors.tealGreen,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        onSubmitted: (_) => _searchCity(),
+                      ),
+                    ),
+                  ),
+                  const Gap(8),
+                  SizedBox(
+                    width: 120,
+                    child: ContainerButton(
+                      title: _isSearching.value ? '...' : AppStrings.search,
+                      icon: _isSearching.value
+                          ? const SizedBox(
+                              width: 18,
+                              height: 18,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
+                          : const Icon(Icons.search_rounded, size: 20),
+                      onPressed: _isSearching.value ? null : _searchCity,
+                    ),
+                  ),
+                ],
+              ),
+              // Search results
+              if (_searchResults.isNotEmpty) ...[
+                const Gap(8),
+                Container(
+                  constraints: const BoxConstraints(maxHeight: 200),
+                  decoration: BoxDecoration(
+                    color: context.theme.colorScheme.surface,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: AppColors.tealGreen.withValues(alpha: .3),
+                    ),
+                  ),
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    itemCount: _searchResults.length,
+                    separatorBuilder: (_, _) => const Divider(height: 1),
+                    itemBuilder: (context, index) {
+                      final result = _searchResults[index];
+                      return TvFocusable(
+                        onSelect: () => _selectSearchResult(result),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 10,
+                          ),
+                          child: Text(
+                            result.displayName,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+              const Gap(16),
+
+              // ── Manual coordinates toggle ──
+              TvFocusable(
+                onSelect: () =>
+                    _showManualEntry.value = !_showManualEntry.value,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      _showManualEntry.value
+                          ? Icons.keyboard_arrow_up
+                          : Icons.keyboard_arrow_down,
+                      color: AppColors.tealGreen,
+                      size: 22,
+                    ),
+                    const Gap(4),
+                    Text(
+                      AppStrings.enterCoordinates,
+                      style: AppTextStyles.tvBody().copyWith(
+                        color: AppColors.tealGreen,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              if (_showManualEntry.value) ...[
+                const Gap(8),
+                Row(
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        height: 48,
+                        child: TextField(
+                          controller: _latController,
+                          keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true,
+                            signed: true,
+                          ),
+                          decoration: InputDecoration(
+                            labelText: AppStrings.latitude,
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 8,
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: const BorderSide(
+                                color: AppColors.tealGreen,
+                                width: 2,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const Gap(12),
+                    Expanded(
+                      child: SizedBox(
+                        height: 48,
+                        child: TextField(
+                          controller: _lngController,
+                          keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true,
+                            signed: true,
+                          ),
+                          decoration: InputDecoration(
+                            labelText: AppStrings.longitude,
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 8,
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: const BorderSide(
+                                color: AppColors.tealGreen,
+                                width: 2,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const Gap(12),
+                    SizedBox(
+                      width: 100,
+                      child: ContainerButton(
+                        title: AppStrings.save,
+                        onPressed: _applyManualCoords,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ],
           );
         }),
@@ -565,6 +842,103 @@ class _AutoRotateSettings extends StatelessWidget {
         const Gap(32),
       ],
     );
+  }
+}
+
+class _HadithIntervalSettings extends StatelessWidget {
+  final DeviceController deviceCtrl;
+  const _HadithIntervalSettings({required this.deviceCtrl});
+
+  @override
+  Widget build(BuildContext context) {
+    if (!Get.isRegistered<HadithController>()) return const SizedBox.shrink();
+    final hadithCtrl = Get.find<HadithController>();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          AppStrings.hadithDisplayDuration,
+          style: AppTextStyles.tvTitle().copyWith(
+            color: context.theme.colorScheme.inversePrimary,
+          ),
+        ),
+        const Gap(12),
+        Obx(() {
+          final value = hadithCtrl.rotationInterval.value;
+          return Row(
+            children: [
+              TvFocusable(
+                onSelect: value > 1
+                    ? () {
+                        final newVal = value - 1;
+                        hadithCtrl.updateRotationInterval(newVal);
+                        _saveInterval(newVal);
+                      }
+                    : null,
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: context.theme.colorScheme.primaryContainer,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    Icons.remove,
+                    color: value > 1
+                        ? AppColors.tealGreen
+                        : AppColors.darkText.withValues(alpha: .3),
+                  ),
+                ),
+              ),
+              const Gap(8),
+              SizedBox(
+                width: 80,
+                child: Text(
+                  '$value ${AppStrings.minutes}',
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.tvBody().copyWith(
+                    color: AppColors.tealGreen,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const Gap(8),
+              TvFocusable(
+                onSelect: value < 60
+                    ? () {
+                        final newVal = value + 1;
+                        hadithCtrl.updateRotationInterval(newVal);
+                        _saveInterval(newVal);
+                      }
+                    : null,
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: context.theme.colorScheme.primaryContainer,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    Icons.add,
+                    color: value < 60
+                        ? AppColors.tealGreen
+                        : AppColors.darkText.withValues(alpha: .3),
+                  ),
+                ),
+              ),
+            ],
+          );
+        }),
+        const Gap(32),
+      ],
+    );
+  }
+
+  void _saveInterval(int minutes) {
+    deviceCtrl.updateHadithInterval(minutes);
   }
 }
 

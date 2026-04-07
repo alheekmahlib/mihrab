@@ -76,6 +76,7 @@ class DeviceRepositoryImpl implements DeviceRepository {
       'adjustments': settings.adjustments,
       'language': settings.language,
       'is_dark_mode': settings.isDarkMode,
+      'hadith_interval': settings.hadithInterval,
       'updated_at': DateTime.now().toIso8601String(),
     };
 
@@ -109,6 +110,7 @@ class DeviceRepositoryImpl implements DeviceRepository {
           : null,
       language: response['language'] as String? ?? 'ar',
       isDarkMode: response['is_dark_mode'] as bool? ?? false,
+      hadithInterval: response['hadith_interval'] as int? ?? 15,
     );
   }
 
@@ -147,6 +149,7 @@ class DeviceRepositoryImpl implements DeviceRepository {
                 : null,
             language: row['language'] as String? ?? 'ar',
             isDarkMode: row['is_dark_mode'] as bool? ?? false,
+            hadithInterval: row['hadith_interval'] as int? ?? 15,
           );
           // Save locally for offline use
           saveLocalSettings(settings);

@@ -157,4 +157,10 @@ const Map<String, String> id = {
   'enterFullscreen': 'Layar Penuh',
   'exitFullscreen': 'Keluar Layar Penuh',
   'or': 'Atau',
+  'hadithDisplayDuration': 'Durasi Tampilan Hadis',
+  'searchByCity': 'Cari berdasarkan nama kota',
+  'enterCoordinates': 'Masukkan koordinat secara manual',
+  'latitude': 'Lintang',
+  'longitude': 'Bujur',
+  'search': 'Cari',
 };

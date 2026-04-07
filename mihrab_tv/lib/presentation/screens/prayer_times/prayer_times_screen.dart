@@ -20,10 +20,7 @@ class PrayerTimesScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      padding: EdgeInsets.symmetric(
-        horizontal: (isPortrait ? 32 : 60) * scale,
-        vertical: (isPortrait ? 20 : 32) * scale,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 56, vertical: 36 * scale),
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
       ),
@@ -282,7 +279,7 @@ class _PrayerTimesGrid extends StatelessWidget {
                       ).copyWith(
                         color: isNext
                             ? Theme.of(context).colorScheme.surface
-                            : AppColors.primaryDarkGreen,
+                            : Theme.of(context).colorScheme.inversePrimary,
                         fontWeight: isNext ? FontWeight.bold : FontWeight.w500,
                       ),
                 ),
@@ -294,7 +291,7 @@ class _PrayerTimesGrid extends StatelessWidget {
                       ).copyWith(
                         color: isNext
                             ? Theme.of(context).colorScheme.surface
-                            : AppColors.darkText,
+                            : Theme.of(context).colorScheme.inversePrimary,
                         fontWeight: isNext ? FontWeight.bold : FontWeight.w400,
                         fontFeatures: [const FontFeature.tabularFigures()],
                       ),

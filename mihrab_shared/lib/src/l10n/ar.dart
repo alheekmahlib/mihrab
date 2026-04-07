@@ -155,4 +155,10 @@ const Map<String, String> ar = {
   'enterFullscreen': 'ملء الشاشة',
   'exitFullscreen': 'الخروج من ملء الشاشة',
   'or': 'أو',
+  'hadithDisplayDuration': 'مدة عرض الحديث',
+  'searchByCity': 'بحث باسم المدينة',
+  'enterCoordinates': 'إدخال الإحداثيات يدوياً',
+  'latitude': 'خط العرض',
+  'longitude': 'خط الطول',
+  'search': 'بحث',
 };

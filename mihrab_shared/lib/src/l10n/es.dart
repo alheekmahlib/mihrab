@@ -160,4 +160,10 @@ const Map<String, String> es = {
   'enterFullscreen': 'Pantalla completa',
   'exitFullscreen': 'Salir de pantalla completa',
   'or': 'O',
+  'hadithDisplayDuration': 'Duración de visualización del hadiz',
+  'searchByCity': 'Buscar por nombre de ciudad',
+  'enterCoordinates': 'Introducir coordenadas manualmente',
+  'latitude': 'Latitud',
+  'longitude': 'Longitud',
+  'search': 'Buscar',
 };

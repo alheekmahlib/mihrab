@@ -39,6 +39,7 @@ dependencies:
   get: ^4.7.3
   get_storage: ^2.1.1
   gap: ^3.0.1
+  flutter_dotenv: ^5.2.1
   flutter_svg: ^2.0.17
 
 dev_dependencies:
@@ -63,5 +64,6 @@ flutter_launcher_icons:
 flutter:
   uses-material-design: true
   assets:
+    - .env
     - assets/images/
 

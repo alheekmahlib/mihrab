@@ -19,7 +19,7 @@ class PrayerQiblaScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      padding: EdgeInsets.all(24 * scale),
+      padding: EdgeInsets.symmetric(horizontal: 56, vertical: 24 * scale),
       child: isPortrait
           ? Column(
               children: [

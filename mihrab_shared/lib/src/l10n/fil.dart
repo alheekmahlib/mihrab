@@ -160,4 +160,10 @@ const Map<String, String> fil = {
   'enterFullscreen': 'Fullscreen',
   'exitFullscreen': 'Lumabas sa Fullscreen',
   'or': 'O',
+  'hadithDisplayDuration': 'Tagal ng Pagpapakita ng Hadith',
+  'searchByCity': 'Maghanap ayon sa pangalan ng lungsod',
+  'enterCoordinates': 'Ilagay ang mga coordinate nang mano-mano',
+  'latitude': 'Latitude',
+  'longitude': 'Longitude',
+  'search': 'Hanapin',
 };
