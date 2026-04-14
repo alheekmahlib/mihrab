@@ -215,6 +215,19 @@ class _HadithPanel extends StatelessWidget {
 
   static const _fontSizeMultipliers = {1: 0.7, 2: 0.85, 3: 1.0, 4: 1.2, 5: 1.4};
 
+  static Widget _fadeSlideTransition(Widget child, Animation<double> anim) {
+    return FadeTransition(
+      opacity: anim,
+      child: SlideTransition(
+        position: Tween<Offset>(
+          begin: const Offset(0, 0.08),
+          end: Offset.zero,
+        ).animate(CurvedAnimation(parent: anim, curve: Curves.easeOut)),
+        child: child,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Obx(() {
@@ -225,49 +238,60 @@ class _HadithPanel extends StatelessWidget {
         );
       }
 
-      return AnimatedSwitcher(
-        duration: const Duration(milliseconds: 800),
-        layoutBuilder: (currentChild, previousChildren) {
-          return SizedBox.expand(
-            child: Stack(
-              alignment: Alignment.topCenter,
-              children: [...previousChildren, ?currentChild],
-            ),
-          );
-        },
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          key: ValueKey(hadith.arabicURN),
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              _collectionArabicName(hadith.collection),
-              style: AppTextStyles.tvBody(
-                fontSize: (22 * scale).clamp(16, 28),
-              ).copyWith(color: context.theme.colorScheme.tertiary),
-            ),
-            Gap(6 * scale),
-            if (hadith.babName != null && hadith.babName!.isNotEmpty)
-              Flexible(
-                child: Text(
-                  hadith.babName!,
-                  style:
-                      AppTextStyles.bodySmall(
-                        fontSize: (16 * scale).clamp(14, 22),
-                      ).copyWith(
-                        color: Theme.of(
-                          context,
-                        ).colorScheme.surface.withValues(alpha: .7),
-                        fontWeight: FontWeight.w500,
-                      ),
-                  overflow: TextOverflow.ellipsis,
-                ),
+      return Column(
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Collection name
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 600),
+            transitionBuilder: _fadeSlideTransition,
+            child: Align(
+              key: ValueKey('col_${hadith.arabicURN}'),
+              alignment: AlignmentDirectional.centerStart,
+              child: Text(
+                _collectionArabicName(hadith.collection),
+                style: AppTextStyles.tvBody(
+                  fontSize: (22 * scale).clamp(16, 28),
+                ).copyWith(color: context.theme.colorScheme.tertiary),
               ),
-            Gap(12 * scale),
-            Divider(color: AppColors.sand.withValues(alpha: .4)),
-            Gap(12 * scale),
-            Expanded(
+            ),
+          ),
+          Gap(6 * scale),
+          // Bab name
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 600),
+            transitionBuilder: _fadeSlideTransition,
+            child: (hadith.babName != null && hadith.babName!.isNotEmpty)
+                ? Align(
+                    key: ValueKey('bab_${hadith.arabicURN}'),
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Text(
+                      hadith.babName!,
+                      style:
+                          AppTextStyles.bodySmall(
+                            fontSize: (16 * scale).clamp(14, 22),
+                          ).copyWith(
+                            color: Theme.of(
+                              context,
+                            ).colorScheme.surface.withValues(alpha: .7),
+                            fontWeight: FontWeight.w500,
+                          ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  )
+                : SizedBox.shrink(key: ValueKey('nobab_${hadith.arabicURN}')),
+          ),
+          Gap(12 * scale),
+          Divider(color: AppColors.sand.withValues(alpha: .4)),
+          Gap(12 * scale),
+          // Hadith text + metadata
+          Expanded(
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 800),
+              transitionBuilder: _fadeSlideTransition,
               child: SingleChildScrollView(
+                key: ValueKey('body_${hadith.arabicURN}'),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -321,8 +345,8 @@ class _HadithPanel extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       );
     });
   }

@@ -11,6 +11,19 @@ class HadithScreen extends StatelessWidget {
 
   static const _fontSizeMultipliers = {1: 0.7, 2: 0.85, 3: 1.0, 4: 1.2, 5: 1.4};
 
+  static Widget _fadeSlideTransition(Widget child, Animation<double> anim) {
+    return FadeTransition(
+      opacity: anim,
+      child: SlideTransition(
+        position: Tween<Offset>(
+          begin: const Offset(0, 0.08),
+          end: Offset.zero,
+        ).animate(CurvedAnimation(parent: anim, curve: Curves.easeOut)),
+        child: child,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final ctrl = Get.find<HadithController>();
@@ -28,19 +41,20 @@ class HadithScreen extends StatelessWidget {
       child: Obx(() {
         final hadith = ctrl.currentHadith.value;
 
-        if (hadith == null || ctrl.isLoading.value) {
+        if (hadith == null) {
           return const Center(
             child: CircularProgressIndicator(color: AppColors.tealGreen),
           );
         }
 
-        return AnimatedSwitcher(
-          duration: const Duration(milliseconds: 800),
-          child: Column(
-            key: ValueKey(hadith.arabicURN),
-            children: [
-              // Header: collection name + hadith number
-              Row(
+        return Column(
+          children: [
+            // Header: collection name + hadith number
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 2000),
+              transitionBuilder: _fadeSlideTransition,
+              child: Row(
+                key: ValueKey('header_${hadith.arabicURN}'),
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Flexible(
@@ -65,28 +79,40 @@ class HadithScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              if (hadith.bookName.isNotEmpty) ...[
-                Gap(6 * scale),
-                Text(
-                  hadith.bookName,
-                  style:
-                      AppTextStyles.titleMedium(
-                        fontSize: (18 * scale).clamp(16, 24),
-                      ).copyWith(
-                        color: Theme.of(context).colorScheme.surface,
-                        fontWeight: FontWeight.w500,
+            ),
+            // Book name
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 2000),
+              transitionBuilder: _fadeSlideTransition,
+              child: hadith.bookName.isNotEmpty
+                  ? Padding(
+                      key: ValueKey('book_${hadith.arabicURN}'),
+                      padding: EdgeInsets.only(top: 6 * scale),
+                      child: Text(
+                        hadith.bookName,
+                        style:
+                            AppTextStyles.titleMedium(
+                              fontSize: (18 * scale).clamp(16, 24),
+                            ).copyWith(
+                              color: Theme.of(context).colorScheme.surface,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
-                ),
-              ],
-              Gap(16 * scale),
-              Divider(
-                color: AppColors.sand.withValues(alpha: .5),
-                thickness: 1,
-              ),
-              Gap(16 * scale),
-              // Hadith text
-              Expanded(
+                    )
+                  : SizedBox.shrink(
+                      key: ValueKey('nobook_${hadith.arabicURN}'),
+                    ),
+            ),
+            Gap(16 * scale),
+            Divider(color: AppColors.sand.withValues(alpha: .5), thickness: 1),
+            Gap(16 * scale),
+            // Hadith text
+            Expanded(
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 800),
+                transitionBuilder: _fadeSlideTransition,
                 child: Center(
+                  key: ValueKey('text_${hadith.arabicURN}'),
                   child: SingleChildScrollView(
                     child: Obx(() {
                       final fontLevel =
@@ -114,14 +140,16 @@ class HadithScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Gap(12 * scale),
-              Divider(
-                color: AppColors.sand.withValues(alpha: .5),
-                thickness: 1,
-              ),
-              Gap(6 * scale),
-              // Grade + bab name
-              Row(
+            ),
+            Gap(12 * scale),
+            Divider(color: AppColors.sand.withValues(alpha: .5), thickness: 1),
+            Gap(6 * scale),
+            // Grade + bab name
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 2000),
+              transitionBuilder: _fadeSlideTransition,
+              child: Row(
+                key: ValueKey('footer_${hadith.arabicURN}'),
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   if (hadith.grade != null && hadith.grade!.isNotEmpty)
@@ -149,8 +177,8 @@ class HadithScreen extends StatelessWidget {
                     ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         );
       }),
     );

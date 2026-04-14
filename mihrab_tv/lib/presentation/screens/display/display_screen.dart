@@ -115,33 +115,36 @@ class _DisplayScreenState extends State<DisplayScreen> {
             child: Stack(
               children: [
                 // Main content
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 24.0),
-                  child: Obx(() {
-                    // Check for prayer alert
-                    if (_prayerCtrl.showPrayerAlert.value) {
-                      return _PrayerAlertOverlay(
-                        prayerName: _prayerCtrl.alertPrayerName.value,
-                        onDismiss: _prayerCtrl.dismissAlert,
-                      );
+                Obx(() {
+                  // Check for prayer alert
+                  if (_prayerCtrl.showPrayerAlert.value) {
+                    return _PrayerAlertOverlay(
+                      prayerName: _prayerCtrl.alertPrayerName.value,
+                      onDismiss: _prayerCtrl.dismissAlert,
+                    );
+                  }
+
+                  final mode = _deviceCtrl.displayMode.value;
+
+                  // Handle auto-rotate mode
+                  if (mode == DisplayMode.autoRotate) {
+                    if (!Get.isRegistered<AutoRotateController>()) {
+                      Get.put(AutoRotateController());
                     }
-
-                    final mode = _deviceCtrl.displayMode.value;
-
-                    // Handle auto-rotate mode
-                    if (mode == DisplayMode.autoRotate) {
-                      if (!Get.isRegistered<AutoRotateController>()) {
-                        Get.put(AutoRotateController());
-                      }
-                      final autoCtrl = Get.find<AutoRotateController>();
-                      return Obx(
+                    final autoCtrl = Get.find<AutoRotateController>();
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 24.0),
+                      child: Obx(
                         () => _buildScreenForMode(autoCtrl.currentMode.value),
-                      );
-                    }
+                      ),
+                    );
+                  }
 
-                    return _buildScreenForMode(mode);
-                  }),
-                ),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 24.0),
+                    child: _buildScreenForMode(mode),
+                  );
+                }),
                 // Settings overlay
                 Obx(() {
                   if (!_showOverlay.value) return const SizedBox.shrink();
@@ -170,6 +173,10 @@ class _DisplayScreenState extends State<DisplayScreen> {
                     'assets/images/decorations.svg',
                     width: 90,
                     height: 90,
+                    colorFilter: ColorFilter.mode(
+                      context.theme.colorScheme.surface,
+                      BlendMode.modulate,
+                    ),
                   ),
                 ),
                 Align(
@@ -180,6 +187,10 @@ class _DisplayScreenState extends State<DisplayScreen> {
                       'assets/images/decorations.svg',
                       width: 90,
                       height: 90,
+                      colorFilter: ColorFilter.mode(
+                        context.theme.colorScheme.surface,
+                        BlendMode.modulate,
+                      ),
                     ),
                   ),
                 ),
@@ -191,6 +202,10 @@ class _DisplayScreenState extends State<DisplayScreen> {
                       'assets/images/decorations.svg',
                       width: 90,
                       height: 90,
+                      colorFilter: ColorFilter.mode(
+                        context.theme.colorScheme.surface,
+                        BlendMode.modulate,
+                      ),
                     ),
                   ),
                 ),
@@ -202,6 +217,10 @@ class _DisplayScreenState extends State<DisplayScreen> {
                       'assets/images/decorations.svg',
                       width: 90,
                       height: 90,
+                      colorFilter: ColorFilter.mode(
+                        context.theme.colorScheme.surface,
+                        BlendMode.modulate,
+                      ),
                     ),
                   ),
                 ),

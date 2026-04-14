@@ -219,14 +219,14 @@ class _QiblaPanel extends StatelessWidget {
             Icon(
               Icons.explore_rounded,
               size: (64 * scale).clamp(40, 80),
-              color: AppColors.tealGreen,
+              color: context.theme.colorScheme.tertiary,
             ),
             Gap(16 * scale),
             Text(
               AppStrings.qiblaDirection,
               style: AppTextStyles.tvTitle(
                 fontSize: (30 * scale).clamp(20, 36),
-              ).copyWith(color: AppColors.tealGreen),
+              ).copyWith(color: context.theme.colorScheme.tertiary),
             ),
             Gap(20 * scale),
             FittedBox(

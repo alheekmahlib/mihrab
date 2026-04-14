@@ -38,7 +38,8 @@ class HadithController extends GetxController {
   }
 
   Future<void> loadNextHadith() async {
-    isLoading.value = true;
+    final isInitialLoad = currentHadith.value == null;
+    if (isInitialLoad) isLoading.value = true;
     try {
       HadithEntity hadith;
       // Avoid showing the same hadith twice in a row
@@ -55,7 +56,7 @@ class HadithController extends GetxController {
     } catch (_) {
       // Keep showing current hadith if loading fails
     } finally {
-      isLoading.value = false;
+      if (isInitialLoad) isLoading.value = false;
     }
   }
 
