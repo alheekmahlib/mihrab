@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart' hide TextDirection;
 import 'package:mihrab_shared/mihrab_shared.dart';
 
+import '../../controllers/device_controller.dart';
 import '../../controllers/hadith_controller.dart';
 import '../../controllers/prayer_controller.dart';
 
@@ -212,6 +213,8 @@ class _HadithPanel extends StatelessWidget {
   final double scale;
   const _HadithPanel({required this.ctrl, required this.scale});
 
+  static const _fontSizeMultipliers = {1: 0.7, 2: 0.85, 3: 1.0, 4: 1.2, 5: 1.4};
+
   @override
   Widget build(BuildContext context) {
     return Obx(() {
@@ -228,10 +231,7 @@ class _HadithPanel extends StatelessWidget {
           return SizedBox.expand(
             child: Stack(
               alignment: Alignment.topCenter,
-              children: [
-                ...previousChildren,
-                ?currentChild,
-              ],
+              children: [...previousChildren, ?currentChild],
             ),
           );
         },
@@ -271,28 +271,39 @@ class _HadithPanel extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      hadith.hadithText,
-                      style:
-                          AppTextStyles.tvBody(
-                            fontSize: (22 * scale).clamp(16, 28),
-                          ).copyWith(
-                            color: context.theme.colorScheme.inversePrimary,
-                            height: 2.0,
-                          ),
-                      textAlign: TextAlign.justify,
-                      textDirection: TextDirection.rtl,
-                    ),
+                    Obx(() {
+                      final deviceCtrl = Get.find<DeviceController>();
+                      final fontLevel =
+                          deviceCtrl.settings.value?.hadithFontSize ?? 3;
+                      final fontMultiplier =
+                          _fontSizeMultipliers[fontLevel] ?? 1.0;
+                      return Text(
+                        hadith.hadithText,
+                        style:
+                            AppTextStyles.tvBody(
+                              fontSize: (22 * scale * fontMultiplier).clamp(
+                                12,
+                                38,
+                              ),
+                            ).copyWith(
+                              color: context.theme.colorScheme.inversePrimary,
+                              height: 2.0,
+                            ),
+                        textAlign: TextAlign.justify,
+                        textDirection: TextDirection.rtl,
+                      );
+                    }),
                     if (hadith.grade != null && hadith.grade!.isNotEmpty)
                       Padding(
                         padding: EdgeInsets.only(top: 6 * scale),
                         child: Text(
                           hadith.grade!,
-                          style: AppTextStyles.bodySmall(
-                            fontSize: (18 * scale).clamp(18, 24),
-                          ).copyWith(
-                            color: context.theme.colorScheme.secondary,
-                          ),
+                          style:
+                              AppTextStyles.bodySmall(
+                                fontSize: (18 * scale).clamp(18, 24),
+                              ).copyWith(
+                                color: context.theme.colorScheme.secondary,
+                              ),
                         ),
                       ),
                     Gap(8 * scale),
@@ -302,10 +313,7 @@ class _HadithPanel extends StatelessWidget {
                           AppTextStyles.bodySmall(
                             fontSize: (14 * scale).clamp(10, 18),
                           ).copyWith(
-                            color: context
-                                .theme
-                                .colorScheme
-                                .inversePrimary
+                            color: context.theme.colorScheme.inversePrimary
                                 .withValues(alpha: .5),
                           ),
                     ),

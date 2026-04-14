@@ -13,6 +13,8 @@ class DeviceSettingsEntity {
   final String? language;
   final bool? isDarkMode;
   final int? hadithInterval;
+  final int? hadithFontSize;
+  final String? theme;
   final DateTime? updatedAt;
 
   const DeviceSettingsEntity({
@@ -29,6 +31,8 @@ class DeviceSettingsEntity {
     this.language = 'ar',
     this.isDarkMode = false,
     this.hadithInterval = 15,
+    this.hadithFontSize = 3,
+    this.theme = 'classic',
     this.updatedAt,
   });
 
@@ -49,6 +53,8 @@ class DeviceSettingsEntity {
       language: json['language'] as String? ?? 'ar',
       isDarkMode: json['is_dark_mode'] as bool? ?? false,
       hadithInterval: json['hadith_interval'] as int? ?? 15,
+      hadithFontSize: json['hadith_font_size'] as int? ?? 3,
+      theme: json['theme'] as String? ?? 'classic',
       updatedAt: json['updated_at'] != null
           ? DateTime.parse(json['updated_at'])
           : null,
@@ -70,6 +76,8 @@ class DeviceSettingsEntity {
       'language': language,
       'is_dark_mode': isDarkMode,
       'hadith_interval': hadithInterval,
+      'hadith_font_size': hadithFontSize,
+      'theme': theme,
       'updated_at': updatedAt?.toIso8601String(),
     };
   }
@@ -88,6 +96,8 @@ class DeviceSettingsEntity {
     String? language,
     bool? isDarkMode,
     int? hadithInterval,
+    int? hadithFontSize,
+    String? theme,
     DateTime? updatedAt,
   }) {
     return DeviceSettingsEntity(
@@ -104,6 +114,8 @@ class DeviceSettingsEntity {
       language: language ?? this.language,
       isDarkMode: isDarkMode ?? this.isDarkMode,
       hadithInterval: hadithInterval ?? this.hadithInterval,
+      hadithFontSize: hadithFontSize ?? this.hadithFontSize,
+      theme: theme ?? this.theme,
       updatedAt: updatedAt ?? this.updatedAt,
     );
   }

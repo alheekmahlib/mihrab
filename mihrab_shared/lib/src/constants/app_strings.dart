@@ -142,4 +142,18 @@ class AppStrings {
   static String get openDisplay => 'openDisplay'.tr;
   static String get enterFullscreen => 'enterFullscreen'.tr;
   static String get exitFullscreen => 'exitFullscreen'.tr;
+
+  // Hadith font size
+  static String get hadithFontSize => 'hadithFontSize'.tr;
+  static String get fontSizeExtraSmall => 'fontSizeExtraSmall'.tr;
+  static String get fontSizeSmall => 'fontSizeSmall'.tr;
+  static String get fontSizeMedium => 'fontSizeMedium'.tr;
+  static String get fontSizeLarge => 'fontSizeLarge'.tr;
+  static String get fontSizeExtraLarge => 'fontSizeExtraLarge'.tr;
+
+  // Themes
+  static String get themeLabel => 'themeLabel'.tr;
+  static String get classicTheme => 'classicTheme'.tr;
+  static String get midnightBlueTheme => 'midnightBlueTheme'.tr;
+  static String get mosqueGreenTheme => 'mosqueGreenTheme'.tr;
 }

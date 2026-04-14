@@ -162,4 +162,18 @@ const Map<String, String> so = {
   'latitude': 'Latitude',
   'longitude': 'Longitude',
   'search': 'Raadi',
+
+  // Hadith font size
+  'hadithFontSize': 'Cabbirka Farta Xadiiska',
+  'fontSizeExtraSmall': 'Aad u Yar',
+  'fontSizeSmall': 'Yar',
+  'fontSizeMedium': 'Dhexdhexaad',
+  'fontSizeLarge': 'Weyn',
+  'fontSizeExtraLarge': 'Aad u Weyn',
+
+  // Themes
+  'themeLabel': 'Qaabka',
+  'classicTheme': 'Caadiga',
+  'midnightBlueTheme': 'Buluugga Habeenkii',
+  'mosqueGreenTheme': 'Cagaarka Masaajidka',
 };

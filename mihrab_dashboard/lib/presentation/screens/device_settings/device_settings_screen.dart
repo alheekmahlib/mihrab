@@ -31,6 +31,8 @@ class _DeviceSettingsScreenState extends State<DeviceSettingsScreen> {
   late String _selectedLanguage;
   bool _isDarkMode = false;
   int _hadithInterval = 15;
+  int _hadithFontSize = 3;
+  String _theme = 'classic';
 
   static const _supportedLanguages = {
     'ar': 'العربية',
@@ -83,10 +85,29 @@ class _DeviceSettingsScreenState extends State<DeviceSettingsScreen> {
     _selectedLanguage = device?.settings?.language ?? 'ar';
     _isDarkMode = device?.settings?.isDarkMode ?? false;
     _hadithInterval = device?.settings?.hadithInterval ?? 15;
+    _hadithFontSize = device?.settings?.hadithFontSize ?? 3;
+    _theme = device?.settings?.theme ?? 'classic';
   }
 
   void _markChanged() {
     if (!_hasChanges) setState(() => _hasChanges = true);
+  }
+
+  String _fontSizeLabel(int level) {
+    switch (level) {
+      case 1:
+        return AppStrings.fontSizeExtraSmall;
+      case 2:
+        return AppStrings.fontSizeSmall;
+      case 3:
+        return AppStrings.fontSizeMedium;
+      case 4:
+        return AppStrings.fontSizeLarge;
+      case 5:
+        return AppStrings.fontSizeExtraLarge;
+      default:
+        return AppStrings.fontSizeMedium;
+    }
   }
 
   void _showRenameDialog(BuildContext context) {
@@ -209,6 +230,8 @@ class _DeviceSettingsScreenState extends State<DeviceSettingsScreen> {
       language: _selectedLanguage,
       isDarkMode: _isDarkMode,
       hadithInterval: _hadithInterval,
+      hadithFontSize: _hadithFontSize,
+      theme: _theme,
     );
     await ctrl.updateDeviceSettings(updated);
 
@@ -437,6 +460,103 @@ class _DeviceSettingsScreenState extends State<DeviceSettingsScreen> {
             if (_selectedDisplayMode == DisplayMode.hadith ||
                 _selectedDisplayMode == DisplayMode.combined)
               const Gap(16),
+
+            // Hadith font size (shown for hadith or combined mode)
+            if (_selectedDisplayMode == DisplayMode.hadith ||
+                _selectedDisplayMode == DisplayMode.combined)
+              _SectionCard(
+                title: AppStrings.hadithFontSize,
+                children: [
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.remove_circle_outline),
+                        color: AppColors.tealGreen,
+                        iconSize: 28,
+                        onPressed: _hadithFontSize > 1
+                            ? () {
+                                setState(() => _hadithFontSize--);
+                                _markChanged();
+                              }
+                            : null,
+                      ),
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          _fontSizeLabel(_hadithFontSize),
+                          textAlign: TextAlign.center,
+                          style: AppTextStyles.bodyMedium().copyWith(
+                            color: AppColors.tealGreen,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.add_circle_outline),
+                        color: AppColors.tealGreen,
+                        iconSize: 28,
+                        onPressed: _hadithFontSize < 5
+                            ? () {
+                                setState(() => _hadithFontSize++);
+                                _markChanged();
+                              }
+                            : null,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            if (_selectedDisplayMode == DisplayMode.hadith ||
+                _selectedDisplayMode == DisplayMode.combined)
+              const Gap(16),
+
+            // Theme selector
+            _SectionCard(
+              title: AppStrings.themeLabel,
+              children: [
+                Row(
+                  children: [
+                    _ThemeCard(
+                      label: AppStrings.classicTheme,
+                      bgColor: AppColors.whiteCream,
+                      accentColor: AppColors.primaryDarkGreen,
+                      textColor: AppColors.darkText,
+                      isSelected: _theme == 'classic',
+                      onTap: () {
+                        setState(() => _theme = 'classic');
+                        _markChanged();
+                      },
+                    ),
+                    const Gap(8),
+                    _ThemeCard(
+                      label: AppStrings.midnightBlueTheme,
+                      bgColor: AppColors.midnightNavy,
+                      accentColor: AppColors.midnightBlue,
+                      textColor: AppColors.midnightText,
+                      isSelected: _theme == 'midnight_blue',
+                      onTap: () {
+                        setState(() => _theme = 'midnight_blue');
+                        _markChanged();
+                      },
+                    ),
+                    const Gap(8),
+                    _ThemeCard(
+                      label: AppStrings.mosqueGreenTheme,
+                      bgColor: AppColors.mosqueForest,
+                      accentColor: AppColors.mosqueEmerald,
+                      textColor: AppColors.mosqueCream,
+                      isSelected: _theme == 'mosque_green',
+                      onTap: () {
+                        setState(() => _theme = 'mosque_green');
+                        _markChanged();
+                      },
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const Gap(16),
 
             // Madhab
             _SectionCard(
@@ -677,6 +797,67 @@ class _InfoRow extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _ThemeCard extends StatelessWidget {
+  final String label;
+  final Color bgColor;
+  final Color accentColor;
+  final Color textColor;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const _ThemeCard({
+    required this.label,
+    required this.bgColor,
+    required this.accentColor,
+    required this.textColor,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          height: 70,
+          decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: isSelected ? AppColors.goldAmber : Colors.grey.shade300,
+              width: isSelected ? 2.5 : 1,
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 18,
+                height: 18,
+                decoration: BoxDecoration(
+                  color: accentColor,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              const Gap(4),
+              Text(
+                label,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: 11,
+                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -160,4 +160,18 @@ const Map<String, String> bn = {
   'latitude': 'অক্ষাংশ',
   'longitude': 'দ্রাঘিমাংশ',
   'search': 'অনুসন্ধান',
+
+  // Hadith font size
+  'hadithFontSize': 'হাদিসের ফন্ট সাইজ',
+  'fontSizeExtraSmall': 'অতি ছোট',
+  'fontSizeSmall': 'ছোট',
+  'fontSizeMedium': 'মাঝারি',
+  'fontSizeLarge': 'বড়',
+  'fontSizeExtraLarge': 'অতি বড়',
+
+  // Themes
+  'themeLabel': 'থিম',
+  'classicTheme': 'ক্লাসিক',
+  'midnightBlueTheme': 'মিডনাইট ব্লু',
+  'mosqueGreenTheme': 'মসজিদ সবুজ',
 };

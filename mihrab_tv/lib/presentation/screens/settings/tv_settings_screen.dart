@@ -29,7 +29,8 @@ class TvSettingsScreen extends StatelessWidget {
         onKeyEvent: (node, event) {
           if (event is KeyDownEvent &&
               (event.logicalKey == LogicalKeyboardKey.escape ||
-                  event.logicalKey == LogicalKeyboardKey.goBack)) {
+                  event.logicalKey == LogicalKeyboardKey.goBack ||
+                  event.logicalKey == LogicalKeyboardKey.browserBack)) {
             Get.back();
             return KeyEventResult.handled;
           }
@@ -160,136 +161,161 @@ class _SettingsContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Location
-          _LocationSection(deviceCtrl: deviceCtrl),
-          const Gap(32),
+    return FocusTraversalGroup(
+      policy: ReadingOrderTraversalPolicy(),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Location
+            _LocationSection(deviceCtrl: deviceCtrl),
+            const Gap(32),
 
-          // Calculation method
-          Text(
-            AppStrings.calculationMethod,
-            style: AppTextStyles.tvTitle().copyWith(
-              color: context.theme.colorScheme.inversePrimary,
-            ),
-          ),
-          const Gap(12),
-          _CalculationMethodSelector(deviceCtrl: deviceCtrl),
-          const Gap(32),
-
-          // Display mode
-          Text(
-            AppStrings.displayMode,
-            style: AppTextStyles.tvTitle().copyWith(
-              color: context.theme.colorScheme.inversePrimary,
-            ),
-          ),
-          const Gap(16),
-          _DisplayModeSelector(deviceCtrl: deviceCtrl),
-          const Gap(32),
-
-          // Auto-rotate interval (when auto-rotate mode)
-          Obx(() {
-            if (deviceCtrl.displayMode.value != DisplayMode.autoRotate) {
-              return const SizedBox.shrink();
-            }
-            return _AutoRotateSettings();
-          }),
-
-          // Hadith interval (when hadith or combined mode)
-          Obx(() {
-            final mode = deviceCtrl.displayMode.value;
-            if (mode != DisplayMode.hadith && mode != DisplayMode.combined) {
-              return const SizedBox.shrink();
-            }
-            return _HadithIntervalSettings(deviceCtrl: deviceCtrl);
-          }),
-
-          // Madhab
-          Text(
-            AppStrings.selectMadhab,
-            style: AppTextStyles.tvTitle().copyWith(
-              color: context.theme.colorScheme.inversePrimary,
-            ),
-          ),
-          const Gap(12),
-          _MadhabSelector(deviceCtrl: deviceCtrl),
-          const Gap(32),
-
-          // Language
-          Text(
-            AppStrings.language,
-            style: AppTextStyles.tvTitle().copyWith(
-              color: context.theme.colorScheme.inversePrimary,
-            ),
-          ),
-          const Gap(12),
-          _LanguageSelector(deviceCtrl: deviceCtrl, languages: _languages),
-          const Gap(32),
-
-          // Prayer time adjustments
-          Text(
-            AppStrings.adjustPrayerTimes,
-            style: AppTextStyles.tvTitle().copyWith(
-              color: context.theme.colorScheme.inversePrimary,
-            ),
-          ),
-          const Gap(12),
-          _PrayerAdjustments(deviceCtrl: deviceCtrl),
-          const Gap(32),
-
-          // Theme toggle
-          CustomSwitchListTile(
-            title: AppStrings.darkMode,
-            value: Get.isDarkMode,
-            onChanged: (v) {
-              Get.changeThemeMode(v ? ThemeMode.dark : ThemeMode.light);
-              GetStorage().write('IS_DARK_MODE', v);
-            },
-          ),
-          const Gap(16),
-
-          // Re-pair button
-          SizedBox(
-            width: 250,
-            child: ContainerButton(
-              title: AppStrings.rePair,
-              icon: const Icon(
-                Icons.link_off_rounded,
-                size: 28,
-                color: Colors.redAccent,
+            // Calculation method
+            Text(
+              AppStrings.calculationMethod,
+              style: AppTextStyles.tvTitle().copyWith(
+                color: context.theme.colorScheme.inversePrimary,
               ),
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (ctx) => AlertDialog(
-                    backgroundColor: context.theme.scaffoldBackgroundColor,
-                    title: Text(AppStrings.rePair),
-                    content: Text(AppStrings.resetPairingConfirm),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(ctx),
-                        child: Text(AppStrings.cancel),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pop(ctx);
-                          deviceCtrl.resetDevice();
-                        },
-                        style: TextButton.styleFrom(
-                          foregroundColor: Colors.redAccent,
-                        ),
-                        child: Text(AppStrings.rePair),
-                      ),
-                    ],
-                  ),
-                );
+            ),
+            const Gap(12),
+            _CalculationMethodSelector(deviceCtrl: deviceCtrl),
+            const Gap(32),
+
+            // Display mode
+            Text(
+              AppStrings.displayMode,
+              style: AppTextStyles.tvTitle().copyWith(
+                color: context.theme.colorScheme.inversePrimary,
+              ),
+            ),
+            const Gap(16),
+            _DisplayModeSelector(deviceCtrl: deviceCtrl),
+            const Gap(32),
+
+            // Auto-rotate interval (when auto-rotate mode)
+            Obx(() {
+              if (deviceCtrl.displayMode.value != DisplayMode.autoRotate) {
+                return const SizedBox.shrink();
+              }
+              return _AutoRotateSettings();
+            }),
+
+            // Hadith interval (when hadith or combined mode)
+            Obx(() {
+              final mode = deviceCtrl.displayMode.value;
+              if (mode != DisplayMode.hadith && mode != DisplayMode.combined) {
+                return const SizedBox.shrink();
+              }
+              return _HadithIntervalSettings(deviceCtrl: deviceCtrl);
+            }),
+
+            // Hadith font size (when hadith or combined mode)
+            Obx(() {
+              final mode = deviceCtrl.displayMode.value;
+              if (mode != DisplayMode.hadith && mode != DisplayMode.combined) {
+                return const SizedBox.shrink();
+              }
+              return _HadithFontSizeSettings(deviceCtrl: deviceCtrl);
+            }),
+
+            // Madhab
+            Text(
+              AppStrings.selectMadhab,
+              style: AppTextStyles.tvTitle().copyWith(
+                color: context.theme.colorScheme.inversePrimary,
+              ),
+            ),
+            const Gap(12),
+            _MadhabSelector(deviceCtrl: deviceCtrl),
+            const Gap(32),
+
+            // Language
+            Text(
+              AppStrings.language,
+              style: AppTextStyles.tvTitle().copyWith(
+                color: context.theme.colorScheme.inversePrimary,
+              ),
+            ),
+            const Gap(12),
+            _LanguageSelector(deviceCtrl: deviceCtrl, languages: _languages),
+            const Gap(32),
+
+            // Prayer time adjustments
+            Text(
+              AppStrings.adjustPrayerTimes,
+              style: AppTextStyles.tvTitle().copyWith(
+                color: context.theme.colorScheme.inversePrimary,
+              ),
+            ),
+            const Gap(12),
+            _PrayerAdjustments(deviceCtrl: deviceCtrl),
+            const Gap(32),
+
+            // Theme selector
+            Text(
+              AppStrings.themeLabel,
+              style: AppTextStyles.tvTitle().copyWith(
+                color: context.theme.colorScheme.inversePrimary,
+              ),
+            ),
+            const Gap(12),
+            _ThemeSelector(deviceCtrl: deviceCtrl),
+            const Gap(32),
+
+            // Theme toggle
+            CustomSwitchListTile(
+              title: AppStrings.darkMode,
+              value: Get.isDarkMode,
+              onChanged: (v) {
+                final themeName = deviceCtrl.settings.value?.theme ?? 'classic';
+                Get.changeThemeMode(v ? ThemeMode.dark : ThemeMode.light);
+                Get.changeTheme(AppTheme.getTheme(themeName, v));
+                GetStorage().write('IS_DARK_MODE', v);
               },
             ),
-          ),
-        ],
+            const Gap(16),
+
+            // Re-pair button
+            SizedBox(
+              width: 250,
+              child: ContainerButton(
+                title: AppStrings.rePair,
+                icon: const Icon(
+                  Icons.link_off_rounded,
+                  size: 28,
+                  color: Colors.redAccent,
+                ),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                      backgroundColor: context.theme.scaffoldBackgroundColor,
+                      title: Text(AppStrings.rePair),
+                      content: Text(AppStrings.resetPairingConfirm),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.pop(ctx),
+                          child: Text(AppStrings.cancel),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(ctx);
+                            deviceCtrl.resetDevice();
+                          },
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.redAccent,
+                          ),
+                          child: Text(AppStrings.rePair),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -975,6 +1001,201 @@ class _HadithIntervalSettings extends StatelessWidget {
 
   void _saveInterval(int minutes) {
     deviceCtrl.updateHadithInterval(minutes);
+  }
+}
+
+class _HadithFontSizeSettings extends StatelessWidget {
+  final DeviceController deviceCtrl;
+  const _HadithFontSizeSettings({required this.deviceCtrl});
+
+  static const _labels = {
+    1: 'fontSizeExtraSmall',
+    2: 'fontSizeSmall',
+    3: 'fontSizeMedium',
+    4: 'fontSizeLarge',
+    5: 'fontSizeExtraLarge',
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          AppStrings.hadithFontSize,
+          style: AppTextStyles.tvTitle().copyWith(
+            color: context.theme.colorScheme.inversePrimary,
+          ),
+        ),
+        const Gap(12),
+        Obx(() {
+          final value = deviceCtrl.settings.value?.hadithFontSize ?? 3;
+          return Row(
+            children: [
+              TvFocusable(
+                onSelect: value > 1
+                    ? () => deviceCtrl.updateHadithFontSize(value - 1)
+                    : null,
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: context.theme.colorScheme.primaryContainer,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    Icons.remove,
+                    color: value > 1
+                        ? AppColors.tealGreen
+                        : AppColors.darkText.withValues(alpha: .3),
+                  ),
+                ),
+              ),
+              const Gap(8),
+              SizedBox(
+                width: 120,
+                child: Text(
+                  (_labels[value] ?? 'fontSizeMedium').tr,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.tvBody().copyWith(
+                    color: AppColors.tealGreen,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const Gap(8),
+              TvFocusable(
+                onSelect: value < 5
+                    ? () => deviceCtrl.updateHadithFontSize(value + 1)
+                    : null,
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: context.theme.colorScheme.primaryContainer,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    Icons.add,
+                    color: value < 5
+                        ? AppColors.tealGreen
+                        : AppColors.darkText.withValues(alpha: .3),
+                  ),
+                ),
+              ),
+            ],
+          );
+        }),
+        const Gap(32),
+      ],
+    );
+  }
+}
+
+class _ThemeSelector extends StatelessWidget {
+  final DeviceController deviceCtrl;
+  const _ThemeSelector({required this.deviceCtrl});
+
+  static const _themes = [
+    (
+      'classic',
+      AppColors.whiteCream,
+      AppColors.primaryDarkGreen,
+      AppColors.darkText,
+    ),
+    (
+      'midnight_blue',
+      AppColors.midnightNavy,
+      AppColors.midnightBlue,
+      AppColors.midnightText,
+    ),
+    (
+      'mosque_green',
+      AppColors.mosqueForest,
+      AppColors.mosqueEmerald,
+      AppColors.mosqueCream,
+    ),
+  ];
+
+  static String _themeName(String key) {
+    switch (key) {
+      case 'midnight_blue':
+        return AppStrings.midnightBlueTheme;
+      case 'mosque_green':
+        return AppStrings.mosqueGreenTheme;
+      case 'classic':
+      default:
+        return AppStrings.classicTheme;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      final current = deviceCtrl.settings.value?.theme ?? 'classic';
+      return Row(
+        children: _themes.map((theme) {
+          final (key, bg, accent, text) = theme;
+          final isSelected = current == key;
+          return Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: TvFocusable(
+              onSelect: () => deviceCtrl.updateTheme(key),
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                width: 140,
+                height: 90,
+                decoration: BoxDecoration(
+                  color: bg,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: isSelected
+                        ? AppColors.goldAmber
+                        : Colors.transparent,
+                    width: isSelected ? 3 : 1,
+                  ),
+                  boxShadow: isSelected
+                      ? [
+                          BoxShadow(
+                            color: AppColors.goldAmber.withValues(alpha: .3),
+                            blurRadius: 8,
+                            spreadRadius: 1,
+                          ),
+                        ]
+                      : null,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 24,
+                      height: 24,
+                      decoration: BoxDecoration(
+                        color: accent,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    const Gap(6),
+                    Text(
+                      _themeName(key),
+                      style: TextStyle(
+                        color: text,
+                        fontSize: 13,
+                        fontWeight: isSelected
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        }).toList(),
+      );
+    });
   }
 }
 

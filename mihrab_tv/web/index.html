@@ -41,6 +41,49 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
+  <!-- webOS TV remote control key handler -->
+  <script>
+    // Ensure Flutter's root element keeps DOM focus for keyboard events
+    function focusFlutterView() {
+      var fv = document.querySelector('flutter-view') ||
+               document.querySelector('flt-glass-pane') ||
+               document.querySelector('body');
+      if (fv && document.activeElement !== fv) {
+        fv.setAttribute('tabindex', '0');
+        fv.focus({preventScroll: true});
+      }
+    }
+    // Re-focus Flutter whenever focus is lost
+    document.addEventListener('focusout', function() {
+      setTimeout(focusFlutterView, 50);
+    });
+    // Initial focus after Flutter loads
+    window.addEventListener('load', function() {
+      setTimeout(focusFlutterView, 500);
+      setTimeout(focusFlutterView, 2000);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      // Prevent browser default for TV remote keys (arrows, enter, back)
+      var tvKeys = [37, 38, 39, 40, 13, 461, 412, 413, 415, 19];
+      if (tvKeys.indexOf(e.keyCode) !== -1) {
+        e.preventDefault();
+      }
+      // webOS Back button (keyCode 461) - dispatch as GoBack
+      if (e.keyCode === 461) {
+        e.preventDefault();
+        e.stopPropagation();
+        var target = document.querySelector('flutter-view') ||
+                     document.querySelector('flt-glass-pane') || document;
+        target.dispatchEvent(new KeyboardEvent('keydown', {
+          key: 'GoBack', code: 'GoBack', keyCode: 27,
+          bubbles: true, cancelable: true
+        }));
+      }
+      // Ensure Flutter view has focus for every keypress
+      focusFlutterView();
+    }, true);
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

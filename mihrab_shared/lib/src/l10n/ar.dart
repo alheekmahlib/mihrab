@@ -161,4 +161,18 @@ const Map<String, String> ar = {
   'latitude': 'خط العرض',
   'longitude': 'خط الطول',
   'search': 'بحث',
+
+  // Hadith font size
+  'hadithFontSize': 'حجم خط الأحاديث',
+  'fontSizeExtraSmall': 'صغير جداً',
+  'fontSizeSmall': 'صغير',
+  'fontSizeMedium': 'متوسط',
+  'fontSizeLarge': 'كبير',
+  'fontSizeExtraLarge': 'كبير جداً',
+
+  // Themes
+  'themeLabel': 'المظهر',
+  'classicTheme': 'كلاسيكي',
+  'midnightBlueTheme': 'أزرق ليلي',
+  'mosqueGreenTheme': 'أخضر مسجدي',
 };

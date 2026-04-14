@@ -160,4 +160,18 @@ const Map<String, String> ur = {
   'latitude': 'عرض البلد',
   'longitude': 'طول البلد',
   'search': 'تلاش',
+
+  // Hadith font size
+  'hadithFontSize': 'حدیث کا فونٹ سائز',
+  'fontSizeExtraSmall': 'بہت چھوٹا',
+  'fontSizeSmall': 'چھوٹا',
+  'fontSizeMedium': 'درمیانا',
+  'fontSizeLarge': 'بڑا',
+  'fontSizeExtraLarge': 'بہت بڑا',
+
+  // Themes
+  'themeLabel': 'تھیم',
+  'classicTheme': 'کلاسیکی',
+  'midnightBlueTheme': 'نیلی رات',
+  'mosqueGreenTheme': 'مسجد سبز',
 };

@@ -322,7 +322,8 @@ class _ControlsOverlayState extends State<_ControlsOverlay> {
             onKeyEvent: (node, event) {
               if (event is KeyDownEvent &&
                   (event.logicalKey == LogicalKeyboardKey.escape ||
-                      event.logicalKey == LogicalKeyboardKey.goBack)) {
+                      event.logicalKey == LogicalKeyboardKey.goBack ||
+                      event.logicalKey == LogicalKeyboardKey.browserBack)) {
                 widget.onDismiss();
                 return KeyEventResult.handled;
               }

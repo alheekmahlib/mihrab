@@ -162,4 +162,18 @@ const Map<String, String> en = {
   'latitude': 'Latitude',
   'longitude': 'Longitude',
   'search': 'Search',
+
+  // Hadith font size
+  'hadithFontSize': 'Hadith Font Size',
+  'fontSizeExtraSmall': 'Extra Small',
+  'fontSizeSmall': 'Small',
+  'fontSizeMedium': 'Medium',
+  'fontSizeLarge': 'Large',
+  'fontSizeExtraLarge': 'Extra Large',
+
+  // Themes
+  'themeLabel': 'Theme',
+  'classicTheme': 'Classic',
+  'midnightBlueTheme': 'Midnight Blue',
+  'mosqueGreenTheme': 'Mosque Green',
 };

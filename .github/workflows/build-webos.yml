@@ -1,0 +1,78 @@
+name: Build webOS IPK
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  build-webos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install webOS CLI
+        run: npm install -g @aspect-build/aspect-cli || npm install -g @aspect-build/ares-cli || true
+
+      - name: Get dependencies (shared)
+        run: flutter pub get
+        working-directory: mihrab_shared
+
+      - name: Get dependencies (tv)
+        run: flutter pub get
+        working-directory: mihrab_tv
+
+      - name: Create .env for mihrab_tv
+        run: |
+          echo "SUPABASE_URL=${{ secrets.SUPABASE_URL }}" > .env
+          echo "SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}" >> .env
+        working-directory: mihrab_tv
+
+      - name: Build Flutter web
+        run: |
+          flutter build web --release \
+            --dart-define=SUPABASE_URL=${{ secrets.SUPABASE_URL }} \
+            --dart-define=SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
+        working-directory: mihrab_tv
+
+      - name: Copy webOS metadata into build
+        run: |
+          cp mihrab_tv/webos/appinfo.json mihrab_tv/build/web/
+          cp mihrab_tv/webos/icon.png mihrab_tv/build/web/
+          cp mihrab_tv/webos/largeIcon.png mihrab_tv/build/web/
+
+      - name: Package IPK
+        run: |
+          if command -v ares-package &> /dev/null; then
+            ares-package --no-minify mihrab_tv/build/web/ -o .
+          else
+            echo "ares-package not available, creating archive manually"
+            cd mihrab_tv/build/web
+            tar czf ../../../com.alheekmah.mihrab.tv_1.0.7_all.ipk .
+          fi
+
+      - name: Upload IPK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mihrab-webos-ipk
+          path: "*.ipk"
+          if-no-files-found: warn
+
+      - name: Upload to Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.ipk"

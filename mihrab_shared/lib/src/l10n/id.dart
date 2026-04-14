@@ -163,4 +163,18 @@ const Map<String, String> id = {
   'latitude': 'Lintang',
   'longitude': 'Bujur',
   'search': 'Cari',
+
+  // Hadith font size
+  'hadithFontSize': 'Ukuran Font Hadis',
+  'fontSizeExtraSmall': 'Sangat Kecil',
+  'fontSizeSmall': 'Kecil',
+  'fontSizeMedium': 'Sedang',
+  'fontSizeLarge': 'Besar',
+  'fontSizeExtraLarge': 'Sangat Besar',
+
+  // Themes
+  'themeLabel': 'Tema',
+  'classicTheme': 'Klasik',
+  'midnightBlueTheme': 'Biru Malam',
+  'mosqueGreenTheme': 'Hijau Masjid',
 };

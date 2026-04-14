@@ -208,7 +208,9 @@ class _QrPairingView extends StatelessWidget {
       autofocus: true,
       onKeyEvent: (node, event) {
         if (event is KeyDownEvent &&
-            event.logicalKey == LogicalKeyboardKey.escape) {
+            (event.logicalKey == LogicalKeyboardKey.escape ||
+                event.logicalKey == LogicalKeyboardKey.goBack ||
+                event.logicalKey == LogicalKeyboardKey.browserBack)) {
           onBack();
           return KeyEventResult.handled;
         }
@@ -530,7 +532,9 @@ class _ManualSetupViewState extends State<_ManualSetupView> {
     return Focus(
       onKeyEvent: (node, event) {
         if (event is KeyDownEvent &&
-            event.logicalKey == LogicalKeyboardKey.escape) {
+            (event.logicalKey == LogicalKeyboardKey.escape ||
+                event.logicalKey == LogicalKeyboardKey.goBack ||
+                event.logicalKey == LogicalKeyboardKey.browserBack)) {
           widget.onBack();
           return KeyEventResult.handled;
         }

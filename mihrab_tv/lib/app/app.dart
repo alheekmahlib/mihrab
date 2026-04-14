@@ -20,6 +20,7 @@ class MihrabTvApp extends StatelessWidget {
 
     final savedTheme = GetStorage().read<bool>('IS_DARK_MODE') ?? false;
     final savedLocale = GetStorage().read<String>('LOCALE') ?? 'ar';
+    final savedThemeName = GetStorage().read<String>('THEME') ?? 'classic';
 
     return GetMaterialApp(
       title: 'Mihrab',
@@ -27,8 +28,8 @@ class MihrabTvApp extends StatelessWidget {
       translations: AppTranslations(),
       locale: Locale(savedLocale),
       fallbackLocale: const Locale('ar'),
-      theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
+      theme: AppTheme.getLightTheme(savedThemeName),
+      darkTheme: AppTheme.getDarkTheme(savedThemeName),
       themeMode: savedTheme ? ThemeMode.dark : ThemeMode.light,
       initialBinding: InitialBinding(),
       initialRoute: AppRoutes.splash,

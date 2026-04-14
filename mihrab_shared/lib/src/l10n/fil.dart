@@ -166,4 +166,18 @@ const Map<String, String> fil = {
   'latitude': 'Latitude',
   'longitude': 'Longitude',
   'search': 'Hanapin',
+
+  // Hadith font size
+  'hadithFontSize': 'Laki ng Font ng Hadith',
+  'fontSizeExtraSmall': 'Napakaliit',
+  'fontSizeSmall': 'Maliit',
+  'fontSizeMedium': 'Katamtaman',
+  'fontSizeLarge': 'Malaki',
+  'fontSizeExtraLarge': 'Napakalaki',
+
+  // Themes
+  'themeLabel': 'Tema',
+  'classicTheme': 'Klasiko',
+  'midnightBlueTheme': 'Midnight Blue',
+  'mosqueGreenTheme': 'Mosque Green',
 };

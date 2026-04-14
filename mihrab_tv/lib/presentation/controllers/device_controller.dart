@@ -171,9 +171,17 @@ class DeviceController extends GetxController {
     // Apply dark mode change
     final isDark = newSettings.isDarkMode ?? false;
     final currentIsDark = Get.isDarkMode;
+    final themeName = newSettings.theme ?? 'classic';
     if (isDark != currentIsDark) {
       Get.changeThemeMode(isDark ? ThemeMode.dark : ThemeMode.light);
       GetStorage().write('IS_DARK_MODE', isDark);
+    }
+
+    // Apply theme change
+    final savedTheme = GetStorage().read<String>('THEME') ?? 'classic';
+    if (themeName != savedTheme) {
+      GetStorage().write('THEME', themeName);
+      Get.changeTheme(AppTheme.getTheme(themeName, isDark));
     }
 
     // Apply hadith interval change
@@ -330,6 +338,41 @@ class DeviceController extends GetxController {
     final updated = current.copyWith(hadithInterval: minutes);
     settings.value = updated;
     await _deviceRepo.saveLocalSettings(updated);
+
+    // Push to Supabase if online
+    if (device.value != null) {
+      try {
+        await _deviceRepo.updateSettings(device.value!.id, updated);
+      } catch (_) {}
+    }
+  }
+
+  Future<void> updateHadithFontSize(int level) async {
+    final current = settings.value;
+    if (current == null) return;
+    final updated = current.copyWith(hadithFontSize: level);
+    settings.value = updated;
+    await _deviceRepo.saveLocalSettings(updated);
+
+    // Push to Supabase if online
+    if (device.value != null) {
+      try {
+        await _deviceRepo.updateSettings(device.value!.id, updated);
+      } catch (_) {}
+    }
+  }
+
+  Future<void> updateTheme(String theme) async {
+    final current = settings.value;
+    if (current == null) return;
+    final updated = current.copyWith(theme: theme);
+    settings.value = updated;
+    await _deviceRepo.saveLocalSettings(updated);
+    GetStorage().write('THEME', theme);
+
+    // Apply theme immediately
+    final isDark = current.isDarkMode ?? false;
+    Get.changeTheme(AppTheme.getTheme(theme, isDark));
 
     // Push to Supabase if online
     if (device.value != null) {

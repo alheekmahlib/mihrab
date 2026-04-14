@@ -3,14 +3,18 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:mihrab_shared/mihrab_shared.dart';
 
+import '../../controllers/device_controller.dart';
 import '../../controllers/hadith_controller.dart';
 
 class HadithScreen extends StatelessWidget {
   const HadithScreen({super.key});
 
+  static const _fontSizeMultipliers = {1: 0.7, 2: 0.85, 3: 1.0, 4: 1.2, 5: 1.4};
+
   @override
   Widget build(BuildContext context) {
     final ctrl = Get.find<HadithController>();
+    final deviceCtrl = Get.find<DeviceController>();
     final size = MediaQuery.sizeOf(context);
     final scale = (size.shortestSide / 800).clamp(0.5, 1.5);
 
@@ -84,18 +88,29 @@ class HadithScreen extends StatelessWidget {
               Expanded(
                 child: Center(
                   child: SingleChildScrollView(
-                    child: Text(
-                      hadith.hadithText,
-                      style:
-                          AppTextStyles.tvHadith(
-                            fontSize: (28 * scale).clamp(18, 32),
-                          ).copyWith(
-                            color: Theme.of(context).colorScheme.inversePrimary,
-                            height: 2.2,
-                          ),
-                      textAlign: TextAlign.center,
-                      textDirection: TextDirection.rtl,
-                    ),
+                    child: Obx(() {
+                      final fontLevel =
+                          deviceCtrl.settings.value?.hadithFontSize ?? 3;
+                      final fontMultiplier =
+                          _fontSizeMultipliers[fontLevel] ?? 1.0;
+                      return Text(
+                        hadith.hadithText,
+                        style:
+                            AppTextStyles.tvHadith(
+                              fontSize: (28 * scale * fontMultiplier).clamp(
+                                14,
+                                48,
+                              ),
+                            ).copyWith(
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.inversePrimary,
+                              height: 2.2,
+                            ),
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.rtl,
+                      );
+                    }),
                   ),
                 ),
               ),

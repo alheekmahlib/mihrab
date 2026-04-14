@@ -166,4 +166,18 @@ const Map<String, String> es = {
   'latitude': 'Latitud',
   'longitude': 'Longitud',
   'search': 'Buscar',
+
+  // Hadith font size
+  'hadithFontSize': 'Tamaño de Fuente del Hadiz',
+  'fontSizeExtraSmall': 'Muy Pequeño',
+  'fontSizeSmall': 'Pequeño',
+  'fontSizeMedium': 'Medio',
+  'fontSizeLarge': 'Grande',
+  'fontSizeExtraLarge': 'Muy Grande',
+
+  // Themes
+  'themeLabel': 'Tema',
+  'classicTheme': 'Clásico',
+  'midnightBlueTheme': 'Azul Noche',
+  'mosqueGreenTheme': 'Verde Mezquita',
 };

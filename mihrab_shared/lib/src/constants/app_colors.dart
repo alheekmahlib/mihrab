@@ -50,4 +50,48 @@ class AppColors {
 
   /// Warm white text for dark mode
   static const Color warmWhiteText = Color(0xFFE0D8C0);
+
+  // ══════════════════════════════════════════════
+  //           MIDNIGHT BLUE THEME COLORS
+  // ══════════════════════════════════════════════
+
+  /// Midnight navy — background
+  static const Color midnightNavy = Color(0xFF0D1B2A);
+
+  /// Midnight blue — primary accent
+  static const Color midnightBlue = Color(0xFF1B3A5C);
+
+  /// Midnight light blue — secondary
+  static const Color midnightLightBlue = Color(0xFF2E5A88);
+
+  /// Midnight surface — cards
+  static const Color midnightSurface = Color(0xFF152238);
+
+  /// Midnight text — light grey
+  static const Color midnightText = Color(0xFFE0E0E0);
+
+  /// Midnight gold — accent
+  static const Color midnightGold = Color(0xFFD4A855);
+
+  // ══════════════════════════════════════════════
+  //           MOSQUE GREEN THEME COLORS
+  // ══════════════════════════════════════════════
+
+  /// Mosque forest — background
+  static const Color mosqueForest = Color(0xFF1B3D2F);
+
+  /// Mosque emerald — primary accent
+  static const Color mosqueEmerald = Color(0xFF2E8B57);
+
+  /// Mosque light green — secondary
+  static const Color mosqueLightGreen = Color(0xFF3DAA6D);
+
+  /// Mosque surface — cards
+  static const Color mosqueSurface = Color(0xFF244F3B);
+
+  /// Mosque cream — text
+  static const Color mosqueCream = Color(0xFFF5F0E1);
+
+  /// Mosque gold — accent
+  static const Color mosqueGold = Color(0xFFCDA434);
 }

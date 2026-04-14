@@ -164,4 +164,18 @@ const Map<String, String> tr = {
   'latitude': 'Enlem',
   'longitude': 'Boylam',
   'search': 'Ara',
+
+  // Hadith font size
+  'hadithFontSize': 'Hadis Yazı Boyutu',
+  'fontSizeExtraSmall': 'Çok Küçük',
+  'fontSizeSmall': 'Küçük',
+  'fontSizeMedium': 'Orta',
+  'fontSizeLarge': 'Büyük',
+  'fontSizeExtraLarge': 'Çok Büyük',
+
+  // Themes
+  'themeLabel': 'Tema',
+  'classicTheme': 'Klasik',
+  'midnightBlueTheme': 'Gece Mavisi',
+  'mosqueGreenTheme': 'Cami Yeşili',
 };
