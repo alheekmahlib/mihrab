@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:mihrab_shared/mihrab_shared.dart';
 
@@ -34,7 +33,7 @@ class HadithScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 56, vertical: 36 * scale),
+      padding: EdgeInsets.symmetric(horizontal: 56, vertical: 16),
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
       ),
@@ -103,9 +102,9 @@ class HadithScreen extends StatelessWidget {
                       key: ValueKey('nobook_${hadith.arabicURN}'),
                     ),
             ),
-            Gap(16 * scale),
+            // Gap(16 * scale),
             Divider(color: AppColors.sand.withValues(alpha: .5), thickness: 1),
-            Gap(16 * scale),
+            // Gap(16 * scale),
             // Hadith text
             Expanded(
               child: AnimatedSwitcher(
@@ -141,9 +140,9 @@ class HadithScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Gap(12 * scale),
+            // Gap(12 * scale),
             Divider(color: AppColors.sand.withValues(alpha: .5), thickness: 1),
-            Gap(6 * scale),
+            // Gap(6 * scale),
             // Grade + bab name
             AnimatedSwitcher(
               duration: const Duration(milliseconds: 2000),
